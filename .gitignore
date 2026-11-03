@@ -1,0 +1,35 @@
+node_modules/
+dist/
+.test/
+legacy/
+store/.tmp/
+
+# chaves e senhas: ficam só nos segredos do GitHub
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision
+ANDROID_KEYSTORE_*.txt
+
+# arquivos gerados pelo Capacitor e pelas ferramentas dos celulares
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/capacitor-cordova-android-plugins/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+android/app/src/main/res/xml/config.xml
+ios/App/build/
+ios/App/DerivedData/
+ios/App/App/public/
+ios/App/App/capacitor.config.json
+ios/App/App/config.xml
+ios/App/CapApp-SPM/.build/
+xcuserdata/
+*.xcuserstate
+
+.DS_Store
+Thumbs.db

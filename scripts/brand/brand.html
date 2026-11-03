@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>Ovelhinha · marca</title>
+<link rel="stylesheet" href="../../src/css/fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  svg { display: block; }
+  .wm { font-family: "Grandstander", sans-serif; font-weight: 900; }
+  .sub { font-family: "Grandstander", sans-serif; font-weight: 700; letter-spacing: .14em; }
+</style>
+</head>
+<body>
+<div id="out"></div>
+<script src="../../src/js/art.js"></script>
+<script>
+// Arte do ícone, da tela de abertura e das imagens das lojas, desenhada com o mesmo kit dos livros.
+// Uso: brand.html?kind=icon|icon-fg|icon-bg|maskable|splash|splash-dark|feature|og&w=1024&h=1024
+const q = new URLSearchParams(location.search);
+const kind = q.get('kind') || 'icon', W = +(q.get('w') || 1024), H = +(q.get('h') || 1024);
+P = 'br';
+const SKY = [[0, '#8fd0f2'], [.62, '#d8f0fa'], [1, '#f3fbe8']];
+const NIGHT = [[0, '#0e1438'], [.7, '#2c3570'], [1, '#3a4889']];
+function bg(dark, hills = true) {
+  let s = `<defs>${lg('fundo', dark ? NIGHT : SKY)}</defs><rect x="0" y="0" width="${W}" height="${H}" fill="${UR('fundo')}"/>`;
+  if (dark) s += starField(7, Math.round(W * H / 9000), 0, 0, W, H * .7, { big: .08 });
+  if (hills) {
+    const h1 = dark ? '#1d3a4c' : '#b9da86', h2 = dark ? '#234a4a' : '#9cc865';
+    s += `<ellipse cx="${W * .18}" cy="${H * 1.12}" rx="${W * .7}" ry="${H * .34}" fill="${h2}"/><ellipse cx="${W * .86}" cy="${H * 1.14}" rx="${W * .62}" ry="${H * .32}" fill="${h1}"/>`;
+  }
+  return s;
+}
+function lamb(x, y, s, body = false) { return `<g transform="translate(${x},${y}) scale(${s})">${mascot({ body })}</g>`; }
+function wordmark(x, y, fs, o = {}) {
+  const stroke = o.stroke || '#253273';
+  let s = `<text x="${x}" y="${y + fs * .075}" text-anchor="middle" class="wm" font-size="${fs}" fill="${stroke}">Ovelhinha</text>`;
+  s += `<text x="${x}" y="${y}" text-anchor="middle" class="wm" font-size="${fs}" fill="#fff7e2" stroke="${stroke}" stroke-width="${fs * .17}" stroke-linejoin="round" paint-order="stroke">Ovelhinha</text>`;
+  if (o.sub) {
+    const sf = fs * .26, sw = sf * 13.2;
+    s += `<rect x="${x - sw / 2}" y="${y + fs * .26}" width="${sw}" height="${sf * 1.7}" rx="${sf * .85}" fill="${o.dark ? 'rgba(255,255,255,.14)' : 'rgba(255,250,240,.86)'}"/>`;
+    s += `<text x="${x}" y="${y + fs * .26 + sf * 1.2}" text-anchor="middle" class="sub" font-size="${sf}" fill="${o.dark ? '#eef0ff' : '#20305e'}">HISTÓRIAS DA BÍBLIA</text>`;
+  }
+  return s;
+}
+let svg = '';
+switch (kind) {
+  case 'icon': svg = bg(false) + lamb(W / 2, H * .53, W / 270); break;
+  case 'icon-bg': svg = bg(false); break;
+  case 'icon-fg': svg = lamb(W / 2, H * .52, W / 341); break;
+  case 'maskable': svg = bg(false) + lamb(W / 2, H * .53, W / 330); break;
+  case 'splash': case 'splash-dark': {
+    const dark = kind === 'splash-dark';
+    svg = bg(dark) + lamb(W / 2, H * .45, W / 560) + wordmark(W / 2, H * .64, W * .085, { sub: true, dark });
+    break;
+  }
+  case 'feature': case 'og': {
+    svg = bg(false) + cloud(W * .82, H * .2, W / 1000) + cloud(W * .46, H * .14, W / 1500, { dx: 0 });
+    svg += lamb(W * .19, H * .45, H / 480, true);
+    svg += wordmark(W * .635, H * .52, W * .118, { sub: true });
+    break;
+  }
+}
+document.getElementById('out').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${svg}</svg>`;
+document.querySelectorAll('svg *').forEach(e => { e.style.animation = 'none'; });
+</script>
+</body>
+</html>

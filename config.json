@@ -1,0 +1,17 @@
+{
+  "appName": "Ovelhinha",
+  "fullName": "Ovelhinha: Histórias da Bíblia",
+  "version": "1.0.0",
+  "build": 1,
+  "appId": "app.ovelhinha.historias",
+  "email": "contacto@aovelhinha.com",
+  "emailConfirmed": true,
+  "site": "https://aovelhinha.com/",
+  "appStore": "",
+  "playStore": "",
+  "order": ["adao", "davi", "natal", "ovelha", "pascoa", "noe", "abraao", "jaco", "jose", "moises", "josue", "rute", "samuel", "elias", "naama", "jonas", "fornalha", "daniel", "ester", "templo", "pesca", "rocha", "tempestade", "paes", "aguas", "samaritano", "prodigo", "criancas", "cego", "zaqueu"],
+  "free": ["adao", "davi", "natal", "ovelha", "pascoa"],
+  "price": 0.99,
+  "productPrefix": "livro_",
+  "currency": "EUR"
+}

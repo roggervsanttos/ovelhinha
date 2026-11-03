@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE}} · Ovelhinha</title>
+<meta name="description" content="{{TITLE}} do Ovelhinha: Histórias da Bíblia.">
+<link rel="icon" href="img/icon-192.png">
+<link rel="stylesheet" href="css/fonts.css?v={{V}}">
+<style>
+  :root { --bg: #fdf0d2; --paper: #fffaf0; --ink: #2d2340; --soft: #5f5573; --edge: #e6d6b2; --link: #2f6db5; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0e1438; --paper: #f6eedb; --edge: #b9a77e; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 "Andika", Verdana, system-ui, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+  .card { background: var(--paper); border-radius: 22px; padding: 22px 22px 28px; box-shadow: 0 12px 30px -16px rgba(0, 0, 0, .4); border: 2px solid var(--edge); }
+  .top { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; text-decoration: none; color: var(--ink); }
+  .top img { width: 56px; height: 56px; border-radius: 14px; }
+  .top b { font: 900 28px/1 "Grandstander", system-ui, sans-serif; color: #fff7e2; -webkit-text-stroke: 5px #253273; paint-order: stroke fill; }
+  h1 { font: 800 28px/1.15 "Grandstander", system-ui, sans-serif; margin: 0 0 14px; }
+  h3 { font: 800 19px/1.25 "Grandstander", system-ui, sans-serif; margin: 22px 0 6px; }
+  p, ul { margin: 0 0 10px; }
+  ul { padding-left: 1.2em; }
+  a { color: var(--link); }
+  footer { margin-top: 20px; text-align: center; font-size: 15px; color: var(--soft); }
+  @media (prefers-color-scheme: dark) { footer { color: #d9dcf3; } footer a { color: #ffd86b; } }
+</style>
+</head>
+<body>
+<main>
+  <a class="top" href="./"><img src="img/icon-192.png" alt=""><b>Ovelhinha</b></a>
+  <div class="card">
+    <h1>{{TITLE}}</h1>
+    {{BODY}}
+  </div>
+  <footer><a href="./">Abrir o Ovelhinha</a> · <a href="privacidade.html">Privacidade</a> · <a href="suporte.html">Suporte</a></footer>
+</main>
+</body>
+</html>

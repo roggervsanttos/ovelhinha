@@ -1,0 +1,85 @@
+/* ---------- movimento das ilustrações ---------- */
+.breath { animation: breath 3.4s ease-in-out infinite; }
+@keyframes breath { 50% { transform: translateY(-2.4px); } }
+.eyes { animation: blink 5.6s infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 95.5% { transform: scaleY(.1); } }
+.drift { animation: drift var(--d, 16s) ease-in-out infinite alternate; }
+@keyframes drift { to { transform: translateX(var(--dx, 36px)); } }
+.spin { animation: spin var(--d, 30s) linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.twinkle { animation: twinkle var(--d, 3s) ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes twinkle { 50% { transform: scale(.4); opacity: .5; } }
+.tw2 { animation: tw2 var(--d, 3s) ease-in-out infinite; }
+@keyframes tw2 { 50% { opacity: .2; } }
+.glide { animation: glide var(--d, 9s) ease-in-out infinite alternate; }
+@keyframes glide { to { transform: translate(var(--dx, 60px), var(--dy, -14px)); } }
+.flap { animation: flap .42s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+@keyframes flap { to { transform: scaleY(-.5); } }
+.sway { animation: sway var(--d, 3s) ease-in-out infinite alternate; }
+@keyframes sway { from { transform: rotate(calc(var(--r, 4deg) * -1)); } to { transform: rotate(var(--r, 4deg)); } }
+.wave { animation: wave 1.5s ease-in-out infinite alternate; }
+@keyframes wave { from { transform: skewY(-5deg); } to { transform: skewY(6deg) scaleX(.9); } }
+.graze { animation: graze 7s ease-in-out infinite; }
+@keyframes graze { 0%, 52%, 100% { transform: rotate(0deg); } 60%, 90% { transform: rotate(40deg); } 70%, 80% { transform: rotate(33deg); } }
+.wiggle { animation: wiggle 1.1s ease-in-out infinite alternate; }
+@keyframes wiggle { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+.peek { animation: peek 3.6s ease-in-out infinite; }
+@keyframes peek { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+.zzz { animation: zzz 3.2s ease-in-out infinite; }
+@keyframes zzz { 0% { transform: translate(0, 0) scale(.6); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(14px, -34px) scale(1.15); opacity: 0; } }
+.bob { animation: bob 2.6s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-4px); } }
+.flicker { animation: flicker .5s ease-in-out infinite alternate; }
+@keyframes flicker { from { transform: scale(1, 1); } to { transform: scale(.88, 1.1); } }
+.rise { animation: rise var(--d, 2.4s) ease-out infinite; }
+@keyframes rise { 0% { transform: translate(0, 0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translate(var(--dx, 6px), -90px); opacity: 0; } }
+.firefly { animation: firefly var(--d, 6s) ease-in-out infinite alternate; }
+@keyframes firefly { 0% { transform: translate(0, 0); opacity: .2; } 40% { opacity: 1; } 100% { transform: translate(var(--dx, 30px), var(--dy, -20px)); opacity: .3; } }
+.flow { animation: flow var(--d, 3s) linear infinite; }
+@keyframes flow { to { stroke-dashoffset: var(--o, -80); } }
+.tremble { animation: tremble .16s linear infinite alternate; }
+@keyframes tremble { from { transform: translateX(-1.6px); } to { transform: translateX(1.6px); } }
+.clap { animation: clap .5s ease-in-out infinite alternate; }
+@keyframes clap { from { transform: rotate(-10deg); } to { transform: rotate(12deg); } }
+.pulse { animation: pulse 1.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes pulse { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(1.5); opacity: 0; } }
+.hover { animation: hover 3s ease-in-out infinite; }
+@keyframes hover { 50% { transform: translateY(-8px); } }
+.shine { animation: shine 2.6s ease-in-out infinite; }
+@keyframes shine { 50% { opacity: .35; } }
+.storm { animation: storm 2.2s ease-in-out infinite alternate; }
+@keyframes storm { to { transform: translate(6px, 2px); } }
+.rain { animation: rain .8s linear infinite; }
+@keyframes rain { from { transform: translateY(-6px); opacity: 0; } 30% { opacity: 1; } to { transform: translateY(30px); opacity: 0; } }
+.swim { animation: swim var(--d, 7s) ease-in-out infinite alternate; }
+@keyframes swim { to { transform: translateX(var(--dx, 40px)); } }
+.flutter { animation: flutter .28s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+@keyframes flutter { to { transform: scaleX(.25); } }
+.wander { animation: wander var(--d, 12s) ease-in-out infinite alternate; }
+@keyframes wander { 0% { transform: translate(0, 0); } 33% { transform: translate(40px, -24px); } 66% { transform: translate(-16px, -40px); } 100% { transform: translate(30px, 10px); } }
+.petal { animation: petal var(--d, 8s) linear infinite; }
+@keyframes petal { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0; } 8% { opacity: 1; } 100% { transform: translate(var(--dx, 20px), 860px) rotate(540deg); opacity: .9; } }
+.shooting { animation: shooting 9s ease-in infinite; opacity: 0; }
+@keyframes shooting { 0%, 78% { transform: translate(760px, 40px); opacity: 0; } 80% { opacity: 1; } 92% { transform: translate(420px, 160px); opacity: 0; } 100% { transform: translate(420px, 160px); opacity: 0; } }
+.fishjump { animation: fishjump 5.5s ease-in-out infinite; opacity: 0; }
+@keyframes fishjump { 0%, 62% { transform: translate(0, 24px) rotate(-50deg); opacity: 0; } 66% { transform: translate(6px, 0) rotate(-45deg); opacity: 1; } 74% { transform: translate(34px, -58px) rotate(0deg); opacity: 1; } 82% { transform: translate(62px, 0) rotate(45deg); opacity: 1; } 86%, 100% { transform: translate(66px, 26px) rotate(50deg); opacity: 0; } }
+.flapw { animation: flapw .38s ease-in-out infinite alternate; transform-origin: 0 0; }
+@keyframes flapw { from { transform: rotate(-14deg) scaleY(1); } to { transform: rotate(10deg) scaleY(-.35); } }
+.swell { animation: swell var(--d, 6s) ease-in-out infinite alternate; }
+@keyframes swell { from { transform: translateX(calc(var(--dx, 60px) * -1)); } to { transform: translateX(var(--dx, 60px)); } }
+.rainfall { animation: rainfall var(--d, .55s) linear infinite; }
+@keyframes rainfall { from { transform: translate(0, 0); } to { transform: translate(-36px, 880px); } }
+.rock { animation: rock 4s ease-in-out infinite; }
+@keyframes rock { 0%, 100% { transform: rotate(-2.2deg) translateY(0); } 50% { transform: rotate(2.2deg) translateY(-6px); } }
+.bounce { animation: bounce 1.2s ease-in-out infinite; }
+@keyframes bounce { 50% { transform: translateY(-10px); } }
+.flapw2 { animation: flapw2 2.6s ease-in-out infinite alternate; transform-origin: 0 -150px; }
+@keyframes flapw2 { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+.flick { animation: flick 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: 0% 50%; }
+@keyframes flick { 0%, 66%, 100% { transform: scaleX(0); } 72%, 88% { transform: scaleX(1); } }
+.float { animation: float var(--d, 3.4s) ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-7px) rotate(2deg); } }
+.climb { animation: climb var(--d, 6s) linear infinite; }
+@keyframes climb { 0% { transform: translate(0, 0); opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { transform: translate(var(--dx, 0px), var(--dy, -300px)); opacity: 0; } }
+.glow { animation: glow var(--d, 2.4s) ease-in-out infinite alternate; }
+@keyframes glow { from { opacity: .45; } to { opacity: 1; } }

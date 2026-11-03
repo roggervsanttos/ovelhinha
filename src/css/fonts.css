@@ -1,0 +1,9 @@
+/* Fontes do app, guardadas dentro dele para funcionar sem internet.
+   Grandstander (Etcetera Type Co.) e Andika (SIL International), SIL Open Font License 1.1 — veja fonts/OFL-*.txt */
+@font-face { font-family: "Grandstander"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/grandstander-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Grandstander"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/grandstander-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Grandstander"; font-style: normal; font-weight: 800; font-display: swap; src: url("../fonts/grandstander-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Grandstander"; font-style: normal; font-weight: 900; font-display: swap; src: url("../fonts/grandstander-latin-900-normal.woff2") format("woff2"); }
+@font-face { font-family: "Andika"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/andika-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Andika"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/andika-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Andika"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/andika-latin-400-italic.woff2") format("woff2"); }

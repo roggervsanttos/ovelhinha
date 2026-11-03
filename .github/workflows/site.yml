@@ -1,0 +1,45 @@
+# Site do Ovelhinha no GitHub Pages: monta a versão web e publica a cada mudança no app.
+name: Site
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'config.json'
+      - 'scripts/build.mjs'
+      - 'scripts/native-entry.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/site.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  montar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/build.mjs web
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist/web
+  publicar:
+    needs: montar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - id: publicar
+        uses: actions/deploy-pages@v5

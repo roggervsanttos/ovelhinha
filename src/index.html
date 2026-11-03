@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!--HEAD-START-->
+<title>Ovelhinha</title>
+<meta name="description" content="Ovelhinha: Histórias da Bíblia. Livros infantis animados para ler e tocar, de Adão e Eva até à Páscoa: Noé, David, Jonas, o nascimento de Jesus e muito mais.">
+<!--WEBONLY-->
+<!--FONTS-->
+<link rel="stylesheet" href="css/app.css?v={{V}}">
+<link rel="stylesheet" href="css/art.css?v={{V}}">
+</head>
+<body>
+
+<div class="view start-view" id="startView">
+  <div class="start-sky" id="startSky" aria-hidden="true"></div>
+  <div class="start-main">
+    <div class="start-brand">
+      <h1 class="start-name">Ovelhinha</h1>
+      <p class="start-sub" data-t="sub">Histórias da Bíblia</p>
+    </div>
+    <button class="cbtn start-btn" id="startBtn" type="button" data-ta="aria-label:startAria" aria-label="Começar: ver todas as histórias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.2v13.6L19 12z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span data-t="start">Começar</span></button>
+    <div class="langs start-langs" id="startLangs" role="group" data-ta="aria-label:lang" aria-label="Língua"></div>
+  </div>
+  <div class="start-ground">
+    <svg class="scene start-meadow" id="startMeadow" viewBox="0 96 1200 304" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+    <button class="start-mascot" id="startMascot" type="button" data-ta="aria-label:mascot" aria-label="A Ovelhinha diz olá">
+      <svg viewBox="-125 -112 250 300" aria-hidden="true" id="startMascotArt"></svg>
+      <span class="mascot-say" id="startSay" data-t="baa" hidden>Bééé!</span>
+    </button>
+  </div>
+</div>
+
+<div class="view shelf-view" id="shelfView" hidden>
+  <div class="shelf-wrap">
+    <header class="shelfbar">
+      <button class="mascot" id="mascot" type="button" data-ta="aria-label:mascot" aria-label="A Ovelhinha diz olá">
+        <svg viewBox="-110 -110 220 220" aria-hidden="true" id="mascotArt"></svg>
+        <span class="mascot-say" id="mascotSay" data-t="baa" hidden>Bééé!</span>
+      </button>
+      <div class="wordmark">
+        <h1>Ovelhinha</h1>
+        <p data-t="sub">Histórias da Bíblia</p>
+        <div class="langs" id="langs" role="group" data-ta="aria-label:lang" aria-label="Língua"></div>
+      </div>
+      <button class="tbtn parents-btn" id="btnParents" type="button" data-ta="aria-label:parents" aria-label="Área dos pais"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg><span class="lbl" data-t="parentsShort">Pais</span></button>
+    </header>
+    <aside class="install-card" id="installCard" hidden>
+      <div class="ic-art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+      <div class="ic-text">
+        <b data-t="installTitle">Instale o Ovelhinha no telemóvel</b>
+        <span id="installSteps" data-th="installSteps" hidden></span>
+        <span class="stores" data-stores hidden></span>
+      </div>
+      <button class="ic-btn" id="installBtn" type="button" data-t="install" hidden>Instalar</button>
+      <button class="ic-close" id="installClose" type="button" data-ta="aria-label:installClose" aria-label="Fechar o aviso de instalação"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </aside>
+    <main class="shelf" data-ta="aria-label:shelf" aria-label="Estante de livros">
+      <div class="shelf-grid" id="shelfGrid"></div>
+    </main>
+    <p class="shelf-foot" data-t="shelfFoot">Toca num livro para começar.</p>
+  </div>
+</div>
+
+<div class="view reader-view" id="readerView" hidden>
+  <div class="app">
+    <header class="topbar">
+      <button class="tbtn backbtn" id="btnHome" type="button" data-ta="aria-label:home" aria-label="Voltar à estante"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M5 20V5.5h4V20M10 20V8h4v12M15.2 20l-1-11.6 3.8-.5 1.2 11.6"/></svg><span class="lbl" data-t="homeShort">Estante</span></button>
+      <b class="booktitle" id="bookTitle"></b>
+      <div class="tools">
+        <button class="tbtn" id="btnLang" type="button" aria-haspopup="true" aria-expanded="false" data-ta="title:lang;aria-label:lang" title="Língua"><span class="flagi" id="langNow" aria-hidden="true"></span><span class="lbl" data-t="lang">Língua</span></button>
+        <button class="tbtn" id="btnSound" type="button" aria-pressed="true" data-ta="title:sounds" title="Sons do livro"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5" fill="currentColor"/><circle cx="16.5" cy="16" r="2.5" fill="currentColor"/></svg><span class="lbl" data-t="soundsShort">Sons</span></button>
+        <button class="tbtn" id="btnPages" type="button" data-ta="title:pages" title="Ver todas as páginas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="lbl" data-t="pagesShort">Páginas</span></button>
+        <button class="tbtn" id="btnFull" type="button" aria-pressed="false" data-ta="title:full" title="Ecrã inteiro"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span class="lbl" data-t="full">Ecrã inteiro</span></button>
+      </div>
+      <div class="langpop" id="langPop" role="group" data-ta="aria-label:lang" aria-label="Língua" hidden></div>
+    </header>
+    <main class="stage" id="stage"><div class="book" id="book"></div></main>
+    <nav class="pager" data-ta="aria-label:nav" aria-label="Navegação do livro">
+      <button class="nav" id="prev" type="button" data-ta="aria-label:prev" aria-label="Página anterior"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="dots" id="dots"></div>
+      <div class="count" id="count" aria-live="polite"></div>
+      <button class="nav" id="next" type="button" data-ta="aria-label:next" aria-label="Página seguinte"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </nav>
+  </div>
+</div>
+
+<div class="index" id="index" hidden role="dialog" aria-modal="true" aria-labelledby="ixTitle">
+  <div class="panel">
+    <header><h3 id="ixTitle" data-t="allPages">Todas as páginas</h3><button class="close" id="closeIndex" type="button" data-ta="aria-label:close" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+</div>
+
+<div class="modal" id="parents" hidden role="dialog" aria-modal="true" aria-labelledby="parentsTitle">
+  <div class="panel">
+    <header class="mhead"><h3 id="parentsTitle" data-t="parents">Área dos pais</h3><button class="close" id="closeParents" type="button" data-ta="aria-label:close" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+    <section class="gate" id="gate" data-ta="aria-label:adultsTitle" aria-label="Para adultos"></section>
+    <section class="pmain" id="pmain" hidden>
+      <div class="group">
+        <h4 data-t="settings">Ajustes</h4>
+        <label class="row" for="setSound"><span data-t="soundMusic">Sons e música</span><input class="switch" type="checkbox" id="setSound"></label>
+      </div>
+      <div class="group" id="storeGroup">
+        <h4 data-t="extras">Histórias extras</h4>
+        <p id="storeLead"></p>
+        <ul class="buylist" id="buyList"></ul>
+        <div class="buyacts" id="buyActs"><button class="pbtn" id="restoreBtn" type="button" data-t="restore">Restaurar compras</button></div>
+        <p class="muted" id="storeMsg" aria-live="polite"></p>
+      </div>
+      <div class="group">
+        <h4 data-t="progress">Progresso de leitura</h4>
+        <p data-t="progressText">A página onde cada livro parou e as estrelas dos livros lidos ficam guardadas só neste aparelho.</p>
+        <div><button class="pbtn" id="resetAsk" type="button" data-t="resetAsk">Apagar o progresso</button></div>
+        <div class="confirm" id="resetConfirm" hidden><span data-t="resetConfirm">Apagar o progresso de todos os livros?</span><button class="pbtn danger" id="resetYes" type="button" data-t="resetYes">Apagar</button><button class="pbtn" id="resetNo" type="button" data-t="cancel">Cancelar</button></div>
+      </div>
+      <div class="group" id="installGroup" hidden>
+        <h4 data-t="installGroup">Instalar no telemóvel</h4>
+        <p data-th="installIos"></p>
+        <p data-th="installAndroid"></p>
+        <div><button class="pbtn" type="button" data-install-now data-t="installNow" hidden>Instalar agora</button></div>
+        <div class="stores" data-stores hidden></div>
+      </div>
+      <div class="group">
+        <h4 data-t="about">Sobre o Ovelhinha</h4>
+        <p data-t="aboutText"></p>
+        <p class="muted" id="verText" data-v="{{VERSION}}"></p>
+        <div class="email"><span data-t="contact">Fale connosco:</span> <b id="emailText" data-email="{{EMAILRAW}}"></b> <button class="pbtn small" id="copyEmail" type="button" data-t="copy">Copiar</button></div>
+      </div>
+      <details class="group">
+        <summary data-t="privacy">Política de privacidade</summary>
+        <div class="policy"><!--POLICY--></div>
+      </details>
+      <details class="group">
+        <summary data-t="credits">Créditos e licenças</summary>
+        <p data-t="creditsStories"></p>
+        <p data-t="creditsFonts"></p>
+        <p class="native-only" data-t="creditsNative"></p>
+      </details>
+    </section>
+  </div>
+</div>
+
+<div class="modal" id="unlock" hidden role="dialog" aria-modal="true" aria-labelledby="unlockTitle">
+  <div class="panel unlock">
+    <header class="mhead"><h3 id="unlockTitle">História bloqueada</h3><button class="close" id="closeUnlock" type="button" data-ta="aria-label:close" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+    <section class="ul-kid" id="ulKid">
+      <div class="ul-cover" id="ulCover" aria-hidden="true"></div>
+      <p class="ul-lead" id="ulLead"></p>
+      <p class="ul-ask" id="ulAsk"></p>
+      <button class="cbtn" id="ulAdult" type="button"><span data-t="adult">Sou adulto</span></button>
+    </section>
+    <section class="gate" id="ulGate" data-ta="aria-label:adultsTitle" aria-label="Para adultos" hidden></section>
+    <section class="ul-buy" id="ulBuy" hidden>
+      <h4 id="ulBuyTitle"></h4>
+      <p id="ulBuyText"></p>
+      <div class="ul-acts">
+        <button class="cbtn" id="ulBuyBtn" type="button"></button>
+        <button class="pbtn" id="ulRestore" type="button" data-t="restore">Restaurar compras</button>
+      </div>
+      <div class="stores" id="ulStores" hidden></div>
+      <p class="muted" id="ulMsg" aria-live="polite"></p>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<!--CONFIG-->
+<script src="js/art.js?v={{V}}"></script>
+<script src="js/linguas.js?v={{V}}"></script>
+<script src="js/engine.js?v={{V}}"></script>
+<script src="js/loja.js?v={{V}}"></script>
+<!--BOOKS-->
+<!--NATIVE-->
+<script src="js/app.js?v={{V}}"></script>
+</body>
+</html>

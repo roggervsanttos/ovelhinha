@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>Ovelhinha · moldura das lojas</title>
+<link rel="stylesheet" href="../../src/css/fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; overflow: hidden; background: #8fd0f2; }
+  svg { display: block; }
+  .cap { font-family: "Grandstander", sans-serif; font-weight: 900; }
+</style>
+</head>
+<body>
+<div id="out"></div>
+<script src="../../src/js/art.js"></script>
+<script>
+// Moldura das fotos das lojas: céu do Ovelhinha, frase no alto e a tela do app num aparelho.
+// frame.html?w=1320&h=2868&img=...&x=150&y=520&iw=1020&ih=2200&r=66&b=24&cap=Frase&fs=92&cy=260&dark=0
+const q = new URLSearchParams(location.search);
+const n = (k, d) => q.has(k) ? +q.get(k) : d;
+const W = n('w', 1320), H = n('h', 2868), X = n('x', 150), Y = n('y', 520), IW = n('iw', 1020), IH = n('ih', 2200);
+const R = n('r', 60), B = n('b', 24), FS = n('fs', 92), CY = n('cy', 260), dark = q.get('dark') === '1';
+const lines = (q.get('cap') || '').split('|');
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+P = 'fr';
+const SKY = dark ? [[0, '#0e1438'], [.7, '#2c3570'], [1, '#3a4889']] : [[0, '#8fd0f2'], [.55, '#d8f0fa'], [1, '#f3fbe8']];
+let s = `<defs>${lg('fundo', SKY)}<filter id="sombra" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="${B * .9}" stdDeviation="${B * 1.1}" flood-color="#1b2550" flood-opacity=".28"/></filter><clipPath id="tela"><rect x="${X}" y="${Y}" width="${IW}" height="${IH}" rx="${R}"/></clipPath></defs>`;
+s += `<rect width="${W}" height="${H}" fill="${UR('fundo')}"/>`;
+if (dark) s += starField(9, Math.round(W * H / 14000), 0, 0, W, H * .6, { big: .08 });
+else s += cloud(W * .05, CY * .32, W / 1700) + cloud(W * .97, CY * .5, W / 2000, { dx: 0 });
+const h1 = dark ? '#1d3a4c' : '#b9da86', h2 = dark ? '#234a4a' : '#9cc865';
+s += `<ellipse cx="${W * .16}" cy="${H * 1.05}" rx="${W * .75}" ry="${H * .2}" fill="${h2}"/><ellipse cx="${W * .9}" cy="${H * 1.07}" rx="${W * .7}" ry="${H * .19}" fill="${h1}"/>`;
+// frase (até duas linhas, separadas por |)
+const ink = dark ? '#fff7e2' : '#253273', edge = dark ? '#253273' : '#ffffff';
+const lh = FS * 1.12, y0 = CY - (lines.length - 1) * lh / 2 + FS * .34;
+lines.forEach((t, i) => {
+  s += `<text x="${W / 2}" y="${y0 + i * lh}" text-anchor="middle" class="cap" font-size="${FS}" fill="${ink}" stroke="${edge}" stroke-width="${FS * .14}" stroke-linejoin="round" paint-order="stroke">${esc(t)}</text>`;
+});
+// aparelho
+s += `<rect x="${X - B}" y="${Y - B}" width="${IW + 2 * B}" height="${IH + 2 * B}" rx="${R + B}" fill="#253273" filter="url(#sombra)"/>`;
+s += `<rect x="${X - B * .35}" y="${Y - B * .35}" width="${IW + B * .7}" height="${IH + B * .7}" rx="${R + B * .35}" fill="#3a4889"/>`;
+s += `<image href="${q.get('img')}" x="${X}" y="${Y}" width="${IW}" height="${IH}" clip-path="url(#tela)" preserveAspectRatio="none"/>`;
+document.getElementById('out').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s}</svg>`;
+document.querySelectorAll('svg *').forEach(e => { e.style.animation = 'none'; });
+// frase comprida demais: a letra diminui até caber em 88% da largura
+const caps = [...document.querySelectorAll('text.cap')], widest = Math.max(...caps.map(t => t.getComputedTextLength()));
+if (widest > W * .88) {
+  const k = W * .88 / widest;
+  caps.forEach((t, i) => { t.setAttribute('font-size', FS * k); t.setAttribute('stroke-width', FS * k * .14); t.setAttribute('y', CY - (lines.length - 1) * lh * k / 2 + FS * k * .34 + i * lh * k); });
+}
+window.frameReady = new Promise(res => { const i = new Image(); i.onload = res; i.onerror = res; i.src = q.get('img'); });
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+# App de iPhone e iPad: gera num Mac da nuvem, a Apple assina e o app vai para o TestFlight.
+# Sem os segredos da Apple, só confere se o app compila.
+name: iPhone e iPad
+on:
+  workflow_dispatch:
+    inputs:
+      enviar:
+        description: 'Enviar para o App Store Connect (TestFlight)'
+        type: boolean
+        default: true
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  ios:
+    runs-on: macos-26
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      BUILD_NUMBER: ${{ github.run_number }}.${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/build.mjs native
+      - run: npx cap sync ios
+      - name: Conferir (sem enviar)
+        if: env.ASC_KEY_ID == '' || github.event.inputs.enviar == 'false'
+        run: |
+          if [ -z "$ASC_KEY_ID" ]; then echo "::notice::Sem os segredos da Apple: o processo só confere se o app compila."; fi
+          bash scripts/ios-enviar.sh conferir
+      - name: Preparar a Apple (ID do app e chave)
+        if: env.ASC_KEY_ID != '' && github.event.inputs.enviar != 'false'
+        run: node scripts/apple.mjs preparar
+      - name: Gerar, assinar e enviar
+        if: env.ASC_KEY_ID != '' && github.event.inputs.enviar != 'false'
+        run: bash scripts/ios-enviar.sh

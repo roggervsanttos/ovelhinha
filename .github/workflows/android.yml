@@ -1,0 +1,53 @@
+# App de Android: gera o .aab (para o Google Play) e o .apk (para instalar direto num celular).
+name: Android
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+      - run: npm ci
+      - run: node scripts/build.mjs native
+      - run: npx cap sync android
+      - name: Chave de envio do Google Play
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KEYSTORE_B64" ]; then
+            printf '%s' "$KEYSTORE_B64" | base64 --decode > "$RUNNER_TEMP/upload.jks"
+            echo "OV_KEYSTORE=$RUNNER_TEMP/upload.jks" >> "$GITHUB_ENV"
+          else
+            echo "::warning::Sem o segredo ANDROID_KEYSTORE_BASE64: o app foi assinado com uma chave de teste e não serve para o Google Play."
+          fi
+      - name: Gerar o .aab e o .apk
+        working-directory: android
+        env:
+          OV_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          OV_KEY_ALIAS: ovelhinha
+        run: |
+          VERSION=$(node -p "require('../config.json').version")
+          chmod +x gradlew
+          ./gradlew bundleRelease assembleRelease -PovVersionCode=${{ github.run_number }} -PovVersionName="$VERSION" --no-daemon
+          echo "Versão $VERSION (${{ github.run_number }})" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ovelhinha-android-${{ github.run_number }}
+          path: |
+            android/app/build/outputs/bundle/release/*.aab
+            android/app/build/outputs/apk/release/*.apk
+          retention-days: 30
+          if-no-files-found: error
