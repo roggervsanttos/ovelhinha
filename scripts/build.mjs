@@ -43,7 +43,7 @@ const FONTS = fs.readdirSync(path.join(SRC, 'fonts')).sort();
 
 /* ---------- versão: muda sempre que qualquer coisa do app muda ---------- */
 const h = crypto.createHash('sha256');
-for (const p of [...CSS_APP, 'src/css/art.css', 'src/css/fonts.css', ...JS.map(j => `src/js/${j}.js`), ...books.map(b => `src/books/${b}.js`), ...I18N_FILES.map(f => `src/i18n/${f}`), ...LANGS.map(l => legalFile('privacidade', l)).filter(exists), 'src/index.html', 'src/legal/page.html', 'src/legal/suporte.body.html', 'config.json', 'scripts/build.mjs', 'scripts/native-entry.js']) h.update(p + '\0' + read(p));
+for (const p of [...CSS_APP, 'src/css/art.css', 'src/css/fonts.css', ...JS.map(j => `src/js/${j}.js`), ...books.map(b => `src/books/${b}.js`), ...I18N_FILES.map(f => `src/i18n/${f}`), ...LANGS.map(l => legalFile('privacidade', l)).filter(exists), 'src/index.html', 'src/legal/page.html', 'src/legal/suporte.body.html', 'src/legal/termos.body.html', 'config.json', 'scripts/build.mjs', 'scripts/native-entry.js']) h.update(p + '\0' + read(p));
 for (const f of IMG) h.update(f + fs.statSync(path.join(SRC, 'img', f)).size);
 const V = `${cfg.version}-${h.digest('hex').slice(0, 8)}`;
 
@@ -162,7 +162,7 @@ const cap = t => t.charAt(0).toUpperCase() + t.slice(1);
 function legal(dir) {
   const tpl = read('src/legal/page.html');
   const t = id => `«${defs()[id].title}»`;
-  for (const [file, title] of [['privacidade', 'Política de privacidade'], ['suporte', 'Suporte']]) {
+  for (const [file, title] of [['privacidade', 'Política de privacidade'], ['termos', 'Termos de utilização'], ['suporte', 'Suporte']]) {
     const body = read(`src/legal/${file}.body.html`).trim()
       .replaceAll('{{LIVROS}}', lista(books.map(t)))
       .replaceAll('{{N_LIVROS}}', String(books.length))
@@ -188,7 +188,7 @@ function buildWeb() {
   }, null, 2));
   out(dir, '.nojekyll', '');
   // service worker: guarda tudo na primeira visita para funcionar sem internet
-  const files = ['./', 'index.html', 'manifest.webmanifest', 'privacidade.html', 'suporte.html', 'css/app.css', 'css/art.css', 'css/fonts.css',
+  const files = ['./', 'index.html', 'manifest.webmanifest', 'privacidade.html', 'termos.html', 'suporte.html', 'css/app.css', 'css/art.css', 'css/fonts.css',
     ...JS.map(j => `js/${j}.js`), ...books.map(b => `books/${b}.js`), ...FONTS.filter(f => f.endsWith('.woff2')).map(f => `fonts/${f}`), ...IMG.map(f => `img/${f}`)];
   out(dir, 'sw.js', `// Ovelhinha ${V}: guarda o app no aparelho para funcionar sem internet
 const CACHE = 'ovelhinha-${V}';
