@@ -228,7 +228,8 @@ SCENES.push({
     s += hill([[-40, 660], [220, 630], [460, 650], [700, 622], [840, 640]], '#93c45c');
     s += palm(560, 650, .5) + shrub(260, 650, .8, '#5fa046', { flowers: ['#e86a9a', '#fff', '#f2c14e'] });
     s += grassBand(311, 680, 780, 12) + flowerBand(312, 700, 790, 8);
-    s += `<rect data-k="sombra" x="-40" y="400" width="900" height="500" fill="#141c4a" opacity="0" style="pointer-events:none"/>`;
+    // a sombra da noite começa suave no céu, para escurecer também a copa das árvores sem deixar uma linha
+    s += `<defs>${lg('sombra', [[0, '#141c4a', 0], [.22, '#141c4a', 1], [1, '#141c4a', 1]])}</defs><rect data-k="sombra" x="-40" y="300" width="900" height="600" fill="${UR('sombra')}" opacity="0" style="pointer-events:none"/>`;
     return s;
   },
   setup(api) {

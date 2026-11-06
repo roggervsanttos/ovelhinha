@@ -352,9 +352,10 @@ function makeApi(root, sc) {
       let bb; try { bb = t.getBBox(); } catch (e) { bb = null; }
       if (!bb || !bb.width) bb = { x: -text.length * fs * .27, y: -fs * .8, width: Math.min(text.length, 20) * fs * .54, height: lh * lines.length };
       const px = fs * .62, py = fs * .42, w = bb.width + px * 2, h = bb.height + py * 2, tail = fs * .75;
-      const up = !o.below && (y - tail - h >= 118);
+      const V = svg.viewBox.baseVal, vTop = svg.dataset.vw ? V.y : 0, vX = svg.dataset.vw ? V.x : 0, vW = svg.dataset.vw ? V.width : vb[0];
+      const up = !o.below && (y - tail - h >= Math.max(118, vTop + 10));
       const by = up ? y - tail - h : y + tail;
-      const half = w / 2, cx = clamp(78 + half, x, vb[0] - 78 - half), bx = cx - half;
+      const half = w / 2, cx = clamp(Math.max(78, vX + 16) + half, x, Math.min(vb[0] - 78, vX + vW - 16) - half), bx = cx - half;
       const tx = clamp(bx + fs * .7, x, bx + w - fs * .7) - x;
       const ry = by - y, edge = up ? ry + h - 1.5 : ry + 1.5;
       const tailD = `M${r1(tx - fs * .34)},${r1(edge)} L0,0 L${r1(tx + fs * .34)},${r1(edge)}`;
@@ -498,10 +499,19 @@ function moveKeep(el, parent) {
     } catch (e) { }
   }
 }
+// quando a ilustração não é quadrada, corta mais em cima (céu) do que em baixo (chão, pés, animais)
+const CROP_TOP = .78;
+const cropRO = typeof ResizeObserver === 'function' ? new ResizeObserver(es => { for (const e of es) cropScene(e.target); }) : null;
+function cropScene(svg) {
+  const vw = +svg.dataset.vw, vh = +svg.dataset.vh, w = svg.clientWidth, h = svg.clientHeight;
+  if (!vw || !vh || !w || !h) return;
+  const k = Math.max(w / vw, h / vh), cw = w / k, ch = h / k;
+  svg.setAttribute('viewBox', `${((vw - cw) / 2).toFixed(1)} ${((vh - ch) * CROP_TOP).toFixed(1)} ${cw.toFixed(1)} ${ch.toFixed(1)}`);
+}
 function destroyEl(el) {
   if (!el) return;
   const all = [el, ...el.querySelectorAll('.illus')];
-  for (const x of all) if (x._api) x._api.destroy();
+  for (const x of all) { if (x._api) x._api.destroy(); const sv = x.querySelector && x.querySelector('svg.scene[data-vw]'); if (sv && cropRO) cropRO.unobserve(sv); }
   el.remove();
 }
 function coverTitleHTML(c) {
@@ -573,7 +583,7 @@ const Book = {
       b.setProperty('--cfs', clamp(12, Math.min(pw * .046, ph * .036), 26).toFixed(1) + 'px');
     } else {
       const sw = Math.floor(Math.max(Math.min(W, 320), Math.min(W, 640, (H - 300) / .7))), sh = Math.floor(Math.min(H - 8, sw * 2.2));
-      const ih = Math.round(clamp(sw * .7, sh - 330, sw * .98));
+      const ih = Math.round(clamp(sw * .78, sh - 330, sw * .98));
       b.setProperty('--pw', sw + 'px'); b.setProperty('--bw', sw + 'px'); b.setProperty('--bh', sh + 'px'); b.setProperty('--ih', ih + 'px');
       b.setProperty('--fs', clamp(15, sw * .045, 20).toFixed(1) + 'px');
       b.setProperty('--cfs', clamp(12, Math.min(sw * .052, sh * .03), 23).toFixed(1) + 'px');
@@ -595,7 +605,7 @@ const Book = {
       const ih = parseFloat(cs.getPropertyValue('--ih')) || 0, pw = parseFloat(cs.getPropertyValue('--pw')) || sheet.clientWidth;
       const over = tp.scrollHeight - tp.clientHeight;
       if (over > 1 && ih) {
-        const nh = Math.max(Math.round(pw * .72), Math.round(ih - over - 6));
+        const nh = Math.max(Math.round(pw * .78), Math.round(ih - over - 6));
         if (nh < ih) sheet.style.gridTemplateRows = `${nh}px minmax(0, 1fr)`;
       }
     }
@@ -628,7 +638,8 @@ const Book = {
     P = 'b' + (++BUILD);
     const [vw, vh] = sc.vb || [800, 800];
     const el = mk('div', 'pg illus');
-    el.innerHTML = `<svg class="scene" viewBox="0 0 ${vw} ${vh}" preserveAspectRatio="${sc.par || 'xMidYMid slice'}" role="group" aria-label="${esc(tr(sc.alt || sc.title))}"><g class="world">${sc.art()}</g><g class="fx"></g></svg>`;
+    el.innerHTML = `<svg class="scene" viewBox="0 0 ${vw} ${vh}" preserveAspectRatio="${sc.par || 'xMidYMid slice'}"${sc.par ? '' : ` data-vw="${vw}" data-vh="${vh}"`} role="group" aria-label="${esc(tr(sc.alt || sc.title))}"><g class="world">${sc.art()}</g><g class="fx"></g></svg>`;
+    if (!sc.par && cropRO) cropRO.observe(el.firstElementChild);
     if (!thumb) {
       const api = makeApi(el, sc); el._api = api;
       try { sc.setup && sc.setup(api); } catch (e) { console.error(e); }
