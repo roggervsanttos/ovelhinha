@@ -118,34 +118,64 @@ const Sound = {
   filt(c, type, f, q = 1) { const b = c.createBiquadFilter(); b.type = type; b.frequency.value = f; b.Q.value = q; return b; },
   tone(c, t, f, d, type = 'sine', v = .25, a = .008) { const g = this.gain(c, t, v, a, d); this.osc(c, type, f, t, t + a + d + .05).connect(g); },
   burstN(c, t, d, f, type, v, q = 1) { const s = this.noise(c), fl = this.filt(c, type, f, q), g = this.gain(c, t, v, .003, d); s.connect(fl); fl.connect(g); s.start(t); s.stop(t + d + .05); return fl; },
-  // voz de desenho animado: fonte com vibrato e 3 formantes de vogal; os bichos "falam" (méé, muu, quá…)
-  cv(c, t, syl, o = {}) {
-    const V = { a: [850, 1220, 2810], e: [560, 1950, 2650], i: [320, 2550, 3250], o: [520, 900, 2500], u: [340, 820, 2450] };
-    const k = o.k || 1, amp = o.v || .8;
+  // voz de animal mais natural: fonte com tremor aleatório (jitter), sopro de ar filtrado pelas mesmas formantes,
+  // duas vozes ligeiramente desafinadas e um pouco de eco de sala; as vogais dão o "méé", "muu", "quá"
+  rnd(c) {
+    if (!this.rb || this.rb.sampleRate !== c.sampleRate) {
+      const n = c.sampleRate * 4, b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0), st = Math.floor(c.sampleRate * .035);
+      let a = Math.random() * 2 - 1, z = Math.random() * 2 - 1;
+      for (let i = 0; i < n; i++) { if (i % st === 0) { a = z; z = Math.random() * 2 - 1; } const x = (i % st) / st; d[i] = a + (z - a) * (.5 - Math.cos(x * Math.PI) / 2); }
+      this.rb = b;
+    }
+    const s = c.createBufferSource(); s.buffer = this.rb; s.loop = true; return s;
+  },
+  rv(c) {
+    if (this.rvc !== c || this.rvo !== this.out) {
+      const n = Math.floor(c.sampleRate * .9), b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0);
+      let p = 0; for (let i = 0; i < n; i++) { p = p * .6 + (Math.random() * 2 - 1) * .4; d[i] = p * Math.exp(-i / n * 6); }
+      const cv = c.createConvolver(); cv.buffer = b; const g = c.createGain(); g.gain.value = .5; cv.connect(g); g.connect(this.out);
+      this.rvc = c; this.rvo = this.out; this.rvn = cv;
+    }
+    return this.rvn;
+  },
+  av(c, t, syl, o = {}) {
+    const V = { m: [280, 1000, 2300], a: [850, 1220, 2810], e: [560, 1950, 2650], i: [320, 2550, 3250], o: [520, 900, 2500], u: [340, 820, 2450] };
+    const k = o.k || 1, amp = o.v || .8, jit = o.jit ?? .025, br = o.br ?? .12, det = o.det ?? 9;
     let tt = t;
     for (const sy of syl) {
       tt += sy.gap || 0;
-      const d = sy.d, end = tt + d + .08, f = sy.f;
-      const src = this.osc(c, o.src || 'sawtooth', f[0], tt, end);
-      f.forEach((fr, i) => { if (i) src.frequency.linearRampToValueAtTime(fr, tt + d * i / (f.length - 1)); });
-      if (o.vib) { const v = this.osc(c, 'sine', o.vib[0], tt, end), vg = c.createGain(); vg.gain.value = o.vib[1]; v.connect(vg); vg.connect(src.frequency); }
-      const sub = this.osc(c, 'triangle', f[0], tt, end); f.forEach((fr, i) => { if (i) sub.frequency.linearRampToValueAtTime(fr, tt + d * i / (f.length - 1)); });
-      const env = this.gain(c, tt, amp, .025, Math.max(.06, d * .35), Math.max(0, d * .6));
+      const d = sy.d, end = tt + d + .12, f = sy.f, n = f.length;
+      const inp = c.createGain();
+      const env = this.gain(c, tt, amp * (sy.a || 1), sy.at || .035, Math.max(.07, d * .4), Math.max(0, d * .55));
+      env.connect(this.rv(c));
       let dst = env;
       if (o.trem) { const am = c.createGain(); am.gain.value = 1 - o.trem[1]; const l = this.osc(c, 'sine', o.trem[0], tt, end), lg = c.createGain(); lg.gain.value = o.trem[1]; l.connect(lg); lg.connect(am.gain); am.connect(env); dst = am; }
-      const vs = [sy.v, sy.v2, sy.v3].filter(Boolean);
-      [0, 1, 2].forEach(n => {
-        const bp = this.filt(c, 'bandpass', V[vs[0]][n] * k, [5, 7, 9][n]);
-        vs.forEach((vv, i) => { if (i) bp.frequency.linearRampToValueAtTime(V[vv][n] * k, tt + d * i / (vs.length - 1) * .8); });
-        const g = c.createGain(); g.gain.value = [1.6, 1, .45][n]; src.connect(bp); bp.connect(g); g.connect(dst);
+      // tremor natural: valores aleatórios suaves somados à frequência
+      const jr = this.rnd(c); jr.playbackRate.value = o.jr || 1; const jg = c.createGain(); jg.gain.value = f[0] * jit; jr.connect(jg); jr.start(tt, Math.random() * 3); jr.stop(end);
+      [1, 2].forEach(vn => {
+        const src = this.osc(c, o.src || 'sawtooth', f[0] * .9, tt, end);
+        src.detune.value = vn === 2 ? det : -det * .4;
+        src.frequency.linearRampToValueAtTime(f[0], tt + Math.min(.05, d * .15));
+        f.forEach((fr, i) => { if (i) src.frequency.linearRampToValueAtTime(fr, tt + d * i / (n - 1)); });
+        if (o.vib) { const v = this.osc(c, 'sine', o.vib[0] * (vn === 2 ? 1.07 : 1), tt, end), vg = c.createGain(); vg.gain.value = o.vib[1]; v.connect(vg); vg.connect(src.frequency); }
+        jg.connect(src.frequency);
+        const sg = c.createGain(); sg.gain.value = vn === 2 ? .55 : 1; src.connect(sg); sg.connect(inp);
       });
-      if (o.nasal) { const nb = this.filt(c, 'bandpass', o.nasal, 12), ng = c.createGain(); ng.gain.value = 1.4; src.connect(nb); nb.connect(ng); ng.connect(dst); }
-      const sg = c.createGain(); sg.gain.value = .22; sub.connect(sg); sg.connect(dst);
+      // sopro de ar pelas formantes (o que tira o som "eletrónico")
+      const bs = this.noise(c), bg = c.createGain(), b = sy.br ?? br; bg.gain.value = b * 3.5; bs.connect(bg); bg.connect(inp); bs.start(tt); bs.stop(end);
+      const vs = [sy.v, sy.v2, sy.v3].filter(Boolean);
+      [0, 1, 2].forEach(m => {
+        const bp = this.filt(c, 'bandpass', V[vs[0]][m] * k, [4, 6, 8][m]);
+        vs.forEach((vv, i) => { if (i) bp.frequency.linearRampToValueAtTime(V[vv][m] * k, tt + d * i / (vs.length - 1) * .85); });
+        const g = c.createGain(); g.gain.value = [1.5, .9, .35][m]; inp.connect(bp); bp.connect(g); g.connect(dst);
+      });
+      if (o.nasal) { const nb = this.filt(c, 'bandpass', o.nasal, 10), ng = c.createGain(); ng.gain.value = 1.2; inp.connect(nb); nb.connect(ng); ng.connect(dst); }
+      const lp = this.filt(c, 'lowpass', f[0] * 2.2, .7), lg2 = c.createGain(); lg2.gain.value = o.body ?? .25; inp.connect(lp); lp.connect(lg2); lg2.connect(dst);
       tt += d;
     }
   },
 
-  bleat(c, t, p = 1) { this.cv(c, t, [{ v: 'u', v2: 'e', d: .62, f: [560 * p, 610 * p, 520 * p] }], { k: 1.18 * p, trem: [17, .5], vib: [6, 6] }); },
+bleat(c, t, p = 1) { this.av(c, t, [{ v: 'm', v2: 'e', v3: 'e', d: .72 / Math.sqrt(p), f: [380 * p, 420 * p, 400 * p, 340 * p] }], { k: 1.05 * Math.sqrt(p), trem: [24, .55], vib: [5, 9 * p], jit: .045, br: .16, v: .85 }); },
   pluck(c, t, n = 'C5', v = .55) {
     const f = NOTE(n), key = Math.round(f);
     let buf = this.pl[key];
@@ -172,7 +202,7 @@ const Sound = {
   tada(c, t) { ['C5', 'E5', 'G5', 'C6'].forEach((n, i) => { this.tone(c, t + i * .09, NOTE(n), i === 3 ? .8 : .22, 'triangle', .22); this.tone(c, t + i * .09, NOTE(n) * 2, i === 3 ? .5 : .15, 'sine', .05); }); },
   hello(c, t) { this.tone(c, t, NOTE('G5'), .18, 'triangle', .22); this.tone(c, t + .14, NOTE('C6'), .4, 'triangle', .22); },
   snore(c, t) { const s = this.noise(c), f = this.filt(c, 'lowpass', 520, 2), g = this.gain(c, t, .55, .5, .45); s.connect(f); f.connect(g); s.start(t); s.stop(t + 1.1); this.tone(c, t + .1, 110, .7, 'triangle', .06, .3); },
-  roar(c, t) { this.cv(c, t, [{ v: 'o', v2: 'a', d: .62, f: [190, 275, 150] }], { k: .98, trem: [30, .32], vib: [7, 8], v: 1 }); },
+  roar(c, t) { this.av(c, t, [{ v: 'o', v2: 'a', v3: 'o', d: .9, f: [120, 165, 150, 95], at: .08 }], { k: .78, trem: [27, .38], jit: .09, jr: 2.2, br: .55, body: .55, v: 1 }); },
   whoosh(c, t, p = 1) { const s = this.noise(c), f = this.filt(c, 'bandpass', 500 * p, 2.2); f.frequency.exponentialRampToValueAtTime(2600 * p, t + .25); const g = this.gain(c, t, .8, .1, .2); s.connect(f); f.connect(g); s.start(t); s.stop(t + .4); },
   grunt(c, t) { const o = this.osc(c, 'sawtooth', 140, t, t + .45); o.frequency.exponentialRampToValueAtTime(85, t + .4); const f = this.filt(c, 'lowpass', 520, 4), g = this.gain(c, t, .5, .03, .35); o.connect(f); f.connect(g); },
   boing(c, t, p = 1) {
@@ -191,7 +221,7 @@ const Sound = {
     const o = this.osc(c, 'sine', 700, t, t + .2); o.frequency.exponentialRampToValueAtTime(1500, t + .06); o.connect(this.gain(c, t, .3, .005, .14));
     const o2 = this.osc(c, 'sine', 520, t + .08, t + .3); o2.frequency.exponentialRampToValueAtTime(300, t + .2); o2.connect(this.gain(c, t + .08, .16, .005, .16));
   },
-  ribbit(c, t) { this.cv(c, t, [{ v: 'o', v2: 'a', d: .17, f: [300, 250] }, { v: 'o', v2: 'a', d: .19, f: [290, 230], gap: .07 }], { k: 1.1, trem: [48, .55] }); },
+  ribbit(c, t) { this.av(c, t, [{ v: 'o', v2: 'a', d: .2, f: [210, 190], at: .01 }, { v: 'o', v2: 'a', d: .24, f: [205, 170], gap: .09, at: .01 }], { k: .95, trem: [42, .85], jit: .05, br: .25, body: .5, v: 1 }); },
   laugh(c, t) { for (let i = 0; i < 3; i++) { const tt = t + i * .22, o = this.osc(c, 'sawtooth', 160 - i * 8, tt, tt + .2); o.frequency.exponentialRampToValueAtTime(120 - i * 8, tt + .17); const f = this.filt(c, 'bandpass', 720, 2.5); o.connect(f); f.connect(this.gain(c, tt, .9, .015, .16)); } },
   bonk(c, t) { const o = this.osc(c, 'sine', 900, t, t + .3); o.frequency.exponentialRampToValueAtTime(330, t + .06); o.connect(this.gain(c, t, .45, .002, .2)); this.tone(c, t, 230, .3, 'triangle', .25, .002); },
   victory(c, t) { for (const [n, dt, d] of [['G4', 0, .12], ['C5', .13, .12], ['E5', .26, .12], ['G5', .39, .24], ['E5', .66, .12], ['G5', .79, .7]]) { const f = NOTE(n); this.tone(c, t + dt, f, d + .08, 'square', .05); this.tone(c, t + dt, f, d + .2, 'triangle', .2); } },
@@ -213,7 +243,7 @@ const Sound = {
   flip(c, t) { const s = this.noise(c), f = this.filt(c, 'bandpass', 1700, .7); f.frequency.linearRampToValueAtTime(900, t + .45); s.connect(f); f.connect(this.gain(c, t, .13, .16, .3)); s.start(t); s.stop(t + .55); },
   knock(c, t, n = 1) { for (let i = 0; i < n; i++) { const tt = t + i * .17; this.burstN(c, tt, .05, 900, 'bandpass', .7, 2); const o = this.osc(c, 'sine', 190, tt, tt + .14); o.frequency.exponentialRampToValueAtTime(90, tt + .1); o.connect(this.gain(c, tt, .55, .002, .1)); } },
   saw(c, t) { for (let i = 0; i < 4; i++) { const tt = t + i * .22, s = this.noise(c), f = this.filt(c, 'bandpass', i % 2 ? 2400 : 1700, 3); f.frequency.linearRampToValueAtTime(i % 2 ? 1700 : 2500, tt + .2); s.connect(f); f.connect(this.gain(c, tt, .45, .03, .15)); s.start(tt); s.stop(tt + .26); } },
-  trumpet(c, t) { this.cv(c, t, [{ v: 'u', v2: 'a', d: .95, f: [420, 660, 600, 500] }], { k: 1.3, src: 'square', vib: [7, 16], v: .75 }); },
+  trumpet(c, t) { this.av(c, t, [{ v: 'u', v2: 'a', v3: 'e', d: 1.05, f: [480, 700, 680, 560], at: .05 }], { k: 1.35, src: 'square', vib: [6, 14], jit: .05, jr: 1.5, br: .4, v: .75 }); },
   thunder(c, t) {
     const s = this.noise(c), f = this.filt(c, 'lowpass', 900, .7); f.frequency.exponentialRampToValueAtTime(110, t + 1.6);
     const g = c.createGain(); g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.95, t + .04); g.gain.exponentialRampToValueAtTime(.45, t + .45); g.gain.exponentialRampToValueAtTime(.0001, t + 2.2); g.connect(this.out);
@@ -228,19 +258,19 @@ const Sound = {
   },
   splash(c, t) { const s = this.noise(c), f = this.filt(c, 'bandpass', 2000, .8); f.frequency.exponentialRampToValueAtTime(380, t + .5); s.connect(f); f.connect(this.gain(c, t, .95, .005, .55)); s.start(t); s.stop(t + .65); this.bubbles(c, t + .25, 5); },
   bubbles(c, t, n = 6) { for (let i = 0; i < n; i++) { const tt = t + i * .09 + Math.random() * .04, f0 = 380 + Math.random() * 500, o = this.osc(c, 'sine', f0, tt, tt + .1); o.frequency.exponentialRampToValueAtTime(f0 * 2.3, tt + .07); o.connect(this.gain(c, tt, .2, .005, .07)); } },
-  coo(c, t) { this.cv(c, t, [{ v: 'u', d: .2, f: [380, 400] }, { v: 'u', d: .38, f: [400, 350, 370], gap: .05 }], { k: 1.15, src: 'triangle', vib: [9, 10], v: .9 }); },
+  coo(c, t) { this.av(c, t, [{ v: 'u', d: .22, f: [300, 320] }, { v: 'u', d: .45, f: [330, 345, 300], gap: .07 }, { v: 'u', d: .2, f: [300, 290], gap: .1, a: .7 }], { k: 1, src: 'triangle', jit: .02, br: .28, body: .6, v: .5 }); },
   door(c, t) { const o = this.osc(c, 'sine', 120, t, t + .55); o.frequency.exponentialRampToValueAtTime(46, t + .32); o.connect(this.gain(c, t, .95, .004, .42)); this.burstN(c, t, .12, 600, 'lowpass', .55); this.knock(c, t + .02, 1); },
-  heehaw(c, t) { this.cv(c, t, [{ v: 'i', d: .24, f: [640, 720] }, { v: 'o', d: .3, f: [340, 280], gap: .02 }, { v: 'i', d: .24, f: [660, 740], gap: .08 }, { v: 'o', d: .34, f: [350, 270], gap: .02 }], { k: 1.05, vib: [6, 10] }); },
-  moo(c, t) { this.cv(c, t, [{ v: 'u', v2: 'o', v3: 'u', d: 1.05, f: [190, 222, 150] }], { k: 1.05, vib: [5, 4], v: .95 }); },
+  heehaw(c, t) { this.av(c, t, [{ v: 'i', d: .3, f: [620, 820, 760], br: .45, a: .75 }, { v: 'a', v2: 'o', d: .36, f: [300, 330, 250], gap: .02 }, { v: 'i', d: .3, f: [640, 840, 780], gap: .1, br: .45, a: .75 }, { v: 'a', v2: 'o', d: .4, f: [310, 330, 240], gap: .02 }], { k: 1, jit: .06, jr: 1.6, br: .2, v: .9 }); },
+  moo(c, t) { this.av(c, t, [{ v: 'm', v2: 'u', v3: 'o', d: 1.25, f: [150, 172, 165, 120] }], { k: .9, vib: [4, 3], jit: .03, br: .2, body: .5, v: 1 }); },
   choir(c, t, chord = ['C4', 'E4', 'G4', 'C5', 'E5']) {
     chord.forEach((n, i) => { const f = NOTE(n); for (const det of [-4, 4]) { const o = this.osc(c, 'triangle', f, t, t + 2.6); o.detune.value = det; const vb = this.osc(c, 'sine', 5 + i * .3, t, t + 2.6), vg = c.createGain(); vg.gain.value = f * .006; vb.connect(vg); vg.connect(o.frequency); const fl = this.filt(c, 'lowpass', 1900, .7); o.connect(fl); fl.connect(this.gain(c, t + i * .05, .055, .5, 1.3, .5)); } });
   },
   lullaby(c, t) { [['E5', 0], ['G5', .36], ['G5', .56], ['E5', .92], ['C5', 1.28], ['D5', 1.64], ['E5', 2.0]].forEach(([n, dt]) => { const f = NOTE(n); this.tone(c, t + dt, f, .9, 'sine', .15); this.tone(c, t + dt, f * 2, .4, 'sine', .045); this.tone(c, t + dt, f * 3, .2, 'sine', .015); }); },
   wind(c, t) { const s = this.noise(c), f = this.filt(c, 'bandpass', 400, 1.4); f.frequency.linearRampToValueAtTime(1200, t + .8); f.frequency.linearRampToValueAtTime(480, t + 1.6); s.connect(f); f.connect(this.gain(c, t, .5, .4, .7, .4)); s.start(t); s.stop(t + 1.7); },
   squeak(c, t, p = 1) { const o = this.osc(c, 'sine', 1400 * p, t, t + .16); o.frequency.exponentialRampToValueAtTime(2300 * p, t + .08); o.connect(this.gain(c, t, .22, .005, .1)); },
-  quack(c, t) { this.cv(c, t, [{ v: 'a', d: .15, f: [460, 380] }, { v: 'a', d: .17, f: [470, 370], gap: .09 }], { k: 1.22, nasal: 1250, v: .9 }); },
+  quack(c, t) { this.av(c, t, [{ v: 'a', v2: 'a', d: .16, f: [330, 300, 260], at: .012 }, { v: 'a', d: .19, f: [340, 300, 250], gap: .1, at: .012 }], { k: 1.1, nasal: 1150, jit: .07, jr: 2.5, br: .22, det: 18, v: .9 }); },
   twinkle(c, t) { ['C6', 'E6', 'G6', 'C7'].forEach((n, i) => this.tone(c, t + i * .07, NOTE(n), .6, 'sine', .09)); },
-  seagull(c, t) { this.cv(c, t, [{ v: 'a', d: .18, f: [950, 1250, 820] }, { v: 'a', d: .18, f: [980, 1280, 840], gap: .06 }, { v: 'a', d: .24, f: [960, 1220, 760], gap: .06 }], { k: 1.45, v: .7 }); },
+  seagull(c, t) { this.av(c, t, [{ v: 'i', v2: 'a', d: .2, f: [900, 1250, 850] }, { v: 'i', v2: 'a', d: .2, f: [920, 1280, 860], gap: .07 }, { v: 'i', v2: 'a', d: .28, f: [940, 1230, 760], gap: .07 }], { k: 1.3, jit: .05, jr: 2, br: .25, v: .7 }); },
   gift(c, t) { this.twinkle(c, t); this.tone(c, t, NOTE('G4'), 1.2, 'triangle', .08, .2); },
   tweet(c, t, n = 3) { for (let i = 0; i < n; i++) { const tt = t + i * .13, f0 = 2500 + Math.random() * 700, o = this.osc(c, 'sine', f0, tt, tt + .12); o.frequency.exponentialRampToValueAtTime(f0 * 1.45, tt + .04); o.frequency.exponentialRampToValueAtTime(f0 * .85, tt + .1); o.connect(this.gain(c, tt, .13, .004, .09)); } },
   hiss(c, t, d = .9) { const s = this.noise(c), f = this.filt(c, 'highpass', 4200, .7); s.connect(f); f.connect(this.gain(c, t, .3, .12, d * .5, d * .3)); s.start(t); s.stop(t + d + .2); },
