@@ -552,7 +552,7 @@ SCENES.push({
   text: [
     'No jardim havia muitas árvores com fruta saborosa.',
     'Mesmo no meio, havia uma árvore especial. Deus disse:',
-    { q: 'Vocês podem comer de todas as árvores. Só não comam desta aqui.', who: 'deus' }
+    { q: 'Vocês podem comer de todos os frutos. Só não comam do fruto desta árvore.', who: 'deus' }
   ],
   fact: 'Deus deu esta regra porque amava Adão e Eva.',
   hint: 'Toca nas frutas para as colheres.',
@@ -665,7 +665,7 @@ SCENES.push({
     'Mas Deus chamou:',
     { q: 'Adão, onde estás?', who: 'deus' }
   ],
-  fact: 'Ninguém se consegue esconder de Deus. Ele procura-nos porque nos ama!',
+  fact: 'Ninguém consegue se esconder de Deus. Ele procura-nos porque nos ama!',
   hint: 'Toca nos arbustos para encontrares Adão e Eva.',
   alt: 'No fim da tarde, o jardim fica alaranjado. Adão e Eva estão escondidos atrás de dois arbustos, e uma luz suave chega do céu.',
   cue: [240, 650],

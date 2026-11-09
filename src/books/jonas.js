@@ -190,7 +190,7 @@ SCENES.push({
   key: 'fugiu', title: 'Jonas fugiu', ref: 'Jonas 1.3', tint: 'water',
   text: [
     'Jonas correu para o porto e entrou num navio. O navio ia para muito longe!',
-    'Jonas queria fugir de Deus. Mas ninguém se consegue esconder de Deus!'
+    'Jonas queria fugir de Deus. Mas ninguém consegue se esconder de Deus!'
   ],
   fact: 'O navio ia para o lado contrário de Nínive.',
   hint: 'Toca no Jonas e depois no navio.',

@@ -399,10 +399,10 @@
   "Juste au milieu, il y avait un arbre spécial. Dieu a dit :",
   "Right in the middle was a special tree. God said:"
  ],
- "Vocês podem comer de todas as árvores. Só não comam desta aqui.": [
-  "Podéis comer de todos los árboles. Pero de este no comáis.",
-  "Vous pouvez manger de tous les arbres. Mais pas de celui-ci.",
-  "You may eat from every tree. Just don’t eat from this one."
+ "Vocês podem comer de todos os frutos. Só não comam do fruto desta árvore.": [
+  "Podéis comer de todos los frutos. Pero no comáis del fruto de este árbol.",
+  "Vous pouvez manger de tous les fruits. Mais pas du fruit de cet arbre.",
+  "You may eat all the fruit. Just don’t eat the fruit of this tree."
  ],
  "Deus deu esta regra porque amava Adão e Eva.": [
   "Dios les dio esa regla porque amaba a Adán y a Eva.",
@@ -479,7 +479,7 @@
   "Adam, où es-tu ?",
   "Adam, where are you?"
  ],
- "Ninguém se consegue esconder de Deus. Ele procura-nos porque nos ama!": [
+ "Ninguém consegue se esconder de Deus. Ele procura-nos porque nos ama!": [
   "Nadie puede esconderse de Dios. ¡Él nos busca porque nos ama!",
   "Personne ne peut se cacher de Dieu. Il nous cherche parce qu’il nous aime !",
   "No one can hide from God. He looks for us because he loves us!"

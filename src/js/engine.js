@@ -298,7 +298,14 @@ function makeApi(root, sc) {
       if (!el || dead) return Promise.resolve();
       const opt = Object.assign({ duration: 600, easing: 'ease-in-out' }, o);
       if (RM.matches) { opt.duration = Math.min(opt.duration, 160); opt.delay = 0; }
-      try { return el.animate(frames, opt).finished.catch(() => { }); } catch (e) { return Promise.resolve(); }
+      try {
+        const a = el.animate(frames, opt), last = frames[frames.length - 1];
+        // um fade só de opacidade com fill 'forwards' fica preso por cima do atributo: passa o valor final para o atributo
+        // e solta a animação, para que um setAttribute('opacity') posterior volte a funcionar (ex.: Adão a dormir escondido)
+        const fade = opt.fill === 'forwards' && el instanceof SVGElement && last && Object.keys(last).length === 1 && 'opacity' in last;
+        const was = fade ? el.getAttribute('opacity') : null;
+        return a.finished.then(() => { if (fade && !dead) { if (el.getAttribute('opacity') === was) el.setAttribute('opacity', String(last.opacity)); a.cancel(); } }).catch(() => { });
+      } catch (e) { return Promise.resolve(); }
     },
     snd: (...a) => Sound.play(...a),
     tap(el, label, fn) {
