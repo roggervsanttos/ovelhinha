@@ -590,22 +590,26 @@ const Book = {
       b.setProperty('--cfs', clamp(12, Math.min(pw * .046, ph * .036), 26).toFixed(1) + 'px');
     } else {
       const sw = Math.floor(Math.max(Math.min(W, 320), Math.min(W, 640, (H - 300) / .7))), sh = Math.floor(Math.min(H - 8, sw * 2.2));
-      const ih = Math.round(clamp(sw * .78, sh - 330, sw * .98));
+      // a ilustração fica quadrada (sem cortes) sempre que sobrem pelo menos 250 px para o texto
+      const ih = Math.round(clamp(sw * .78, sh - 250, sw));
       b.setProperty('--pw', sw + 'px'); b.setProperty('--bw', sw + 'px'); b.setProperty('--bh', sh + 'px'); b.setProperty('--ih', ih + 'px');
-      b.setProperty('--fs', clamp(15, sw * .045, 20).toFixed(1) + 'px');
+      b.setProperty('--fs', clamp(14.5, sw * .042, 19).toFixed(1) + 'px');
       b.setProperty('--cfs', clamp(12, Math.min(sw * .052, sh * .03), 23).toFixed(1) + 'px');
     }
     if (force || mode !== this.mode) { this.mode = mode; this.renderNow(this.cur); }
     else this.refit();
   },
-  // se o texto não couber: no celular em pé a ilustração encolhe um pouco (até 72% da largura);
-  // depois, se ainda faltar espaço, a letra diminui um pouco (até 13,5 px)
+  // se o texto não couber: primeiro a letra diminui um pouco (até 14 px), para a ilustração não ser cortada;
+  // depois, no celular em pé, a ilustração encolhe (até 78% da largura) e, por fim, a letra desce até 13,5 px
   fit(el) {
     if (!el || !el.isConnected || !el.classList) return;
     const tp = el.classList.contains('sheet') ? el.querySelector(':scope > .tp') : el;
     if (!tp || !tp.classList.contains('tp')) return;
     const sheet = tp.parentElement && tp.parentElement.classList.contains('sheet') ? tp.parentElement : null;
     tp.style.fontSize = '';
+    let fs = parseFloat(getComputedStyle(tp).fontSize) || 16, n = 0;
+    const shrink = min => { while (tp.scrollHeight - tp.clientHeight > 1 && fs > min && n++ < 24) { fs -= .5; tp.style.fontSize = fs + 'px'; } };
+    if (sheet) shrink(14);
     if (sheet) {
       sheet.style.gridTemplateRows = '';
       const cs = getComputedStyle(this.book);
@@ -616,8 +620,7 @@ const Book = {
         if (nh < ih) sheet.style.gridTemplateRows = `${nh}px minmax(0, 1fr)`;
       }
     }
-    let fs = parseFloat(getComputedStyle(tp).fontSize) || 16, n = 0;
-    while (tp.scrollHeight - tp.clientHeight > 1 && fs > 13.5 && n++ < 16) { fs -= .5; tp.style.fontSize = fs + 'px'; }
+    shrink(13.5);
     // ainda não coube: a página rola e o fim fica esmaecido até a criança rolar até o fim
     const more = () => tp.classList.toggle('more', tp.scrollTop + tp.clientHeight < tp.scrollHeight - 2);
     more(); tp.onscroll = more;

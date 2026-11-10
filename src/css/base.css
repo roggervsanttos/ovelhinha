@@ -182,7 +182,10 @@ svg.scene .cue, svg.scene .fx { pointer-events: none; }
   color: var(--ink); display: flex; flex-direction: column; gap: .8em;
   padding: 7% 9% 5% 11%; font-size: var(--fs, 20px); line-height: 1.55;
 }
-.book.stack .tp { padding: 18px 20px 14px; gap: .65em; }
+.book.stack .tp { padding: 14px 18px 10px; gap: .5em; line-height: 1.45; }
+.book.stack .tp h2 { font-size: 1.42em; }
+.book.stack .tp .body { gap: .5em; }
+.book.stack .tp.end h2 { font-size: 2em; }
 .tp[data-tint="meadow"] { --tint: var(--t-meadow); --tint-ink: var(--t-meadow-ink); }
 .tp[data-tint="night"] { --tint: var(--t-night); --tint-ink: var(--t-night-ink); }
 .tp[data-tint="sand"] { --tint: var(--t-sand); --tint-ink: var(--t-sand-ink); }
