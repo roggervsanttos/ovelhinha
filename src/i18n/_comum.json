@@ -124,6 +124,11 @@
   "Samuel",
   "Samuel"
  ],
+ "Trombeta": [
+  "Trompeta",
+  "Trompette",
+  "Trumpet"
+ ],
  "Povo a festejar": [
   "El pueblo celebrando",
   "Le peuple qui fait la fête",
@@ -184,6 +189,11 @@
   "Porte",
   "Door"
  ],
+ "Vamos para lá!": [
+  "¡Vamos allí!",
+  "Allons là-bas !",
+  "Let’s go there!"
+ ],
  "Lamparina": [
   "Candil",
   "Lampe à huile",
@@ -214,6 +224,11 @@
   "Jésus raconte une histoire",
   "Jesus tells a story"
  ],
+ "Vamos para casa!": [
+  "¡Vamos a casa!",
+  "On rentre à la maison !",
+  "Let’s go home!"
+ ],
  "Pandeireta": [
   "Pandereta",
   "Tambourin",
@@ -229,6 +244,11 @@
   "Enfant",
   "Child"
  ],
+ "Jesus está vivo!": [
+  "¡Jesús está vivo!",
+  "Jésus est vivant !",
+  "Jesus is alive!"
+ ],
  "Pedro": [
   "Pedro",
   "Pierre",
@@ -238,6 +258,11 @@
   "¡Gracias, Señor!",
   "Merci, Seigneur !",
   "Thank you, Lord!"
+ ],
+ "Pão": [
+  "Pan",
+  "Pain",
+  "Bread"
  ],
  "Três dias!": [
   "¡Tres días!",
@@ -284,6 +309,31 @@
   "Nuages",
   "Clouds"
  ],
+ "Menino": [
+  "Niño",
+  "Petit garçon",
+  "Boy"
+ ],
+ "Bom dia!": [
+  "¡Buenos días!",
+  "Bonjour !",
+  "Good morning!"
+ ],
+ "Pessoa": [
+  "Persona",
+  "Personne",
+  "Person"
+ ],
+ "Burro": [
+  "Burro",
+  "Âne",
+  "Donkey"
+ ],
+ "Grupo de pessoas": [
+  "Grupo de personas",
+  "Groupe de personnes",
+  "Group of people"
+ ],
  "Cabra": [
   "Cabra",
   "Chèvre",
@@ -324,6 +374,11 @@
   "Je suis avec toi !",
   "I am with you!"
  ],
+ "Trigo": [
+  "Trigo",
+  "Blé",
+  "Wheat"
+ ],
  "Deus está comigo!": [
   "¡Dios está conmigo!",
   "Dieu est avec moi !",
@@ -333,6 +388,11 @@
   "Estoy tan cansado...",
   "Je suis si fatigué...",
   "I’m so tired..."
+ ],
+ "Estamos livres!": [
+  "¡Somos libres!",
+  "Nous sommes libres !",
+  "We’re free!"
  ],
  "Vamos!": [
   "¡Vamos!",
@@ -404,10 +464,20 @@
   "Cruche d’huile",
   "Jug of oil"
  ],
+ "Estou curado!": [
+  "¡Estoy curado!",
+  "Je suis guéri !",
+  "I’m healed!"
+ ],
  "Menina": [
   "Niña",
   "Petite fille",
   "Girl"
+ ],
+ "Vai em paz!": [
+  "¡Ve en paz!",
+  "Va en paix !",
+  "Go in peace!"
  ],
  "Nuvens de tempestade": [
   "Nubes de tormenta",
@@ -433,6 +503,11 @@
   "Toca a Jesús y a la gente.",
   "Touche Jésus et les gens.",
   "Tap Jesus and the people."
+ ],
+ "Não tenhas medo!": [
+  "¡No tengas miedo!",
+  "N’aie pas peur !",
+  "Don’t be afraid!"
  ],
  "Barco": [
   "Barco",
@@ -469,15 +544,40 @@
   "Disciple",
   "Disciple"
  ],
- "Amém!": [
-  "¡Amén!",
-  "Amen !",
-  "Amen!"
+ "Toca nas pessoas e em Jesus.": [
+  "Toca a la gente y a Jesús.",
+  "Touche les gens et Jésus.",
+  "Tap the people and Jesus."
+ ],
+ "A tua fé curou-te!": [
+  "¡Tu fe te ha sanado!",
+  "Ta foi t’a guéri !",
+  "Your faith has healed you!"
+ ],
+ "Mão de Jesus": [
+  "Mano de Jesús",
+  "Main de Jésus",
+  "Jesus’ hand"
+ ],
+ "Mãe": [
+  "Mamá",
+  "Maman",
+  "Mom"
+ ],
+ "Obrigada, Jesus!": [
+  "¡Gracias, Jesús!",
+  "Merci, Jésus !",
+  "Thank you, Jesus!"
  ],
  "Obrigado, Jesus!": [
   "¡Gracias, Jesús!",
   "Merci, Jésus !",
   "Thank you, Jesus!"
+ ],
+ "Amém!": [
+  "¡Amén!",
+  "Amen !",
+  "Amen!"
  ],
  "Toca em Jesus.": [
   "Toca a Jesús.",
@@ -489,19 +589,44 @@
   "Viens !",
   "Come!"
  ],
+ "Toca no homem e em Jesus.": [
+  "Toca al hombre y a Jesús.",
+  "Touche l’homme et Jésus.",
+  "Tap the man and Jesus."
+ ],
  "Toca nas moedas.": [
   "Toca las monedas.",
   "Touche les pièces.",
   "Tap the coins."
  ],
- "Burro": [
-  "Burro",
-  "Âne",
-  "Donkey"
+ "Jesus perguntou:": [
+  "Jesús le preguntó:",
+  "Jésus lui a demandé :",
+  "Jesus asked:"
+ ],
+ "Que maravilha!": [
+  "¡Qué maravilla!",
+  "Quelle merveille !",
+  "How wonderful!"
  ],
  "Moedas": [
   "Monedas",
   "Pièces",
   "Coins"
+ ],
+ "Que bonito!": [
+  "¡Qué bonito!",
+  "Que c’est beau !",
+  "How beautiful!"
+ ],
+ "Aleluia!": [
+  "¡Aleluya!",
+  "Alléluia !",
+  "Hallelujah!"
+ ],
+ "Louvado seja Deus!": [
+  "¡Alabado sea Dios!",
+  "Loué soit Dieu !",
+  "Praise God!"
  ]
 }

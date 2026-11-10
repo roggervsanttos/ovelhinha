@@ -1,14 +1,15 @@
 # Ovelhinha: Histórias da Bíblia
 
-Livros infantis animados para ler e tocar. São 30 histórias da Bíblia, contadas com frases curtas
-para crianças pequenas: Adão e Eva, Noé e a Grande Arca, Abraão e as Estrelas, Jacó e o Novo Nome,
-José e a Túnica Colorida, Moisés e o Mar Vermelho, Josué e as Muralhas de Jericó, Rute e Noemi, Samuel,
-o Menino que Ouviu Deus, Davi, o Pastorzinho, Elias e o Fogo do Céu, Naamã e a Menina Corajosa, Jonas
-e o Grande Peixe, Os Três Amigos na Fornalha, Daniel na Cova dos Leões, Ester, a Rainha Corajosa,
-O Nascimento de Jesus, O Menino Jesus no Templo, Pedro, Tiago e João no Barquinho, A Casa na Rocha,
-Jesus Acalma a Tempestade, Cinco Pães e Dois Peixes, Jesus Anda sobre as Águas, O Bom Samaritano,
-A Ovelhinha Perdida, O Filho que Voltou, Jesus e as Crianças, Jesus e o Cego Bartimeu, Zaqueu,
-o Homem Pequenino e A Páscoa: Jesus Está Vivo!
+Livros infantis animados para ler e tocar. São 35 histórias da Bíblia, contadas com frases curtas
+para crianças pequenas: Adão e Eva, Noé e a Grande Arca, A Torre de Babel, Abraão e as Estrelas,
+Jacó e o Novo Nome, José e a Túnica Colorida, Moisés e o Mar Vermelho, Josué e as Muralhas de Jericó,
+Gideão e os 300, Rute e Noemi, Samuel, o Menino que Ouviu Deus, Davi, o Pastorzinho, Elias e o Fogo
+do Céu, Naamã e a Menina Corajosa, Jonas e o Grande Peixe, Os Três Amigos na Fornalha, Daniel na Cova
+dos Leões, Ester, a Rainha Corajosa, O Nascimento de Jesus, O Menino Jesus no Templo, Pedro, Tiago e
+João no Barquinho, A Casa na Rocha, Jesus Acalma a Tempestade, Jesus e a Filha de Jairo, Cinco Pães e
+Dois Peixes, Jesus Anda sobre as Águas, O Bom Samaritano, Os Dez Leprosos, A Ovelhinha Perdida, O Filho
+que Voltou, Jesus e as Crianças, Jesus e o Cego Bartimeu, Zaqueu, o Homem Pequenino, A Páscoa: Jesus
+Está Vivo! e Paulo e Silas na Prisão.
 
 A app está em quatro línguas: português (de Portugal, com os nomes bíblicos como no Brasil: Davi,
 Jacó, Isaque…), espanhol, francês e inglês. Muda-se de língua tocando na bandeira, no ecrã inicial ou no topo da estante.
@@ -36,10 +37,10 @@ não é preciso ficheiro CNAME.
 
 - `src/` a app: `index.html`, estilos (`css/`), motor dos livros (`js/engine.js`), desenhos (`js/art.js`),
   línguas e textos dos botões (`js/linguas.js`), histórias extra e compras (`js/loja.js`), ecrã inicial, estante e área dos pais (`js/app.js`)
-- `src/books/` um ficheiro por livro (`adao.js`, `noe.js`, `abraao.js`, `jaco.js`, `jose.js`, `moises.js`,
-  `josue.js`, `rute.js`, `samuel.js`, `davi.js`, `elias.js`, `naama.js`, `jonas.js`, `fornalha.js`, `daniel.js`, `ester.js`,
-  `natal.js`, `templo.js`, `pesca.js`, `rocha.js`, `tempestade.js`, `paes.js`, `aguas.js`, `samaritano.js`, `ovelha.js`,
-  `prodigo.js`, `criancas.js`, `cego.js`, `zaqueu.js`, `pascoa.js`)
+- `src/books/` um ficheiro por livro (`adao.js`, `noe.js`, `babel.js`, `abraao.js`, `jaco.js`, `jose.js`, `moises.js`,
+  `josue.js`, `gideao.js`, `rute.js`, `samuel.js`, `davi.js`, `elias.js`, `naama.js`, `jonas.js`, `fornalha.js`, `daniel.js`, `ester.js`,
+  `natal.js`, `templo.js`, `pesca.js`, `rocha.js`, `tempestade.js`, `jairo.js`, `paes.js`, `aguas.js`, `samaritano.js`, `leprosos.js`, `ovelha.js`,
+  `prodigo.js`, `criancas.js`, `cego.js`, `zaqueu.js`, `pascoa.js`, `paulo.js`)
 - `src/i18n/` as traduções: um ficheiro por livro e `_comum.json` para os textos que aparecem em mais de um livro
 - `src/legal/` política de privacidade (nas quatro línguas) e página de suporte
 - `config.json` nome, versão, e-mail de contacto, endereços das lojas, ordem dos livros na estante, histórias grátis e preço

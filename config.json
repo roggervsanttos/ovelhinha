@@ -9,7 +9,7 @@
   "site": "https://aovelhinha.com/",
   "appStore": "",
   "playStore": "",
-  "order": ["adao", "davi", "natal", "ovelha", "pascoa", "noe", "abraao", "jaco", "jose", "moises", "josue", "rute", "samuel", "elias", "naama", "jonas", "fornalha", "daniel", "ester", "templo", "pesca", "rocha", "tempestade", "paes", "aguas", "samaritano", "prodigo", "criancas", "cego", "zaqueu"],
+  "order": ["adao", "davi", "natal", "ovelha", "pascoa", "noe", "babel", "abraao", "jaco", "jose", "moises", "josue", "gideao", "rute", "samuel", "elias", "naama", "jonas", "fornalha", "daniel", "ester", "templo", "pesca", "rocha", "tempestade", "jairo", "paes", "aguas", "samaritano", "leprosos", "prodigo", "criancas", "cego", "zaqueu", "paulo"],
   "free": ["adao", "davi", "natal", "ovelha", "pascoa"],
   "price": 0.99,
   "productPrefix": "livro_",
