@@ -59,13 +59,13 @@ function dayIcon(i) {
   const bg = ['#20264f', '#7cc4ec', '#bfe08e', '#ffd86b', '#5ab0de', '#f6c99a', '#9a8ad0'][i];
   let g = `<circle r="42" fill="${bg}" stroke="${OL}" stroke-width="4"/>`;
   if (i === 0) g += `<path d="M-42,0 A42,42 0 0 1 42,0 Z" fill="#fff3c4" transform="rotate(-30)"/><path d="${sparkle(20)}" fill="#ffd84a" stroke="${OL}" stroke-width="2"/>`;
-  if (i === 1) g += `<path d="M-40,12 q10,-10 20,0 t20,0 t20,0 t20,0 L40,40 L-40,40 Z" fill="#3f93c7"/><circle cx="-10" cy="-14" r="10" fill="#fff"/><circle cx="6" cy="-18" r="12" fill="#fff"/>`;
+  if (i === 1) g += `<path d="M-40,12 q10,-10 20,0 t20,0 t20,0 t20,0 A41,41 0 0 1 -40,12 Z" fill="#3f93c7"/><circle cx="-10" cy="-14" r="10" fill="#fff"/><circle cx="6" cy="-18" r="12" fill="#fff"/>`;
   if (i === 2) g += `<path d="M0,26 L0,-4" stroke="#4f8a3a" stroke-width="5" stroke-linecap="round"/>${[0, 72, 144, 216, 288].map(a => `<ellipse cx="0" cy="-15" rx="7" ry="10" transform="translate(0,-8) rotate(${a})" fill="#e86a9a" stroke="${OL}" stroke-width="2"/>`).join('')}<circle cy="-8" r="6" fill="#f2c14e" stroke="${OL}" stroke-width="2"/><path d="M0,14 q-14,-4 -18,-14 q14,0 18,14 Z" fill="#6aa246" stroke="${OL}" stroke-width="2"/>`;
   if (i === 3) g += `<circle cx="-10" cy="-6" r="17" fill="#ffcf3f" stroke="${OL}" stroke-width="2.6"/><path d="M22,-24 A16,16 0 1 0 22,10 A12,12 0 1 1 22,-24 Z" fill="#fff4c4" stroke="${OL}" stroke-width="2.4" transform="translate(-4,10)"/>`;
   if (i === 4) g += `<g transform="translate(-8,14) scale(.8)"><path d="M-22,0 C-12,-16 14,-16 24,0 C14,16 -12,16 -22,0 Z" fill="#f28c3a" stroke="${OL}" stroke-width="2.8"/><path d="M-20,0 L-36,-12 L-34,12 Z" fill="#f28c3a" stroke="${OL}" stroke-width="2.6"/><circle cx="12" cy="-3" r="3" fill="${OL}"/></g><path d="M2,-22 q8,-10 16,0 q8,-10 16,0" fill="none" stroke="${OL}" stroke-width="3.4" stroke-linecap="round" transform="translate(-14,0)"/>`;
   if (i === 5) g += `<g transform="translate(-14,12) scale(.42)">${blob([[-18, -20, 20], [10, -24, 20], [-4, -2, 20]], '#fffaf0', 4)}<ellipse cx="26" cy="-6" rx="14" ry="17" fill="#4b3d38" stroke="${OL}" stroke-width="4"/></g><g transform="translate(16,-2)"><circle cy="-10" r="11" fill="#d39463" stroke="${OL}" stroke-width="2.6"/><path d="M-12,22 Q-12,4 0,4 Q12,4 12,22 Z" fill="#6aa246" stroke="${OL}" stroke-width="2.6"/></g>`;
   if (i === 6) g += `<path d="M10,-26 A22,22 0 1 0 10,20 A16,16 0 1 1 10,-26 Z" fill="#fff4c4" stroke="${OL}" stroke-width="2.4" transform="translate(-6,4)"/><text x="16" y="-6" font-size="22" font-weight="800" class="svgtxt" fill="#ffffff">z</text><text x="26" y="-22" font-size="15" font-weight="800" class="svgtxt" fill="#ffffff">z</text>`;
-  return g;
+  return g + `<circle r="42" fill="none" stroke="${OL}" stroke-width="4"/>`;
 }
 const DAYS = [[100, 168], [200, 128], [300, 104], [400, 96], [500, 104], [600, 128], [700, 168]];
 const DAY_NAMES = [N('Luz!'), N('Céu e mar!'), N('Plantas!'), N('Sol, lua e estrelas!'), N('Peixes e passarinhos!'), N('Animais e pessoas!'), N('Descanso!')];

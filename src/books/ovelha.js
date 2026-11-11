@@ -47,10 +47,11 @@ function rebanho(rows, seed = 1, o = {}) {
   rows.forEach(([y, sc, xs]) => xs.forEach(x => s += sheep({ x, y: y + (R() - .5) * 10, s: sc * (.92 + R() * .16), flip: R() < .4, pose: o.pose || (R() < .3 ? 'graze' : 'stand'), wool: o.wool || '#fffaf0' })));
   return s;
 }
-function curral(x, y, s = 1) {
+// inside: o que fica dentro do curral (atrás do muro), em coordenadas da cena
+function curral(x, y, s = 1, inside = '') {
   const pedras = [];
   for (let i = 0; i < 9; i++) pedras.push([-200 + i * 42 + (i % 2) * 8, -30 - (i % 3) * 4]);
-  return `<g transform="translate(${x},${y}) scale(${s})"><path d="M-220,0 C-220,-60 -150,-90 0,-90 C150,-90 220,-60 220,0 Z" fill="#6f7f5a" opacity=".5"/><path d="M-230,10 L-230,-46 L-40,-46 L-40,10 Z M40,10 L40,-46 L230,-46 L230,10 Z" fill="#9a9488" stroke="${OL}" stroke-width="4" stroke-linejoin="round"/><g fill="#b3ad9f" stroke="${OL}" stroke-width="2.4">${[-210, -170, -130, -90, 60, 100, 140, 180].map((a, i) => `<rect x="${a}" y="${-42 + (i % 2) * 22}" width="34" height="18" rx="5"/>`).join('')}</g>${limb(-40, 12, -40, -70, 9, '#8a5a33')}${limb(40, 12, 40, -70, 9, '#8a5a33')}</g>`;
+  return `<g transform="translate(${x},${y}) scale(${s})"><path d="M-220,0 C-220,-60 -150,-90 0,-90 C150,-90 220,-60 220,0 Z" fill="#6f7f5a" opacity=".5"/></g>${inside}<g transform="translate(${x},${y}) scale(${s})"><path d="M-230,10 L-230,-46 L-40,-46 L-40,10 Z M40,10 L40,-46 L230,-46 L230,10 Z" fill="#9a9488" stroke="${OL}" stroke-width="4" stroke-linejoin="round"/><g fill="#b3ad9f" stroke="${OL}" stroke-width="2.4">${[-210, -170, -130, -90, 60, 100, 140, 180].map((a, i) => `<rect x="${a}" y="${-42 + (i % 2) * 22}" width="34" height="18" rx="5"/>`).join('')}</g>${limb(-40, 12, -40, -70, 9, '#8a5a33')}${limb(40, 12, 40, -70, 9, '#8a5a33')}</g>`;
 }
 function espinheiro(x, y, s = 1) {
   let sp = '';
@@ -190,9 +191,7 @@ SCENES.push({
   cue: [500, 660],
   art() {
     let s = prado({ day: { sky: [[0, '#f6a46a'], [.5, '#fde2b8'], [1, '#fdf0e2']], sunX: 640, sunY: 400, sunR: 44, clouds: false }, far: '#b6b07a', mid: '#9cb46a', near: '#8aa65a' });
-    s += curral(250, 640, 1);
-    s += rebanho([[600, .42, [90, 140, 190, 330, 380, 420]]], 9);
-    s += `<g style="pointer-events:none">${[0, 1, 2].map(i => `<g data-k="dentro${i}" opacity="0">${sheep({ x: [200, 270, 330][i], y: 612, s: .44, flip: true })}</g>`).join('')}</g>`;
+    s += curral(250, 640, 1, rebanho([[612, .42, [90, 140, 190, 330, 380, 420]]], 9) + `<g style="pointer-events:none">${[0, 1, 2].map(i => `<g data-k="dentro${i}" opacity="0">${sheep({ x: [230, 160, 360][i], y: 616, s: .44, flip: true })}</g>`).join('')}</g>`);
     s += pastor({ x: 330, y: 740, s: 1.02, face: 'smile', look: .6, armL: { a: 14, item: ITEM.staff(230, -1) }, armR: { a: 60, b: -30 }, k: 'pastor' });
     FILA.forEach(([x, y], i) => s += sheep({ x, y, s: .8, flip: true, k: 'f' + i }));
     return s;
@@ -335,7 +334,7 @@ SCENES.push({
 /* =====================================================================
    7 — FESTA!
    ===================================================================== */
-const VIZ = [[120, 770, 0], [230, 790, 1], [580, 786, 3], [690, 770, 2]];
+const VIZ = [[85, 770, 0], [180, 796, 1], [610, 786, 3], [715, 770, 2]];
 SCENES.push({
   key: 'festa', title: 'Venham fazer festa!', ref: 'Lucas 15.6', tint: 'rose',
   text: [
@@ -352,7 +351,7 @@ SCENES.push({
     s += house(40, 560, 170, 150, {}) + house(600, 560, 180, 160, {});
     s += `<rect x="-40" y="560" width="900" height="360" fill="#e2cf9f"/>`;
     s += `<g stroke="${OL}" stroke-width="2">${[[120, 0], [200, 1], [280, 2], [520, 3], [600, 4], [680, 0]].map(([x, c], i) => `<path d="M${x},${300 + (i % 2) * 14} l-14,24 l28,0 Z" fill="${['#e5483f', '#f2c14e', '#3f93c7', '#5fb35a', '#e86a9a'][c]}"/>`).join('')}</g><path d="M60,296 Q400,350 740,296" stroke="${OL}" stroke-width="3" fill="none"/>`;
-    s += pastorOmbros({ x: 400, y: 776, s: 1.08, face: 'laugh', look: 0, k: 'pastor' });
+    s += pastorOmbros({ x: 440, y: 776, s: 1.08, face: 'laugh', look: 0, k: 'pastor' });
     VIZ.forEach(([x, y, p], i) => {
       const P = POVO[p];
       s += person(Object.assign({}, P, { x, y, s: P.kind === 'child' ? .9 : .96, legs: i % 2 ? 'hop' : 'stand', face: 'laugh', look: x < 400 ? .6 : -.6, armL: { a: 150, b: -20 }, armR: { a: 150, b: -20 }, k: 'v' + i }));
@@ -361,7 +360,7 @@ SCENES.push({
     return s;
   },
   setup(api) {
-    api.tap(api.q('pastor'), 'Pastor', () => { api.snd('fanfare'); api.bubble(400, 480, 'Encontrei a minha ovelha perdida!', { key: 'p' }); if (!api.st.n) { api.st.n = true; api.nudgeNext(2600); } });
+    api.tap(api.q('pastor'), 'Pastor', () => { api.snd('fanfare'); api.bubble(440, 480, 'Encontrei a minha ovelha perdida!', { key: 'p' }); if (!api.st.n) { api.st.n = true; api.nudgeNext(2600); } });
     VIZ.forEach(([x], i) => api.tap(api.q('v' + i), 'Amigo', () => { api.snd('clap'); api.hop(api.q('v' + i), 16); api.burst(x, 560, 'confetti', 10); }));
     api.tap(api.q('pandeiro'), 'Pandeireta', () => { api.snd('tambourine'); api.hop(api.q('pandeiro'), 8); api.burst(330, 500, 'note', 5); });
   }

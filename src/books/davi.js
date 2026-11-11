@@ -248,7 +248,7 @@ SCENES.push({
       api.bubble(292, 410, 'Xô, urso! Deixa as ovelhas!', { key: 'davi' });
       api.hop(d, 16);
       await api.wait(300);
-      api.anim(api.act(bear), [{ transform: 'translate(0,0)', opacity: 1 }, { transform: 'translate(0,-14px)', opacity: 1, offset: .25 }, { transform: 'translate(70px,40px)', opacity: 0 }], { duration: 800, easing: 'ease-in' });
+      api.anim(api.act(bear), [{ transform: 'translate(0,0)', opacity: 1 }, { transform: 'translate(0,-14px)', opacity: 1, offset: .25 }, { transform: 'translate(70px,40px)', opacity: 0 }], { duration: 800, easing: 'ease-in', fill: 'forwards' });
       api.burst(760, 470, 'dust', 5);
     });
     for (const k of ['f1', 'f2', 'f3']) api.tap(api.q(k), 'Ovelha', () => { api.hop(api.q(k)); api.snd('bleat', 1 + Math.random() * .2); });
