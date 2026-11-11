@@ -10,7 +10,7 @@ A língua principal das fichas é o **Português (Portugal)**. Como a app tem qu
 | --- | --- |
 | Nome | Ovelhinha: Histórias da Bíblia |
 | Subtítulo | Livros animados para crianças |
-| Texto promocional | 35 histórias da Bíblia para ler e tocar, de Adão e Eva até à Páscoa, em português, espanhol, francês e inglês. 5 são grátis. Sem anúncios e funciona sem internet. |
+| Texto promocional | Histórias da Bíblia para ler e tocar, de Adão e Eva até Paulo e Silas, em português, espanhol, francês e inglês. Algumas são grátis. Sem anúncios e funciona sem internet. |
 | Palavras-chave | noé,moisés,davi,golias,jonas,daniel,ester,josué,elias,zaqueu,jesus,natal,páscoa,infantil,cristão |
 | URL de suporte | https://aovelhinha.com/suporte.html |
 | URL de marketing | https://aovelhinha.com/ |
@@ -25,7 +25,7 @@ A língua principal das fichas é o **Português (Portugal)**. Como a app tem qu
 ```
 Ovelhinha é uma estante de livros animados com histórias da Bíblia para crianças. Cada página tem uma ilustração que reage ao toque, sons divertidos e um texto curtinho, fiel à Bíblia, escrito com frases simples para os mais pequenos.
 
-35 HISTÓRIAS DA BÍBLIA
+HISTÓRIAS DA BÍBLIA
 Antigo Testamento: Adão e Eva · Noé e a Grande Arca · A Torre de Babel · Abraão e as Estrelas · Jacó e o Novo Nome · José e a Túnica Colorida · Moisés e o Mar Vermelho · Josué e as Muralhas de Jericó · Gideão e os 300 · Rute e Noemi · Samuel, o Menino que Ouviu Deus · Davi, o Pastorzinho · Elias e o Fogo do Céu · Naamã e a Menina Corajosa · Jonas e o Grande Peixe · Os Três Amigos na Fornalha · Daniel na Cova dos Leões · Ester, a Rainha Corajosa.
 
 Novo Testamento: O Nascimento de Jesus · O Menino Jesus no Templo · Pedro, Tiago e João no Barquinho · A Casa na Rocha · Jesus Acalma a Tempestade · Jesus e a Filha de Jairo · Cinco Pães e Dois Peixes · Jesus Anda sobre as Águas · O Bom Samaritano · Os Dez Leprosos · A Ovelhinha Perdida · O Filho que Voltou · Jesus e as Crianças · Jesus e o Cego Bartimeu · Zaqueu, o Homem Pequenino · A Páscoa: Jesus Está Vivo! · Paulo e Silas na Prisão.
@@ -39,7 +39,7 @@ LER E TOCAR
 • A app lembra a página em que cada livro ficou e dá uma estrela por cada livro lido.
 
 5 HISTÓRIAS GRÁTIS
-Adão e Eva, Davi, O Nascimento de Jesus, A Ovelhinha Perdida e A Páscoa são grátis. As outras 30 podem ser desbloqueadas uma a uma, com uma compra única por história, válida para sempre.
+Adão e Eva, Davi, O Nascimento de Jesus, A Ovelhinha Perdida e A Páscoa são grátis. As outras podem ser desbloqueadas uma a uma, com uma compra única por história, válida para sempre.
 
 FEITA PARA CRIANÇAS
 • Sem anúncios.
@@ -50,7 +50,7 @@ FEITA PARA CRIANÇAS
 As histórias foram recontadas a partir da Bíblia em linguagem simples, para ler em conjunto com os mais pequenos.
 ```
 
-### Compras dentro da app (as 30 histórias extra)
+### Compras dentro da app (as histórias extra)
 
 Crie um produto para cada história em App Store Connect > a app > Monetização > Compras dentro da app > +. No Google Play os dados são os mesmos: Play Console > a app > Monetizar > Produtos, na parte dos produtos de compra única. Os nomes e as descrições cabem nos limites da Apple (30 e 45 caracteres).
 
@@ -215,7 +215,7 @@ Em cada produto, acrescente também as traduções (na Apple: Localização da A
 Unlocks this picture book forever. To reach the purchase: tap "Começar" (Start) on the start screen, then tap a book with a lock on the shelf, tap "Sou adulto" (I'm an adult), answer the multiplication question and tap "Comprar" (Buy). Purchases can also be made or restored in the "Pais" (Parents) area, behind the same question. The app interface can also be switched to Spanish, French or English with the flags on the start screen or at the top of the shelf.
 ```
 
-Os IDs têm de ser exatamente estes (a app procura livro_ + o nome do livro). A primeira leva de compras da App Store vai para a revisão junto com uma versão da app: marque as 30 na página da versão, em Compras dentro da app.
+Os IDs têm de ser exatamente estes (a app procura livro_ + o nome do livro). A primeira leva de compras da App Store vai para a revisão junto com uma versão da app: marque todas na página da versão, em Compras dentro da app.
 
 ### Respostas da App Store
 
@@ -234,7 +234,7 @@ Com estas respostas, a Apple calcula a classificação 9+. Algumas apps de hist�
 Notas para a revisão, em inglês, que é o que os revisores leem:
 
 ```
-Ovelhinha is a picture-book app for children with thirty Bible stories in European Portuguese, Spanish, French and English (the language is chosen with the flags on the start screen or at the top of the shelf). Five stories are free; each of the other twenty-five can be unlocked forever with a non-consumable in-app purchase. Purchases only appear behind a parental gate (a multiplication question): on the start screen tap "Começar" (Start), then tap a book with a lock, tap "Sou adulto" (I'm an adult) and answer the question, or open the "Pais" (Parents) area, which also has "Restaurar compras" (Restore Purchases). There is no login, no ads, no analytics and no data collection; everything works offline. The app has no external links.
+Ovelhinha is a picture-book app for children with animated Bible stories in European Portuguese, Spanish, French and English (the language is chosen with the flags on the start screen or at the top of the shelf). Some stories are free; each of the others can be unlocked forever with a non-consumable in-app purchase. Purchases only appear behind a parental gate (a multiplication question): on the start screen tap "Começar" (Start), then tap a book with a lock, tap "Sou adulto" (I'm an adult) and answer the question, or open the "Pais" (Parents) area, which also has "Restaurar compras" (Restore Purchases). There is no login, no ads, no analytics and no data collection; everything works offline. The app has no external links.
 ```
 
 ## Google Play
@@ -242,7 +242,7 @@ Ovelhinha is a picture-book app for children with thirty Bible stories in Europe
 | Campo | O que colar |
 | --- | --- |
 | Nome da app | Ovelhinha: Histórias da Bíblia |
-| Descrição breve | Histórias da Bíblia animadas para ler e tocar com as crianças. 5 são grátis. |
+| Descrição breve | Histórias da Bíblia animadas para ler e tocar com as crianças. Algumas grátis! |
 | Descrição completa | A mesma da App Store, acima |
 | Categoria | Educação |
 | E-mail de contacto | contacto@aovelhinha.com |
@@ -271,16 +271,16 @@ Os mesmos campos, para as traduções das fichas. As imagens podem ser as mesmas
 | --- | --- |
 | Nome (App Store e Google Play) | Ovelhinha: Historias bíblicas |
 | Subtítulo (App Store) | Libros animados para niños |
-| Texto promocional (App Store) | 35 historias de la Biblia para leer y tocar, de Adán y Eva a la Pascua, en portugués, español, francés e inglés. 5 son gratis. Sin anuncios y funciona sin internet. |
+| Texto promocional (App Store) | Historias de la Biblia para leer y tocar, de Adán y Eva a Pablo y Silas, en portugués, español, francés e inglés. Algunas gratis. Sin anuncios y funciona sin internet. |
 | Palavras-chave (App Store) | noé,moisés,david,goliat,jonás,daniel,ester,josué,elías,zaqueo,jesús,navidad,pascua,infantil,niños |
-| Descrição breve (Google Play) | Historias de la Biblia animadas para leer y tocar con los niños. 5 gratis. |
+| Descrição breve (Google Play) | Historias de la Biblia animadas para leer y tocar con niños. ¡Algunas gratis! |
 
 Descrição (App Store e Google Play):
 
 ```
 Ovelhinha es una estantería de libros animados con historias de la Biblia para niños. Cada página tiene una ilustración que reacciona al tocarla, sonidos divertidos y un texto cortito, fiel a la Biblia, con frases sencillas para los más pequeños.
 
-35 HISTORIAS DE LA BIBLIA
+HISTORIAS DE LA BIBLIA
 Antiguo Testamento: Adán y Eva · Noé y el gran arca · La Torre de Babel · Abraham y las estrellas · Jacob y su nuevo nombre · José y la túnica de colores · Moisés y el mar Rojo · Josué y las murallas de Jericó · Gedeón y los 300 · Rut y Noemí · Samuel, el niño que escuchó a Dios · David, el pastorcito · Elías y el fuego del cielo · Naamán y la niña valiente · Jonás y el gran pez · Los tres amigos en el horno de fuego · Daniel en el foso de los leones · Ester, la reina valiente.
 
 Nuevo Testamento: El nacimiento de Jesús · El niño Jesús en el Templo · Pedro, Santiago y Juan en la barquita · La casa sobre la roca · Jesús calma la tormenta · Jesús y la hija de Jairo · Cinco panes y dos peces · Jesús camina sobre el agua · El buen samaritano · Los diez leprosos · La ovejita perdida · El hijo que volvió · Jesús y los niños · Jesús y el ciego Bartimeo · Zaqueo, el hombre bajito · La Pascua: ¡Jesús está vivo! · Pablo y Silas en la cárcel.
@@ -294,7 +294,7 @@ LEER Y TOCAR
 • La app recuerda la página de cada libro y da una estrella por cada libro leído.
 
 5 HISTORIAS GRATIS
-Adán y Eva, David, El nacimiento de Jesús, La ovejita perdida y La Pascua son gratis. Las otras 30 se pueden desbloquear una a una, con una compra única por historia, para siempre.
+Adán y Eva, David, El nacimiento de Jesús, La ovejita perdida y La Pascua son gratis. Las demás se pueden desbloquear una a una, con una compra única por historia, para siempre.
 
 PENSADA PARA NIÑOS
 • Sin anuncios.
@@ -311,7 +311,7 @@ Las historias se han vuelto a contar a partir de la Biblia con un lenguaje senci
 | --- | --- |
 | Nome (App Store e Google Play) | Ovelhinha – Récits bibliques |
 | Subtítulo (App Store) | Livres animés pour enfants |
-| Texto promocional (App Store) | 35 histoires de la Bible à lire et toucher, d’Adam et Ève à Pâques, en portugais, espagnol, français et anglais. 5 sont gratuites. Sans publicité, fonctionne hors ligne. |
+| Texto promocional (App Store) | Histoires de la Bible à lire et toucher, d’Adam et Ève à Paul et Silas, en portugais, espagnol, français et anglais. Certaines gratuites. Sans pub, hors ligne. |
 | Palavras-chave (App Store) | noé,moïse,david,goliath,jonas,daniel,esther,josué,élie,zachée,jésus,noël,pâques,enfant,chrétien |
 | Descrição breve (Google Play) | Des histoires de la Bible animées, à lire et à toucher avec les enfants. |
 
@@ -320,7 +320,7 @@ Descrição (App Store e Google Play):
 ```
 Ovelhinha est une bibliothèque de livres animés avec des histoires de la Bible pour les enfants. Chaque page a une illustration qui réagit au toucher, des sons amusants et un petit texte fidèle à la Bible, écrit avec des phrases simples pour les plus petits.
 
-35 HISTOIRES DE LA BIBLE
+HISTOIRES DE LA BIBLE
 Ancien Testament : Adam et Ève · Noé et la grande arche · La tour de Babel · Abraham et les étoiles · Jacob et son nouveau nom · Joseph et la tunique de toutes les couleurs · Moïse et la mer Rouge · Josué et les murailles de Jéricho · Gédéon et les 300 · Ruth et Noémi · Samuel, le garçon qui écoutait Dieu · David, le petit berger · Élie et le feu du ciel · Naaman et la fillette courageuse · Jonas et le grand poisson · Les trois amis dans la fournaise · Daniel dans la fosse aux lions · Esther, la reine courageuse.
 
 Nouveau Testament : La naissance de Jésus · L’enfant Jésus au Temple · Pierre, Jacques et Jean dans la petite barque · La maison sur le roc · Jésus calme la tempête · Jésus et la fille de Jaïrus · Cinq pains et deux poissons · Jésus marche sur l’eau · Le bon Samaritain · Les dix lépreux · La petite brebis perdue · Le fils qui est revenu · Jésus et les enfants · Jésus et l’aveugle Bartimée · Zachée, le tout petit homme · Pâques : Jésus est vivant ! · Paul et Silas en prison.
@@ -334,7 +334,7 @@ LIRE ET TOUCHER
 • L’app se souvient de la page de chaque livre et donne une étoile pour chaque livre lu.
 
 5 HISTOIRES GRATUITES
-Adam et Ève, David, La naissance de Jésus, La petite brebis perdue et Pâques sont gratuites. Les 30 autres peuvent être débloquées une par une, avec un achat unique par histoire, valable pour toujours.
+Adam et Ève, David, La naissance de Jésus, La petite brebis perdue et Pâques sont gratuites. Les autres peuvent être débloquées une par une, avec un achat unique par histoire, valable pour toujours.
 
 PENSÉE POUR LES ENFANTS
 • Sans publicité.
@@ -351,16 +351,16 @@ Les histoires ont été racontées à partir de la Bible dans un langage simple,
 | --- | --- |
 | Nome (App Store e Google Play) | Ovelhinha: Bible Stories |
 | Subtítulo (App Store) | Animated books for kids |
-| Texto promocional (App Store) | 35 Bible stories to read and touch, from Adam and Eve to Easter, in Portuguese, Spanish, French and English. 5 are free. No ads, and it works offline. |
+| Texto promocional (App Store) | Bible stories to read and touch, from Adam and Eve to Paul and Silas, in Portuguese, Spanish, French and English. Some are free. No ads, and it works offline. |
 | Palavras-chave (App Store) | noah,moses,david,goliath,jonah,daniel,esther,joshua,elijah,zacchaeus,jesus,christmas,easter,kids |
-| Descrição breve (Google Play) | Animated Bible stories to read and touch with your kids. 5 are free. |
+| Descrição breve (Google Play) | Animated Bible stories to read and touch with your kids. Some are free! |
 
 Descrição (App Store e Google Play):
 
 ```
 Ovelhinha is a bookshelf of animated picture books with Bible stories for children. Every page has an illustration that reacts to touch, fun sounds and a short text, true to the Bible, written in simple sentences for little ones.
 
-35 BIBLE STORIES
+BIBLE STORIES
 Old Testament: Adam and Eve · Noah and the Big Ark · The Tower of Babel · Abraham and the Stars · Jacob and His New Name · Joseph and the Colorful Coat · Moses and the Red Sea · Joshua and the Walls of Jericho · Gideon and the 300 · Ruth and Naomi · Samuel, the Boy Who Listened to God · David, the Shepherd Boy · Elijah and the Fire from Heaven · Naaman and the Brave Little Girl · Jonah and the Big Fish · The Three Friends in the Fiery Furnace · Daniel in the Lions’ Den · Esther, the Brave Queen.
 
 New Testament: The Birth of Jesus · The Boy Jesus in the Temple · Peter, James and John in the Little Boat · The House on the Rock · Jesus Calms the Storm · Jesus and Jairus’s Daughter · Five Loaves and Two Fish · Jesus Walks on the Water · The Good Samaritan · The Ten Lepers · The Lost Sheep · The Son Who Came Home · Jesus and the Children · Jesus and Blind Bartimaeus · Zacchaeus, the Little Man · Easter: Jesus Is Alive! · Paul and Silas in Prison.
@@ -374,7 +374,7 @@ READ AND TOUCH
 • The app remembers where each book was left and gives a star for every book read.
 
 5 FREE STORIES
-Adam and Eve, David, The Birth of Jesus, The Lost Sheep and Easter are free. The other 30 can be unlocked one by one, with a one-time purchase per story that lasts forever.
+Adam and Eve, David, The Birth of Jesus, The Lost Sheep and Easter are free. The others can be unlocked one by one, with a one-time purchase per story that lasts forever.
 
 MADE FOR KIDS
 • No ads.
