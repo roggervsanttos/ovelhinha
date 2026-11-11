@@ -1,0 +1,114 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Vídeo vertical (1080x1920) de uma história: abre com ?book=adao&cenas=0,1,2&lang=pt&seg=8
+     As cenas passam sozinhas, os toques acontecem sozinhos e os sons ficam registados em window.LOG
+     (o áudio é gerado depois, à parte, por scripts/video/gravar.py). -->
+<link rel="stylesheet" href="/src/css/fonts.css"><link rel="stylesheet" href="/src/css/base.css"><link rel="stylesheet" href="/src/css/shell.css"><link rel="stylesheet" href="/src/css/art.css">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+body{background:var(--bg,#f6efe0)!important;font-family:var(--font-read)}
+#top{position:absolute;left:0;right:0;top:0;height:170px;display:flex;align-items:center;justify-content:center;gap:22px;font-family:var(--font-display);font-weight:800;font-size:46px;color:#2b2140}
+#top img{width:96px;height:96px;border-radius:24px;box-shadow:0 4px 14px #0002}
+#stage{position:absolute;left:40px;top:180px;width:1000px;height:1000px;border-radius:44px;overflow:hidden;box-shadow:0 10px 40px #0003;background:#fff}
+.sc{position:absolute;inset:0;opacity:0;transition:opacity .6s}
+.sc.on{opacity:1}
+.sc .illus{position:absolute;inset:0}
+.sc svg.scene{width:100%;height:100%;display:block}
+#cap{position:absolute;left:40px;right:40px;top:1210px;height:560px;background:#fffdf7;border-radius:44px;box-shadow:0 10px 30px #0002;padding:44px 54px;box-sizing:border-box;color:#2b2140;transition:opacity .5s}
+#cap .ref{font-family:var(--font-display);font-weight:700;font-size:28px;letter-spacing:.12em;text-transform:uppercase;color:#8a6a3a;margin-bottom:10px}
+#cap h1{font-family:var(--font-display);font-weight:800;font-size:66px;line-height:1.05;margin:0 0 22px}
+#cap p{font-size:42px;line-height:1.4;margin:0 0 14px}
+#cap p.q{font-family:var(--font-display);font-weight:600;background:#fff2c4;color:#7a4a12;border-radius:22px;padding:14px 26px}
+#bot{position:absolute;left:0;right:0;bottom:0;height:140px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:38px;color:#2b2140}
+#bot b{background:#2b2140;color:#fff;border-radius:99px;padding:12px 34px;margin-left:16px}
+#end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;background:linear-gradient(#bfe4f6,#fdf3d6);opacity:0;transition:opacity .8s;text-align:center;color:#2b2140}
+#end.on{opacity:1}
+#end img{width:360px;height:360px;border-radius:84px;box-shadow:0 14px 40px #0003}
+#end h2{font-family:var(--font-display);font-weight:800;font-size:84px;line-height:1.05;margin:0 60px}
+#end p{font-size:46px;margin:0 80px;line-height:1.35}
+#end b{font-family:var(--font-display);font-size:50px;background:#2b2140;color:#fff;border-radius:99px;padding:20px 54px}
+</style>
+</head><body>
+<div id="top"><img src="/assets/icon-only.png" alt=""><span id="brand">Ovelhinha</span></div>
+<div id="stage"></div>
+<div id="cap"></div>
+<div id="bot"></div>
+<div id="wait" style="position:absolute;inset:0;background:#000;z-index:9"></div>
+<div id="end"><img src="/assets/icon-only.png" alt=""><h2 id="e1"></h2><p id="e2"></p><b id="e3"></b></div>
+<script>
+// câmara lenta: com ?k=3 tudo na página corre 3 vezes mais devagar (temporizadores e relógio);
+// as animações CSS são abrandadas pelo gravador. Assim a gravação não perde imagens e depois é acelerada.
+(function(){ const K=+(new URLSearchParams(location.search).get('k')||1); if(K===1) return;
+  const st=window.setTimeout.bind(window), si=window.setInterval.bind(window), pn=performance.now.bind(performance), t0=pn(), dn=Date.now, d0=dn();
+  window.setTimeout=(f,ms=0,...a)=>st(f,(+ms||0)*K,...a); window.setInterval=(f,ms=0,...a)=>si(f,(+ms||0)*K,...a);
+  performance.now=()=>t0+(pn()-t0)/K; Date.now=()=>d0+(dn()-d0)/K; })();
+</script>
+<script>window.OV_CONFIG={target:'test',order:[]};</script>
+<script src="/src/js/art.js"></script><script src="/src/js/linguas.js"></script><script src="/src/js/engine.js"></script>
+<script>const Q=new URLSearchParams(location.search); document.write('<script src="/src/books/'+Q.get('book')+'.js"><\/script>');</script>
+<script>
+(async function(){
+const lang=Q.get('lang')||'pt', book=Q.get('book');
+// textos do vídeo (fora da app)
+const TXT={
+  pt:{brand:'Ovelhinha · Histórias da Bíblia', bot:'Grátis no', play:'Google Play', e1:'Ovelhinha', e2:'35 histórias da Bíblia animadas, para ler e tocar.', e3:'Grátis no Google Play'},
+  es:{brand:'Ovelhinha · Historias de la Biblia', bot:'Gratis en', play:'Google Play', e1:'Ovelhinha', e2:'35 historias de la Biblia animadas, para leer y tocar.', e3:'Gratis en Google Play'},
+  fr:{brand:'Ovelhinha · Histoires de la Bible', bot:'Gratuit sur', play:'Google Play', e1:'Ovelhinha', e2:'35 histoires de la Bible animées, à lire et à toucher.', e3:'Gratuit sur Google Play'},
+  en:{brand:'Ovelhinha · Bible Stories', bot:'Free on', play:'Google Play', e1:'Ovelhinha', e2:'35 animated Bible stories to read and tap.', e3:'Free on Google Play'}
+}[lang];
+if (lang!=='pt') {
+  for (const f of ['_comum', book]) { try { I18N.add(await (await fetch('/src/i18n/'+f+'.json')).json()); } catch(e){} }
+}
+I18N.lang=lang; document.documentElement.lang=I18N.html[lang];
+document.getElementById('brand').textContent=TXT.brand;
+document.getElementById('bot').innerHTML=`${TXT.bot}<b>${TXT.play}</b>`;
+e1.textContent=TXT.e1; e2.textContent=TXT.e2; e3.textContent=TXT.e3;
+
+// os sons não tocam aqui: ficam registados com o tempo, para o áudio ser feito depois
+window.LOG=[]; let T0=0;
+Sound.play=(name,...a)=>{ LOG.push({t:(performance.now()-T0)/1000, name, a}); };
+Book.nudge=()=>{};
+const def=Ov.book(book), cenas=(Q.get('cenas')||'').split(',').filter(Boolean).map(Number), seg=+(Q.get('seg')||8);
+document.body.style.setProperty('--bg', def.color+'22');
+const stage=document.getElementById('stage'), cap=document.getElementById('cap');
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+await document.fonts.ready;
+window.READY=true;
+// espera pelo sinal do gravador
+while(!window.GO) await sleep(50);
+document.getElementById('wait').remove(); T0=performance.now(); window.T0WALL=Date.now();
+let prev=null;
+for (const i of cenas) {
+  const sc=def.scenes[i], [vw,vh]=sc.vb||[800,800];
+  const box=document.createElement('div'); box.className='sc';
+  // capa (800x1100) corta a parte de baixo para caber no quadrado
+  const vbox = vh>vw ? `0 ${vh-vw} ${vw} ${vw}` : `0 0 ${vw} ${vh}`;
+  box.innerHTML=`<div class="pg illus"><svg class="scene" viewBox="${vbox}" preserveAspectRatio="xMidYMid slice"><g class="world">${sc.art()}</g><g class="fx"></g></svg></div>`;
+  stage.appendChild(box);
+  const api=makeApi(box.firstChild, sc); try{ sc.setup&&sc.setup(api);}catch(e){console.error(e)}
+  // legenda
+  cap.style.opacity=0; await sleep(250);
+  const paras=(sc.text||[]).map(p=>typeof p==='string'?`<p>${esc(tr(p))}</p>`:`<p class="q">${esc(tr(p.q))}</p>`).join('');
+  cap.innerHTML = sc.cover ? `<div class="ref">${esc(tr(def.cover.kicker||''))}</div><h1>${esc(tr(sc.title))}</h1><p>${esc(tr(def.cover.sub||''))}</p>` : `<div class="ref">${esc(tr(sc.ref||''))}</div><h1>${esc(tr(sc.title))}</h1>${paras}`;
+  // letra mais pequena se o texto for comprido
+  let fs=42; cap.querySelectorAll('p').forEach(p=>p.style.fontSize=fs+'px');
+  while (cap.scrollHeight>cap.clientHeight+2 && fs>30){ fs-=2; cap.querySelectorAll('p').forEach(p=>p.style.fontSize=fs+'px'); }
+  requestAnimationFrame(()=>{ box.classList.add('on'); cap.style.opacity=1; });
+  if (prev){ const p=prev; setTimeout(()=>p.remove(),900); }
+  prev=box;
+  // toques automáticos: percorre os alvos da cena, como uma criança a brincar
+  const end=performance.now()+seg*1000; await sleep(1100);
+  const taps=[...box.querySelectorAll('.tap')];
+  let k=0;
+  while (taps.length && performance.now()<end-1500) {
+    const el=taps[k++%taps.length];
+    el.dispatchEvent(new MouseEvent('click',{bubbles:true}));
+    await sleep(+(Q.get('ritmo')||1300));
+  }
+  await sleep(Math.max(0,end-performance.now()));
+}
+cap.style.opacity=0; document.getElementById('end').classList.add('on');
+await sleep(+(Q.get('fim')||4500));
+window.DONE=(performance.now()-T0)/1000;
+})();
+</script></body></html>
