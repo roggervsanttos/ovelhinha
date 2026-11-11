@@ -50,10 +50,10 @@ body{background:var(--bg,#f6efe0)!important;font-family:var(--font-read)}
 const lang=Q.get('lang')||'pt', book=Q.get('book');
 // textos do vídeo (fora da app)
 const TXT={
-  pt:{brand:'Ovelhinha · Histórias da Bíblia', bot:'Grátis no', play:'Google Play', e1:'Ovelhinha', e2:'35 histórias da Bíblia animadas, para ler e tocar.', e3:'Grátis no Google Play'},
-  es:{brand:'Ovelhinha · Historias de la Biblia', bot:'Gratis en', play:'Google Play', e1:'Ovelhinha', e2:'35 historias de la Biblia animadas, para leer y tocar.', e3:'Gratis en Google Play'},
-  fr:{brand:'Ovelhinha · Histoires de la Bible', bot:'Gratuit sur', play:'Google Play', e1:'Ovelhinha', e2:'35 histoires de la Bible animées, à lire et à toucher.', e3:'Gratuit sur Google Play'},
-  en:{brand:'Ovelhinha · Bible Stories', bot:'Free on', play:'Google Play', e1:'Ovelhinha', e2:'35 animated Bible stories to read and tap.', e3:'Free on Google Play'}
+  pt:{brand:'Ovelhinha · Histórias da Bíblia', bot:'Grátis no', play:'Google Play', e1:'Ovelhinha', e2:'Histórias da Bíblia animadas, para ler e tocar.', e3:'Grátis no Google Play'},
+  es:{brand:'Ovelhinha · Historias de la Biblia', bot:'Gratis en', play:'Google Play', e1:'Ovelhinha', e2:'Historias de la Biblia animadas, para leer y tocar.', e3:'Gratis en Google Play'},
+  fr:{brand:'Ovelhinha · Histoires de la Bible', bot:'Gratuit sur', play:'Google Play', e1:'Ovelhinha', e2:'Des histoires de la Bible animées, à lire et à toucher.', e3:'Gratuit sur Google Play'},
+  en:{brand:'Ovelhinha · Bible Stories', bot:'Free on', play:'Google Play', e1:'Ovelhinha', e2:'Animated Bible stories to read and tap.', e3:'Free on Google Play'}
 }[lang];
 if (lang!=='pt') {
   for (const f of ['_comum', book]) { try { I18N.add(await (await fetch('/src/i18n/'+f+'.json')).json()); } catch(e){} }

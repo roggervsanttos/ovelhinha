@@ -27,10 +27,10 @@ body{background:linear-gradient(#8fd0f2,#fdf0cf 70%,#bfe3a0);font-family:A,sans-
 <script>
 const Q=new URLSearchParams(location.search), lang=Q.get('lang')||'pt';
 const TXT={
-  pt:{a:'Histórias da Bíblia para crianças', b:'35 histórias animadas', c:'Em 4 línguas', d:'Toca e a história ganha vida!', e2:'Livros animados da Bíblia para ler e tocar.', e3:Q.get('fim')||'Grátis no Google Play'},
-  es:{a:'Historias de la Biblia para niños', b:'35 historias animadas', c:'En 4 idiomas', d:'¡Toca y la historia cobra vida!', e2:'Libros animados de la Biblia para leer y tocar.', e3:Q.get('fim')||'Gratis en Google Play'},
-  fr:{a:'Histoires de la Bible pour enfants', b:'35 histoires animées', c:'En 4 langues', d:'Touche, et l’histoire s’anime !', e2:'Des livres animés de la Bible à lire et à toucher.', e3:Q.get('fim')||'Gratuit sur Google Play'},
-  en:{a:'Bible stories for kids', b:'35 animated stories', c:'In 4 languages', d:'Tap and the story comes alive!', e2:'Animated Bible books to read and tap.', e3:Q.get('fim')||'Free on Google Play'}
+  pt:{a:'Histórias da Bíblia para crianças', b:'Muitas histórias animadas', c:'Em 4 línguas', d:'Toca e a história ganha vida!', e2:'Livros animados da Bíblia para ler e tocar.', e3:Q.get('fim')||'Grátis no Google Play'},
+  es:{a:'Historias de la Biblia para niños', b:'Muchas historias animadas', c:'En 4 idiomas', d:'¡Toca y la historia cobra vida!', e2:'Libros animados de la Biblia para leer y tocar.', e3:Q.get('fim')||'Gratis en Google Play'},
+  fr:{a:'Histoires de la Bible pour enfants', b:'Plein d’histoires animées', c:'En 4 langues', d:'Touche, et l’histoire s’anime !', e2:'Des livres animés de la Bible à lire et à toucher.', e3:Q.get('fim')||'Gratuit sur Google Play'},
+  en:{a:'Bible stories for kids', b:'Lots of animated stories', c:'In 4 languages', d:'Tap and the story comes alive!', e2:'Animated Bible books to read and tap.', e3:Q.get('fim')||'Free on Google Play'}
 }[lang];
 e2.textContent=TXT.e2; e3.textContent=TXT.e3;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -44,6 +44,13 @@ function tap(el, ev){
   const x=136+14+(r.left+r.width/2)*2, y=300+14+(r.top+r.height/2)*2;
   const d=document.createElement('div'); d.className='dot'; d.style.left=x+'px'; d.style.top=y+'px'; document.body.appendChild(d); setTimeout(()=>d.remove(),900);
   if(ev) el.dispatchEvent(new (W().MouseEvent)('click',{bubbles:true})); else el.click();
+}
+// deslizar suave: em vez de mudar o scroll aos saltos, move o conteúdo com uma animação (desenhada pela placa gráfica)
+async function glide(el, top, ms){
+  const kids=[...el.children], d=el.scrollTop-top;
+  const an=kids.map(k=>k.animate([{transform:'translateY(0px)'},{transform:`translateY(${d}px)`}],{duration:ms,easing:'cubic-bezier(.45,0,.25,1)',fill:'forwards'}));
+  await Promise.all(an.map(a=>a.finished.catch(()=>{})));
+  el.scrollTop=top; an.forEach(a=>a.cancel());
 }
 async function scrollTo(el, top, ms){ const a=el.scrollTop, n=Math.max(1,Math.round(ms/33)); for(let i=1;i<=n;i++){ const k=i/n, e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2; el.scrollTop=a+(top-a)*e; await sleep(33);} }
 const flag=l=>[...D().querySelectorAll('.flag')].filter(f=>f.offsetParent).find(f=>(f.getAttribute('aria-label')||'')===({pt:'Português',es:'Español',fr:'Français',en:'English'})[l]);
@@ -64,15 +71,15 @@ async function tapScene(ms, every=900){ const end=performance.now()+ms; let k=0;
   // 2. a estante com todas as histórias
   await caption(TXT.b);
   const sh=D().getElementById('shelfView');
-  await scrollTo(sh, sh.scrollHeight-sh.clientHeight, 4200); await sleep(300);
-  await scrollTo(sh, 0, 900); await sleep(200);
+  await glide(sh, sh.scrollHeight-sh.clientHeight, 4200); await sleep(300);
+  await glide(sh, 0, 900); await sleep(200);
   // 3. as línguas: a estante muda de língua
   await caption(TXT.c);
   for (const l of ['es','fr','en',lang]) { tap(flag(l)); await sleep(1150); }
   // 4. uma história com toques
   await caption(TXT.d);
   const card=D().querySelector('[data-book=moises]');
-  await scrollTo(sh, card.offsetTop-120, 700); await sleep(150);
+  await glide(sh, card.offsetTop-120, 700); await sleep(150);
   tap(card); await sleep(1500);
   W().eval('Book.go(10)'); await sleep(900);
   await tapScene(4200, 1000);
