@@ -56,10 +56,33 @@
       <button class="ic-btn" id="installBtn" type="button" data-t="install" hidden>Instalar</button>
       <button class="ic-close" id="installClose" type="button" data-ta="aria-label:installClose" aria-label="Fechar o aviso de instalação"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </aside>
+    <button class="color-card" id="btnColor" type="button" data-ta="aria-label:color" aria-label="Desenhos para colorir">
+      <span class="cc-art" aria-hidden="true"><i style="--c:#e5483f"></i><i style="--c:#f7d04a"></i><i style="--c:#4f9a45"></i><i style="--c:#3f7fd0"></i><i style="--c:#8a5cc7"></i></span>
+      <span class="cc-text"><b data-t="color">Desenhos para colorir</b><span data-t="colorSub">Toca e pinta!</span></span>
+      <svg class="cc-go" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
     <main class="shelf" data-ta="aria-label:shelf" aria-label="Estante de livros">
       <div class="shelf-grid" id="shelfGrid"></div>
     </main>
     <p class="shelf-foot" data-t="shelfFoot">Toca num livro para começar.</p>
+  </div>
+</div>
+
+<div class="view color-view" id="colorView" hidden>
+  <header class="cbar">
+    <button class="tbtn backbtn" id="cBack" type="button" aria-label="Voltar à estante"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 7l-5 5 5 5M5 12h14"/></svg></button>
+    <b class="ctitle" id="cTitle">Para colorir</b>
+  </header>
+  <div class="cgallery" id="cGallery"></div>
+  <div class="cpaint" id="cPaint" hidden>
+    <div class="cstage" id="cStage"></div>
+    <div class="ctools">
+      <div class="cpalette" id="cPalette" role="group" data-ta="aria-label:palette" aria-label="Cores"></div>
+      <div class="cacts">
+        <button class="tbtn" id="cUndo" type="button" data-ta="aria-label:undo" aria-label="Desfazer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg><span class="lbl" data-t="undo">Desfazer</span></button>
+        <button class="tbtn" id="cClear" type="button" data-ta="aria-label:clearAll" aria-label="Apagar tudo"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13"/></svg><span class="lbl" data-t="clearAll">Apagar tudo</span></button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -172,6 +195,7 @@
 <script src="js/linguas.js?v={{V}}"></script>
 <script src="js/engine.js?v={{V}}"></script>
 <script src="js/loja.js?v={{V}}"></script>
+<script src="js/colorir.js?v={{V}}"></script>
 <!--BOOKS-->
 <!--NATIVE-->
 <script src="js/app.js?v={{V}}"></script>

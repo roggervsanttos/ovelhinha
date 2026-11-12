@@ -101,6 +101,13 @@ e depois as pagas, cada grupo pela ordem da Bíblia (se mudar a lista `free`, mu
 
 Cada produto tem de ser criado na App Store Connect e no Play Console com o mesmo ID (lista em `store/TEXTOS.md`).
 
+## Desenhos para colorir
+
+- Na estante, o cartão «Desenhos para colorir» abre uma galeria com desenhos das histórias que a criança já tem (grátis ou compradas).
+- Os desenhos são as próprias ilustrações dos livros, passadas a linhas brancas em `src/js/colorir.js`: escolhe-se uma cor e toca-se numa zona para a pintar. Há borracha, desfazer e apagar tudo.
+- As páginas de cada livro estão em `COLOR_PAGES` (no início de `colorir.js`); para pôr desenhos de outro livro, junte lá o livro e os números das cenas.
+- As pinturas ficam guardadas no aparelho.
+
 ## Livro novo
 
 1. Crie `src/books/<nome>.js` no mesmo formato dos outros (`Ov.addBook({ id, title, cover, color, ref, scenes })`).

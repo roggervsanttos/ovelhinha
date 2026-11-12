@@ -322,6 +322,7 @@ const App = {
     Install.init();
     Native.init();
     Loja.init();
+    Colorir.init();
     window.addEventListener('popstate', e => this.onPop(e));
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && Sound.ctx && Sound.ctx.state !== 'running') try { Sound.ctx.resume().catch(() => { }); } catch (e) { }
@@ -352,7 +353,7 @@ const App = {
     if (!initial) { const h = document.getElementById('btnHome'); if (h) h.focus({ preventScroll: true }); }
   },
   // só uma das três telas fica à vista: a inicial, a estante ou o leitor
-  show(id) { for (const v of ['startView', 'shelfView', 'readerView']) document.getElementById(v).hidden = v !== id; },
+  show(id) { for (const v of ['startView', 'shelfView', 'readerView', 'colorView']) document.getElementById(v).hidden = v !== id; },
   showStart() {
     if (Book.active) Book.close();
     if (Index.isOpen()) Index.close();
@@ -366,6 +367,15 @@ const App = {
     this.view = 'shelf'; this.state = {};
     this.show('shelfView');
     Shelf.render();
+  },
+  // desenhos para colorir (galeria e pintura)
+  showColor() {
+    if (Book.active) Book.close();
+    if (Index.isOpen()) Index.close();
+    this.view = 'color'; this.state = {};
+    this.show('colorView');
+    Colorir.showGallery();
+    document.getElementById('colorView').scrollTop = 0;
   },
   home() {
     if (this.pushed) { this.pushed = false; try { history.back(); } catch (e) { } }
@@ -382,6 +392,7 @@ const App = {
     Langs.sync();
     Index.reset();
     if (this.view !== 'reader') Shelf.render();
+    if (this.view === 'color') Colorir.relang();
     else if (Book.active && Book.def) Book.open(Book.def, Book.cur);
     if (Parents.isOpen()) Parents.texts();
     Unlock.relang();
@@ -393,6 +404,7 @@ const App = {
     if (Unlock.isOpen()) { Unlock.close(); return true; }
     if (Parents.isOpen()) { Parents.close(); return true; }
     if (this.view === 'reader') { this.home(); return true; }
+    if (this.view === 'color') { Colorir.back(); return true; }
     if (this.view === 'shelf') { this.showStart(); return true; }
     return false;
   }

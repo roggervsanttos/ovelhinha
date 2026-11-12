@@ -32,7 +32,7 @@ const PAID = FREE.length ? books.filter(b => !FREE.includes(b)) : [];
 
 /* ---------- arquivos de cada parte ---------- */
 const CSS_APP = ['src/css/base.css', 'src/css/shell.css'];
-const JS = ['art', 'linguas', 'engine', 'loja', 'app'];
+const JS = ['art', 'linguas', 'engine', 'loja', 'colorir', 'app'];
 // traduções: src/i18n/<livro>.json e src/i18n/_comum.json = { "texto em português": ["espanhol", "francês", "inglês"] }
 const I18N_DIR = path.join(SRC, 'i18n');
 const I18N_FILES = exists('src/i18n') ? fs.readdirSync(I18N_DIR).filter(f => f.endsWith('.json')).sort() : [];
