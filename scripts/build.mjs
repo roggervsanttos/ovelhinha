@@ -223,6 +223,11 @@ async function buildNative() {
 function buildArtifact() {
   const dir = path.join(DIST, 'artifact'); clean(dir);
   common(dir, 'artifact');
+  // dist/familia: a mesma prévia com todas as histórias abertas (para usar em casa, sem compras)
+  const fam = path.join(DIST, 'familia'); clean(fam);
+  fs.cpSync(dir, fam, { recursive: true });
+  const fi = path.join(fam, 'index.html');
+  fs.writeFileSync(fi, fs.readFileSync(fi, 'utf8').replace('"store":"demo"', '"store":"aberto"').replace('<title>Ovelhinha</title>', '<title>Ovelhinha em Casa</title>'));
   return dir;
 }
 
