@@ -108,14 +108,14 @@ const Colorir = {
     this.view = document.getElementById('colorView');
     this.gal = document.getElementById('cGallery'); this.paintBox = document.getElementById('cPaint');
     this.stage = document.getElementById('cStage'); this.pal = document.getElementById('cPalette');
-    document.getElementById('btnColor').onclick = () => { Sound.init(); Sound.play('chime', 'C6'); App.showColor(); };
+    document.getElementById('btnColor').onclick = () => { App.showColor(); };
     document.getElementById('cBack').onclick = () => this.back();
     document.getElementById('cUndo').onclick = () => this.undo();
     document.getElementById('cClear').onclick = () => this.clear();
     this.color = COLORS[2];
     this.stage.addEventListener('click', e => this.tap(e));
-    this.gal.addEventListener('click', e => { const c = e.target.closest('[data-cp]'); if (c) { Sound.init(); Sound.play('chime', 'E6'); const [b, i] = c.dataset.cp.split(':'); this.open(b, +i); } });
-    this.pal.addEventListener('click', e => { const s = e.target.closest('[data-color]'); if (!s) return; Sound.init(); Sound.play('pluck', 'C5', .3); this.pick(s.dataset.color); });
+    this.gal.addEventListener('click', e => { const c = e.target.closest('[data-cp]'); if (c) { const [b, i] = c.dataset.cp.split(':'); this.open(b, +i); } });
+    this.pal.addEventListener('click', e => { const s = e.target.closest('[data-color]'); if (!s) return; this.pick(s.dataset.color); });
   },
   isPainting() { return !this.paintBox.hidden; },
   // galeria com todos os desenhos (com as cores que já foram pintadas)
@@ -167,7 +167,6 @@ const Colorir = {
     if (before === this.color) return;
     this.hist.push([g, before]); if (this.hist.length > 60) this.hist.shift();
     this.set(g, this.color);
-    Sound.play('plip', 1 + Math.random() * .3);
     // um pequeno salto na zona pintada
     try { el.animate([{ opacity: .55 }, { opacity: 1 }], { duration: 260 }); } catch (err) { }
   },
@@ -176,14 +175,14 @@ const Colorir = {
     LineArt.paint(this.svg, g, c);
     ColorStore.set(this.cur.b, this.cur.i, this.map);
   },
-  undo() { const h = this.hist.pop(); if (!h) return; Sound.play('pluck', 'G4', .3); this.set(h[0], h[1]); },
+  undo() { const h = this.hist.pop(); if (!h) return; this.set(h[0], h[1]); },
   clear() {
     if (!this.cur || !Object.keys(this.map).length) return;
     if (!this.clearArm) { this.clearArm = true; toast(T('clearAgain')); clearTimeout(this.ct); this.ct = setTimeout(() => { this.clearArm = false; }, 2600); return; }
-    this.clearArm = false; Sound.play('whoosh');
+    this.clearArm = false;
     for (const g of Object.keys(this.map)) LineArt.paint(this.svg, g, '#ffffff');
     this.map = {}; this.hist = []; ColorStore.set(this.cur.b, this.cur.i, this.map);
   },
-  back() { Sound.init(); Sound.play('pluck', 'E5', .3); if (this.isPainting()) this.showGallery(); else App.showShelf(); },
+  back() { if (this.isPainting()) this.showGallery(); else App.showShelf(); },
   relang() { if (this.view.hidden) return; if (this.isPainting()) { document.getElementById('cTitle').textContent = tr(Ov.book(this.cur.b).title); this.palette(); } else this.showGallery(); }
 };
