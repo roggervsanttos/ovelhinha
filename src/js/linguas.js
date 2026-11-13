@@ -70,7 +70,7 @@ function flagSVG(l) { return `<svg viewBox="0 0 24 24" aria-hidden="true" focusa
 const UI = {
   pt: {
     sub: 'Histórias da Bíblia', mascot: 'A Ovelhinha diz olá', baa: 'Bééé!', start: 'Começar', startAria: 'Começar: ver todas as histórias',
-    color: 'Desenhos para colorir', colorSub: 'Toca e pinta!', colorShort: 'Colorir', colorTitle: 'Para colorir', colorPick: 'Escolhe um desenho. Depois escolhe uma cor e toca no desenho para pintar.', colorThis: 'Colorir: {t}', colorBack: 'Voltar aos desenhos', eraser: 'Borracha', undo: 'Desfazer', clearAll: 'Apagar tudo', clearAgain: 'Toca outra vez para apagar o desenho.', palette: 'Cores',
+    color: 'Desenhos para colorir', colorSub: 'Toca e pinta!', colorShort2: 'Desenhos', colorShort: 'Colorir', colorTitle: 'Para colorir', colorPick: 'Escolhe um desenho. Depois escolhe uma cor e toca no desenho para pintar.', colorThis: 'Colorir: {t}', colorBack: 'Voltar aos desenhos', eraser: 'Borracha', undo: 'Desfazer', clearAll: 'Apagar tudo', clearAgain: 'Toca outra vez para apagar o desenho.', palette: 'Cores',
     parents: 'Área dos pais', parentsShort: 'Pais', shelf: 'Estante de livros', shelfFoot: 'Toca num livro para começar.', lang: 'Língua',
     installTitle: 'Instale o Ovelhinha no telemóvel', installSteps: 'No Safari, toque em <i class="kbd">Partilhar</i> e depois em <i class="kbd">Adicionar ao ecrã principal</i>.',
     install: 'Instalar', installClose: 'Fechar o aviso de instalação', appStore: 'Descarregar na App Store', playStore: 'Descarregar no Google Play',
@@ -113,7 +113,7 @@ const UI = {
   },
   es: {
     sub: 'Historias de la Biblia', mascot: 'La ovejita te saluda', baa: '¡Beee!', start: 'Empezar', startAria: 'Empezar: ver todas las historias',
-    color: 'Dibujos para colorear', colorSub: '¡Toca y pinta!', colorShort: 'Colorear', colorTitle: 'Para colorear', colorPick: 'Elige un dibujo. Luego elige un color y toca el dibujo para pintar.', colorThis: 'Colorear: {t}', colorBack: 'Volver a los dibujos', eraser: 'Goma', undo: 'Deshacer', clearAll: 'Borrar todo', clearAgain: 'Toca otra vez para borrar el dibujo.', palette: 'Colores',
+    color: 'Dibujos para colorear', colorSub: '¡Toca y pinta!', colorShort2: 'Dibujos', colorShort: 'Colorear', colorTitle: 'Para colorear', colorPick: 'Elige un dibujo. Luego elige un color y toca el dibujo para pintar.', colorThis: 'Colorear: {t}', colorBack: 'Volver a los dibujos', eraser: 'Goma', undo: 'Deshacer', clearAll: 'Borrar todo', clearAgain: 'Toca otra vez para borrar el dibujo.', palette: 'Colores',
     parents: 'Zona para padres', parentsShort: 'Padres', shelf: 'Estantería de libros', shelfFoot: 'Toca un libro para empezar.', lang: 'Idioma',
     installTitle: 'Instala Ovelhinha en el móvil', installSteps: 'En Safari, toca <i class="kbd">Compartir</i> y luego <i class="kbd">Añadir a pantalla de inicio</i>.',
     install: 'Instalar', installClose: 'Cerrar el aviso de instalación', appStore: 'Descargar en el App Store', playStore: 'Disponible en Google Play',
@@ -156,7 +156,7 @@ const UI = {
   },
   fr: {
     sub: 'Histoires de la Bible', mascot: 'La petite brebis dit bonjour', baa: 'Bêêê !', start: 'Commencer', startAria: 'Commencer : voir toutes les histoires',
-    color: 'Coloriages', colorSub: 'Touche et colorie !', colorShort: 'Colorier', colorTitle: 'Coloriages', colorPick: 'Choisis un dessin. Puis choisis une couleur et touche le dessin pour colorier.', colorThis: 'Colorier : {t}', colorBack: 'Retour aux dessins', eraser: 'Gomme', undo: 'Annuler', clearAll: 'Tout effacer', clearAgain: 'Touche encore pour effacer le dessin.', palette: 'Couleurs',
+    color: 'Coloriages', colorSub: 'Touche et colorie !', colorShort2: 'Dessins', colorShort: 'Colorier', colorTitle: 'Coloriages', colorPick: 'Choisis un dessin. Puis choisis une couleur et touche le dessin pour colorier.', colorThis: 'Colorier : {t}', colorBack: 'Retour aux dessins', eraser: 'Gomme', undo: 'Annuler', clearAll: 'Tout effacer', clearAgain: 'Touche encore pour effacer le dessin.', palette: 'Couleurs',
     parents: 'Espace parents', parentsShort: 'Parents', shelf: 'Bibliothèque', shelfFoot: 'Touche un livre pour commencer.', lang: 'Langue',
     installTitle: 'Installez Ovelhinha sur votre téléphone', installSteps: 'Dans Safari, touchez <i class="kbd">Partager</i>, puis <i class="kbd">Sur l’écran d’accueil</i>.',
     install: 'Installer', installClose: 'Fermer le message d’installation', appStore: 'Télécharger dans l’App Store', playStore: 'Disponible sur Google Play',
@@ -199,7 +199,7 @@ const UI = {
   },
   en: {
     sub: 'Bible Stories', mascot: 'The little sheep says hello', baa: 'Baa!', start: 'Start', startAria: 'Start: see all the stories',
-    color: 'Coloring pages', colorSub: 'Tap and paint!', colorShort: 'Color', colorTitle: 'Coloring', colorPick: 'Pick a picture. Then pick a color and tap the picture to paint it.', colorThis: 'Color: {t}', colorBack: 'Back to the pictures', eraser: 'Eraser', undo: 'Undo', clearAll: 'Clear all', clearAgain: 'Tap again to clear the picture.', palette: 'Colors',
+    color: 'Coloring pages', colorSub: 'Tap and paint!', colorShort2: 'Pictures', colorShort: 'Color', colorTitle: 'Coloring', colorPick: 'Pick a picture. Then pick a color and tap the picture to paint it.', colorThis: 'Color: {t}', colorBack: 'Back to the pictures', eraser: 'Eraser', undo: 'Undo', clearAll: 'Clear all', clearAgain: 'Tap again to clear the picture.', palette: 'Colors',
     parents: 'Parents’ area', parentsShort: 'Parents', shelf: 'Bookshelf', shelfFoot: 'Tap a book to start.', lang: 'Language',
     installTitle: 'Install Ovelhinha on your phone', installSteps: 'In Safari, tap <i class="kbd">Share</i>, then <i class="kbd">Add to Home Screen</i>.',
     install: 'Install', installClose: 'Close the install message', appStore: 'Download on the App Store', playStore: 'Get it on Google Play',

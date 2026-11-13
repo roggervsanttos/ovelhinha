@@ -63,11 +63,26 @@ const LineArt = {
       if (stroke && stroke !== 'none' && this.lum(stroke) > .28) el.style.stroke = OL;
       // formas grandes sem contorno (colinas, céu, mar) ganham uma linha para se verem as zonas
       if (!stroke || stroke === 'none') {
-        if (this.area(el) > 9000) { el.style.stroke = OL; el.style.strokeWidth = '2.6'; el.setAttribute('vector-effect', 'non-scaling-stroke'); }
+        if (this.area(el) > 9000) { el.style.stroke = OL; el.style.strokeWidth = '3.4'; el.setAttribute('vector-effect', 'non-scaling-stroke'); }
       }
       this.region(el, 'fill', groups, () => gid++, fill);
     }
+    this.ink(svg);
     return gid;
+  },
+  // contornos bem marcados a preto: todas as linhas escuras ficam pretas e mais grossas
+  ink(svg) {
+    const INK = '#120d10';
+    for (const el of svg.querySelectorAll('path, rect, circle, ellipse, polygon, polyline, line')) {
+      if (el.dataset.ck === 'stroke') continue;
+      const cs = getComputedStyle(el), st = cs.stroke, sw = parseFloat(cs.strokeWidth) || 0;
+      if (!el.dataset.ci && cs.fill !== 'none' && !/url\(/.test(cs.fill) && this.lum(cs.fill) < .28) el.style.fill = INK;
+      if (st && st !== 'none' && this.lum(st) < .28) {
+        el.style.stroke = INK;
+        if (el.getAttribute('vector-effect') === 'non-scaling-stroke') el.style.strokeWidth = '3.4';
+        else if (sw > 0) el.style.strokeWidth = String(Math.max(sw * 1.5, sw + 2));
+      }
+    }
   },
   // formas irmãs com a mesma cor original (por ex. as bolas de uma nuvem) pintam-se juntas
   region(el, kind, groups, next, orig = '') {
@@ -110,6 +125,7 @@ const Colorir = {
     this.stage = document.getElementById('cStage'); this.pal = document.getElementById('cPalette');
     document.getElementById('btnColor').onclick = () => { App.showColor(); };
     document.getElementById('cBack').onclick = () => this.back();
+    document.getElementById('cHome').onclick = () => App.showShelf();
     document.getElementById('cUndo').onclick = () => this.undo();
     document.getElementById('cClear').onclick = () => this.clear();
     this.color = COLORS[2];
@@ -122,11 +138,17 @@ const Colorir = {
   showGallery() {
     this.paintBox.hidden = true; this.gal.hidden = false; this.cur = null;
     document.getElementById('cTitle').textContent = T('colorTitle');
-    document.getElementById('cBack').setAttribute('aria-label', T('home'));
-    this.gal.innerHTML = `<p class="clead">${esc(T('colorPick'))}</p><div class="cgrid"></div>`;
-    const grid = this.gal.querySelector('.cgrid');
-    const todo = [];
+    document.getElementById('cBack').hidden = true;
+    this.gal.innerHTML = `<p class="clead">${esc(T('colorPick'))}</p>`;
+    const todo = []; let grid = null, last = '';
     for (const [b, i] of this.pages()) {
+      // um bloco por história, com o título por cima
+      if (b !== last) {
+        last = b; const sec = mk('section', 'cbook'), def = Ov.book(b);
+        sec.style.setProperty('--bk', def.color || '#f6c85f');
+        sec.innerHTML = `<h3>${esc(tr(def.title))}</h3><div class="cgrid"></div>`;
+        this.gal.append(sec); grid = sec.querySelector('.cgrid');
+      }
       const card = mk('button', 'ccard'); card.type = 'button'; card.dataset.cp = b + ':' + i;
       card.setAttribute('aria-label', T('colorThis', { t: tr(Ov.book(b).title) }));
       grid.append(card); todo.push([card, b, i]);
@@ -146,7 +168,7 @@ const Colorir = {
     this.cur = { b, i }; this.hist = [];
     this.gal.hidden = true; this.paintBox.hidden = false;
     document.getElementById('cTitle').textContent = tr(Ov.book(b).title);
-    document.getElementById('cBack').setAttribute('aria-label', T('colorBack'));
+    document.getElementById('cBack').hidden = false; this.view.scrollTop = 0;
     this.stage.innerHTML = '';
     const svg = colorSVG(b, i, 'cpaint-svg'); this.stage.append(svg);
     LineArt.convert(svg); this.svg = svg;
