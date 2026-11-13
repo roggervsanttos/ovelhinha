@@ -331,3 +331,9 @@ svg.coloring { background: #fff; }
 }
 @media (min-aspect-ratio: 5/4) { .swatch { max-width: min(58px, 10.5vh); } .cpalette { gap: min(8px, 1.6vh); } }
 @media (max-height: 520px) { .cacts .tbtn .lbl { display: none; } .cacts .tbtn { width: 42px; padding: 0; } .cbar { padding-block: 4px 2px; min-height: 40px; } .cbar .tbtn { height: 40px; } }
+/* botões do colorir: escuros e bem visíveis (também com o telemóvel em modo escuro) */
+.color-view { color: #2b2140; }
+.color-view .tbtn { background: #2b2140; border-color: #2b2140; color: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: 0 3px 0 #0003; }
+.color-view .tbtn svg { stroke: #fff; }
+.color-view .ctitle, .color-view .cbook h3 { color: #2b2140; }
+.color-view .clead, .color-view .cc-go { color: #5a4c66; }
