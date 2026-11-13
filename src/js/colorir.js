@@ -63,7 +63,7 @@ const LineArt = {
       if (stroke && stroke !== 'none' && this.lum(stroke) > .28) el.style.stroke = OL;
       // formas grandes sem contorno (colinas, céu, mar) ganham uma linha para se verem as zonas
       if (!stroke || stroke === 'none') {
-        if (this.area(el) > 9000) { el.style.stroke = OL; el.style.strokeWidth = '3.4'; el.setAttribute('vector-effect', 'non-scaling-stroke'); }
+        if (this.area(el) > 9000) { el.style.stroke = OL; el.style.strokeWidth = '1.8'; el.setAttribute('vector-effect', 'non-scaling-stroke'); }
       }
       this.region(el, 'fill', groups, () => gid++, fill);
     }
@@ -73,14 +73,28 @@ const LineArt = {
   // contornos bem marcados a preto: todas as linhas escuras ficam pretas e mais grossas
   ink(svg) {
     const INK = '#120d10';
-    for (const el of svg.querySelectorAll('path, rect, circle, ellipse, polygon, polyline, line')) {
+    for (const el of [...svg.querySelectorAll('path, rect, circle, ellipse, polygon, polyline, line')]) {
       if (el.dataset.ck === 'stroke') continue;
       const cs = getComputedStyle(el), st = cs.stroke, sw = parseFloat(cs.strokeWidth) || 0;
       if (!el.dataset.ci && cs.fill !== 'none' && !/url\(/.test(cs.fill) && this.lum(cs.fill) < .28) el.style.fill = INK;
       if (st && st !== 'none' && this.lum(st) < .28) {
         el.style.stroke = INK;
-        if (el.getAttribute('vector-effect') === 'non-scaling-stroke') el.style.strokeWidth = '3.4';
-        else if (sw > 0) el.style.strokeWidth = String(Math.max(sw * 1.5, sw + 2));
+        if (el.getAttribute('vector-effect') === 'non-scaling-stroke') el.style.strokeWidth = '1.8';
+        else if (sw > 0) el.style.strokeWidth = String(Math.max(sw * 1.12, sw + .4));
+      } else if (el.dataset.ci && el.dataset.ck === 'fill' && (!st || st === 'none')) {
+        // zona sem contorno encostada a outras: ganha uma linha fina para se ver onde acaba
+        // (as formas feitas de várias bolas já têm o contorno por baixo, por isso ficam de fora)
+        const same = svg.querySelectorAll(`[data-ci="${el.dataset.ci}"]`);
+        if (same.length === 1) { el.style.stroke = INK; el.style.strokeWidth = '1.6'; el.setAttribute('vector-effect', 'non-scaling-stroke'); }
+        else if (el === same[0]) {
+          // formas feitas de várias bolas (nuvens, lã): uma cópia escura por baixo desenha o contorno de fora
+          for (const m of same) {
+            if (m.parentElement !== el.parentElement) continue;
+            const c = m.cloneNode(false); delete c.dataset.ci; delete c.dataset.ck;
+            c.style.fill = INK; c.style.stroke = INK; c.style.strokeWidth = '3.2'; c.setAttribute('vector-effect', 'non-scaling-stroke');
+            c.style.pointerEvents = 'none'; el.parentElement.insertBefore(c, el);
+          }
+        }
       }
     }
   },
