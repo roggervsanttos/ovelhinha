@@ -364,6 +364,13 @@ SCENES.push({
     ['Com que tratou ele as feridas?', 'Com azeite, vinho e ligaduras.'],
     ['O que nos disse Jesus para fazer?', '«Vai e faz o mesmo!»']
   ],
+  wrong: [
+    ['Para Belém.', 'Para o Egito.', 'Para Nínive.'],
+    ['O samaritano.', 'Um soldado e um rei.', 'Ninguém.'],
+    ['Um sacerdote.', 'Os ladrões.', 'Um levita.'],
+    ['Com terra e folhas.', 'Com água do mar.', 'Não tratou.'],
+    ['«Passa ao largo!»', '«Ajuda só os amigos!»', '«Fica em casa!»']
+  ],
   verse: ['Ama o teu próximo como a ti mesmo.', 'Lucas 10.27'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

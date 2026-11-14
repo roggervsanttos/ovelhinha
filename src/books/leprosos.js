@@ -367,6 +367,13 @@ SCENES.push({
     ['Quantos voltaram para agradecer?', 'Só um.'],
     ['E tu, por que coisas queres agradecer a Deus hoje?', 'Pela família, pela comida, pelos amigos...']
   ],
+  wrong: [
+    ['Dois.', 'Cinco.', 'Cem.'],
+    ['Vai-te embora!', 'Dá-nos dinheiro!', 'Não gritaram nada.'],
+    ['Antes de verem Jesus.', 'Só no dia seguinte.', 'Nunca.'],
+    ['Todos os dez.', 'Cinco.', 'Nenhum.'],
+    ['Por nada.', 'Só pelos brinquedos novos.', 'Só quando ganho alguma coisa.']
+  ],
   verse: ['Deem graças ao Senhor, porque Ele é bom!', 'Salmo 107.1'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

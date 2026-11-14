@@ -1028,6 +1028,13 @@ SCENES.push({
     ['Quem ajudou Davi a vencer o gigante?', 'Deus!'],
     ['Quando tiveres medo, o que podes fazer?', 'Orar e confiar em Deus, como Davi.']
   ],
+  wrong: [
+    ['Dos camelos.', 'Dos cavalos do rei.', 'Dos peixes.'],
+    ['Para a aparência!', 'Para a roupa!', 'Para a altura!'],
+    ['Uma.', 'Três.', 'Dez.'],
+    ['O rei Saul.', 'Os irmãos dele.', 'A armadura.'],
+    ['Fugir e esconder-me sempre.', 'Ficar calado e sozinho.', 'Fingir que não tenho medo.']
+  ],
   verse: ['As pessoas olham para a aparência, mas o Senhor olha para o coração.', '1 Samuel 16.7'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.5, '#262f6c'], [.7, '#3a4889'], [1, '#3a4889']]);

@@ -620,6 +620,13 @@ SCENES.push({
     ['Quem visitou Jesus naquela noite?', 'Os pastores.'],
     ['Qual é o maior presente de Deus?', 'Jesus!']
   ],
+  wrong: [
+    ['O anjo Miguel.', 'Um pastor.', 'Um rei.'],
+    ['Em Nazaré.', 'Em Jerusalém.', 'Em Roma.'],
+    ['Numa cama de ouro.', 'Num barco.', 'Num cesto no rio.'],
+    ['Os soldados.', 'Os pescadores.', 'O rei Herodes.'],
+    ['Uma coroa.', 'Muitos brinquedos.', 'Uma estrela.']
+  ],
   verse: ['Hoje nasceu o vosso Salvador: Cristo, o Senhor!', 'Lucas 2.11'],
   art() {
     let s = nightSky(89, { n: 80, h: 440 });

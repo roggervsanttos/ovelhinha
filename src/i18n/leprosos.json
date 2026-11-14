@@ -334,11 +334,6 @@
   "Combien d’hommes malades ont rencontré Jésus ?",
   "How many sick men met Jesus?"
  ],
- "Dez.": [
-  "Diez.",
-  "Dix.",
-  "Ten."
- ],
  "O que gritaram eles a Jesus?": [
   "¿Qué le gritaron a Jesús?",
   "Qu’ont-ils crié à Jésus ?",
@@ -383,6 +378,51 @@
   "Salmo 107:1",
   "Psaume 107.1",
   "Psalm 107:1"
+ ],
+ "Vai-te embora!": [
+  "¡Vete!",
+  "Va-t’en !",
+  "Go away!"
+ ],
+ "Dá-nos dinheiro!": [
+  "¡Danos dinero!",
+  "Donne-nous de l’argent !",
+  "Give us money!"
+ ],
+ "Não gritaram nada.": [
+  "No gritaron nada.",
+  "Ils n’ont rien crié.",
+  "They didn’t shout anything."
+ ],
+ "Antes de verem Jesus.": [
+  "Antes de ver a Jesús.",
+  "Avant de voir Jésus.",
+  "Before they saw Jesus."
+ ],
+ "Só no dia seguinte.": [
+  "Solo al día siguiente.",
+  "Seulement le lendemain.",
+  "Only the next day."
+ ],
+ "Todos os dez.": [
+  "Los diez.",
+  "Tous les dix.",
+  "All ten."
+ ],
+ "Por nada.": [
+  "Por nada.",
+  "Pour rien.",
+  "Nothing."
+ ],
+ "Só pelos brinquedos novos.": [
+  "Solo por los juguetes nuevos.",
+  "Seulement pour les nouveaux jouets.",
+  "Only for new toys."
+ ],
+ "Só quando ganho alguma coisa.": [
+  "Solo cuando gano algo.",
+  "Seulement quand je gagne quelque chose.",
+  "Only when I win something."
  ],
  "Homem curado": [
   "Hombre curado",

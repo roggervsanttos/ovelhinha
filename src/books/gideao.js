@@ -379,6 +379,13 @@ SCENES.push({
     ['O que levavam os soldados nas mãos?', 'Trombetas, cântaros e tochas.'],
     ['Quem deu a vitória a Gideão?', 'Deus!']
   ],
+  wrong: [
+    ['No telhado da casa.', 'Numa árvore alta.', 'Dentro de um barco.'],
+    ['Homem medroso!', 'Rei de Israel!', 'Pequeno pastor!'],
+    ['Trinta.', 'Três mil.', 'Dez mil.'],
+    ['Espadas e escudos.', 'Arcos e flechas.', 'Pães e peixes.'],
+    ['Os soldados mais fortes.', 'As tochas.', 'Os inimigos.']
+  ],
   verse: ['O Senhor está contigo, homem valente!', 'Juízes 6.12'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

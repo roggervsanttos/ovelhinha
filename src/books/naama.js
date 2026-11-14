@@ -413,6 +413,13 @@ SCENES.push({
     ['Quantas vezes mergulhou o Naamã?', 'Sete vezes!'],
     ['O que aprendeu o Naamã?', 'Que só há um Deus!']
   ],
+  wrong: [
+    ['Uma dor de dentes.', 'Uma perna partida.', 'Uma constipação.'],
+    ['O rei da Síria.', 'Um soldado.', 'A mulher do Naamã.'],
+    ['No rio Nilo.', 'No mar.', 'Numa piscina do palácio.'],
+    ['Uma vez.', 'Três vezes.', 'Doze vezes.'],
+    ['Que a água do rio é mágica.', 'Que o ouro cura tudo.', 'Que há muitos deuses.']
+  ],
   verse: ['Agora sei que em toda a terra não há outro Deus, senão o Deus de Israel.', '2 Reis 5.15'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

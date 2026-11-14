@@ -735,6 +735,13 @@ SCENES.push({
     ['O que é que a pombinha trouxe no bico?', 'Uma folha verde.'],
     ['O que é que o arco-íris nos lembra?', 'Que Deus cumpre sempre o que promete.']
   ],
+  wrong: [
+    ['Uma torre muito alta.', 'Uma casa na árvore.', 'Um poço fundo.'],
+    ['Todos a correr de uma vez.', 'Um de cada vez.', 'De dez em dez.'],
+    ['Um dia e uma noite.', 'Sete dias.', 'Cem dias e cem noites.'],
+    ['Um peixe.', 'Uma pedra.', 'Uma flor vermelha.'],
+    ['Que vai chover outra vez.', 'Que é hora de dormir.', 'Que há um tesouro no fim.']
+  ],
   verse: ['Eu pus o meu arco nas nuvens. Ele é o sinal da minha promessa.', 'Gênesis 9.13'],
   art() {
     let s = sky('sky', [[0, '#1f2a63'], [.45, '#6a5a9a'], [.75, '#f2a27a'], [1, '#f2a27a']]);

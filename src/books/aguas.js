@@ -392,6 +392,13 @@ SCENES.push({
     ['Quem saiu do barco para ir ter com Jesus?', 'O Pedro.'],
     ['O que fez Jesus quando o Pedro se afundou?', 'Estendeu a mão e salvou-o.']
   ],
+  wrong: [
+    ['Foi dormir a casa.', 'Foi pescar.', 'Foi à cidade comprar pão.'],
+    ['A nadar.', 'Noutro barco.', 'Às costas de um peixe.'],
+    ['Que era um peixe enorme.', 'Que era um pescador.', 'Que era o vento.'],
+    ['O João.', 'Todos os discípulos.', 'Ninguém.'],
+    ['Ficou a olhar.', 'Foi-se embora.', 'Atirou-lhe uma corda.']
+  ],
   verse: ['Coragem! Sou Eu. Não tenham medo!', 'Mateus 14.27'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

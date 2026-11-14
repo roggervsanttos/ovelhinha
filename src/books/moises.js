@@ -743,6 +743,13 @@ SCENES.push({
     ['O que é que aconteceu quando Moisés levantou o cajado?', 'O mar abriu-se!'],
     ['O que é que Deus deu a Moisés no monte?', 'Os dez mandamentos.']
   ],
+  wrong: [
+    ['Numa árvore.', 'Numa gruta.', 'No palácio do faraó.'],
+    ['Um pescador.', 'Um crocodilo.', 'Um soldado.'],
+    ['Uma cidade de ouro.', 'Um camelo a falar.', 'Um poço cheio de peixes.'],
+    ['Começou a chover.', 'O cajado virou flor.', 'Nada.'],
+    ['Uma coroa.', 'Um barco.', 'Um cesto de pão.']
+  ],
   verse: ['O Senhor vai lutar por vocês. Fiquem tranquilos!', 'Êxodo 14.14'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

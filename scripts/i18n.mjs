@@ -39,6 +39,7 @@ export function structured(d) {
     add(sc.factLabel); add(sc.fact); add(sc.hint); add(sc.alt);
     for (const [q, a] of sc.questions || []) { add(q); add(a); }
     if (sc.verse) { add(sc.verse[0]); add(sc.verse[1]); }
+    for (const w of sc.wrong || []) for (const s of w) add(s);
   }
   return out;
 }

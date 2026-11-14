@@ -166,7 +166,7 @@ const Parents = {
     document.getElementById('emailText').textContent = Ov.cfg.email || T('emailSoon');
     const v = document.getElementById('verText'); v.textContent = T('version', { v: v.dataset.v });
     if (!document.getElementById('gate').hidden) this.gate.text();
-    if (!document.getElementById('pmain').hidden) this.renderStore();
+    if (!document.getElementById('pmain').hidden) { this.renderStore(); Tempo.renderOpts(); }
   },
   open() {
     Sound.init();
@@ -181,6 +181,7 @@ const Parents = {
     document.getElementById('gate').hidden = true;
     const m = document.getElementById('pmain'); m.hidden = false;
     document.getElementById('setSound').checked = !!Settings.v.sound;
+    Tempo.renderOpts();
     document.getElementById('installGroup').hidden = !(TARGET === 'web' && !Install.standalone());
     document.getElementById('storeMsg').textContent = '';
     this.texts();
@@ -323,6 +324,8 @@ const App = {
     Native.init();
     Loja.init();
     Colorir.init();
+    Quiz.init();
+    Tempo.init();
     window.addEventListener('popstate', e => this.onPop(e));
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && Sound.ctx && Sound.ctx.state !== 'running') try { Sound.ctx.resume().catch(() => { }); } catch (e) { }
@@ -353,7 +356,7 @@ const App = {
     if (!initial) { const h = document.getElementById('btnHome'); if (h) h.focus({ preventScroll: true }); }
   },
   // só uma das três telas fica à vista: a inicial, a estante ou o leitor
-  show(id) { for (const v of ['startView', 'shelfView', 'readerView', 'colorView']) document.getElementById(v).hidden = v !== id; },
+  show(id) { for (const v of ['startView', 'shelfView', 'readerView', 'colorView', 'quizView']) document.getElementById(v).hidden = v !== id; },
   showStart() {
     if (Book.active) Book.close();
     if (Index.isOpen()) Index.close();
@@ -377,6 +380,15 @@ const App = {
     Colorir.showGallery();
     document.getElementById('colorView').scrollTop = 0;
   },
+  // quiz das histórias (lista e perguntas); com id abre logo o quiz desse livro
+  showQuiz(id) {
+    if (Book.active) Book.close();
+    if (Index.isOpen()) Index.close();
+    this.view = 'quiz'; this.state = {};
+    this.show('quizView');
+    document.getElementById('quizView').scrollTop = 0;
+    if (id) Quiz.start(id); else Quiz.showGallery();
+  },
   home() {
     if (this.pushed) { this.pushed = false; try { history.back(); } catch (e) { } }
     this.showShelf();
@@ -393,18 +405,22 @@ const App = {
     Index.reset();
     if (this.view !== 'reader') Shelf.render();
     if (this.view === 'color') Colorir.relang();
+    else if (this.view === 'quiz') Quiz.relang();
     else if (Book.active && Book.def) Book.open(Book.def, Book.cur);
     if (Parents.isOpen()) Parents.texts();
+    if (!Tempo.el.hidden) Tempo.texts();
     Unlock.relang();
     Install.stores();
   },
   back() {
+    if (!Tempo.el.hidden) return true;
     if (Langs.popOpen()) { Langs.closePop(); return true; }
     if (Index.isOpen()) { Index.close(); return true; }
     if (Unlock.isOpen()) { Unlock.close(); return true; }
     if (Parents.isOpen()) { Parents.close(); return true; }
     if (this.view === 'reader') { this.home(); return true; }
     if (this.view === 'color') { Colorir.back(); return true; }
+    if (this.view === 'quiz') { Quiz.back(); return true; }
     if (this.view === 'shelf') { this.showStart(); return true; }
     return false;
   }

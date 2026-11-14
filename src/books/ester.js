@@ -395,6 +395,13 @@ SCENES.push({
     ['Onde é que a Ester contou tudo ao rei?', 'Num jantar especial.'],
     ['Como se chama a festa que lembra esta história?', 'Purim.']
   ],
+  wrong: [
+    ['O rei.', 'O malvado Hamã.', 'Uma princesa.'],
+    ['O primo Mardoqueu.', 'O rei.', 'Os guardas do palácio.'],
+    ['Uma espada.', 'Um ramo de flores.', 'Uma carta.'],
+    ['No jardim, a correr.', 'Numa carta secreta.', 'No meio da rua.'],
+    ['Páscoa.', 'Natal.', 'Pentecostes.']
+  ],
   verse: ['Quem sabe se não foi para um momento como este que chegaste a rainha?', 'Ester 4.14'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

@@ -508,6 +508,13 @@ SCENES.push({
     ['Quem fechou a boca dos leões?', 'Um anjo que Deus mandou.'],
     ['Tu também podes falar com Deus?', 'Sim! A qualquer hora.']
   ],
+  wrong: [
+    ['Nunca.', 'Uma vez por ano.', 'Só ao domingo.'],
+    ['Que todos tinham de dançar.', 'Que ninguém podia comer pão.', 'Que todos tinham de dormir cedo.'],
+    ['Sim, teve medo.', 'Sim, escondeu-se.', 'Só orava em segredo no rio.'],
+    ['O rei.', 'O próprio Daniel.', 'Os soldados.'],
+    ['Não, só os reis.', 'Só na igreja.', 'Só quando sou grande.']
+  ],
   verse: ['O meu Deus mandou o seu anjo, e ele fechou a boca dos leões.', 'Daniel 6.22'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

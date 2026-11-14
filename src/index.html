@@ -61,6 +61,11 @@
       <span class="cc-text"><b data-t="color">Desenhos para colorir</b><span data-t="colorSub">Toca e pinta!</span></span>
       <svg class="cc-go" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
     </button>
+    <button class="color-card quiz-card" id="btnQuiz" type="button" data-ta="aria-label:quiz" aria-label="Quiz da Bíblia">
+      <span class="cc-art qz" aria-hidden="true"><b>?</b><i>A</i><i>B</i></span>
+      <span class="cc-text"><b data-t="quiz">Quiz da Bíblia</b><span data-t="quizSub">Responde às perguntas das histórias!</span></span>
+      <svg class="cc-go" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
     <main class="shelf" data-ta="aria-label:shelf" aria-label="Estante de livros">
       <div class="shelf-grid" id="shelfGrid"></div>
     </main>
@@ -85,6 +90,16 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="view color-view quiz-view" id="quizView" hidden>
+  <header class="cbar">
+    <button class="tbtn backbtn" id="qHome" type="button" data-ta="aria-label:home" aria-label="Voltar à estante"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M5 20V5.5h4V20M10 20V8h4v12M15.2 20l-1-11.6 3.8-.5 1.2 11.6"/></svg><span class="lbl" data-t="homeShort">Estante</span></button>
+    <button class="tbtn backbtn" id="qBack" type="button" data-ta="aria-label:quizBack" aria-label="Voltar aos quizzes" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 7l-5 5 5 5M5 12h14"/></svg><span class="lbl" data-t="quizShort">Quiz</span></button>
+    <b class="ctitle" id="qTitle">Quiz da Bíblia</b>
+  </header>
+  <div class="cgallery" id="qGallery"></div>
+  <div class="qplay" id="qPlay" hidden></div>
 </div>
 
 <div class="view reader-view" id="readerView" hidden>
@@ -117,6 +132,18 @@
   </div>
 </div>
 
+<div class="rest" id="rest" hidden role="dialog" aria-modal="true" aria-labelledby="restTitle">
+  <div class="rest-box">
+    <div id="restKid">
+      <svg class="rest-sheep" viewBox="0 0 200 150" aria-hidden="true"><ellipse cx="100" cy="132" rx="78" ry="10" fill="#0002"/><g fill="#fff" stroke="#3a2730" stroke-width="5"><circle cx="62" cy="88" r="26"/><circle cx="92" cy="72" r="28"/><circle cx="124" cy="80" r="27"/><circle cx="140" cy="102" r="22"/><circle cx="100" cy="104" r="30"/><circle cx="66" cy="110" r="22"/></g><g fill="#fff" stroke="none"><circle cx="62" cy="88" r="23"/><circle cx="92" cy="72" r="25"/><circle cx="124" cy="80" r="24"/><circle cx="140" cy="102" r="19"/><circle cx="100" cy="104" r="27"/><circle cx="66" cy="110" r="19"/></g><ellipse cx="44" cy="104" rx="24" ry="20" fill="#f6d5c4" stroke="#3a2730" stroke-width="5"/><path d="M32 102q5 4 10 0M48 102q5 4 10 0" fill="none" stroke="#3a2730" stroke-width="3.5" stroke-linecap="round"/><text x="150" y="44" font-family="Grandstander, sans-serif" font-weight="800" font-size="26" fill="#3f7fd0">z</text><text x="166" y="26" font-family="Grandstander, sans-serif" font-weight="800" font-size="18" fill="#3f7fd0">z</text></svg>
+      <h3 id="restTitle">Hora de descansar!</h3>
+      <p id="restText">Já brincaste muito hoje. Volta amanhã para mais histórias!</p>
+      <button class="pbtn" id="restAdult" type="button" data-t="adultsTitle">Para adultos</button>
+    </div>
+    <section class="gate" id="restGate" hidden></section>
+  </div>
+</div>
+
 <div class="modal" id="parents" hidden role="dialog" aria-modal="true" aria-labelledby="parentsTitle">
   <div class="panel">
     <header class="mhead"><h3 id="parentsTitle" data-t="parents">Área dos pais</h3><button class="close" id="closeParents" type="button" data-ta="aria-label:close" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
@@ -125,6 +152,12 @@
       <div class="group">
         <h4 data-t="settings">Ajustes</h4>
         <label class="row" for="setSound"><span data-t="soundMusic">Sons e música</span><input class="switch" type="checkbox" id="setSound"></label>
+      </div>
+      <div class="group">
+        <h4 data-t="screenTime">Tempo de ecrã</h4>
+        <p data-t="screenTimeText">Quanto tempo por dia a criança pode usar a app. Quando o tempo acaba, a app pede uma pausa.</p>
+        <div class="tempo-opts" id="tempoOpts"></div>
+        <p class="muted" id="tempoUsed"></p>
       </div>
       <div class="group" id="storeGroup">
         <h4 data-t="extras">Histórias extras</h4>
@@ -197,6 +230,8 @@
 <script src="js/engine.js?v={{V}}"></script>
 <script src="js/loja.js?v={{V}}"></script>
 <script src="js/colorir.js?v={{V}}"></script>
+<script src="js/quiz.js?v={{V}}"></script>
+<script src="js/tempo.js?v={{V}}"></script>
 <!--BOOKS-->
 <!--NATIVE-->
 <script src="js/app.js?v={{V}}"></script>

@@ -414,6 +414,13 @@ SCENES.push({
     ['Quem é como o homem sábio?', 'Quem ouve Jesus e faz o que Ele diz.'],
     ['O que nos ensina Jesus?', 'A amar a Deus e a amar os outros.']
   ],
+  wrong: [
+    ['Na areia.', 'Dentro do rio.', 'Numa nuvem.'],
+    ['Em cima da rocha.', 'Numa árvore.', 'Numa gruta.'],
+    ['A casa na rocha.', 'As duas.', 'Nenhuma.'],
+    ['Quem tem a casa maior.', 'Quem sabe nadar.', 'Quem constrói mais depressa.'],
+    ['A construir casas grandes.', 'A ganhar sempre.', 'A não sair à chuva.']
+  ],
   verse: ['Quem ouve as minhas palavras e as põe em prática é como um homem sábio que construiu a sua casa sobre a rocha.', 'Mateus 7.24'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

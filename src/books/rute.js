@@ -472,6 +472,13 @@ SCENES.push({
     ['Quem era o dono do campo?', 'O Boaz.'],
     ['Como se chamava o bebé da Rute?', 'Obede.']
   ],
+  wrong: [
+    ['O Boaz.', 'As vizinhas.', 'Ninguém.'],
+    ['Adeus, vou-me embora!', 'Fica tu sozinha!', 'Vou dormir!'],
+    ['Apanhava flores.', 'Guardava ovelhas.', 'Brincava às escondidas.'],
+    ['A Noemi.', 'O rei.', 'Um soldado.'],
+    ['Davi.', 'Samuel.', 'Boaz.']
+  ],
   verse: ['O teu povo será o meu povo, e o teu Deus será o meu Deus.', 'Rute 1.16'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

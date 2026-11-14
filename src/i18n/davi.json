@@ -659,11 +659,6 @@
   "Combien de pierres David a-t-il ramassées dans le ruisseau ?",
   "How many stones did David pick up at the stream?"
  ],
- "Cinco.": [
-  "Cinco.",
-  "Cinq.",
-  "Five."
- ],
  "Quem ajudou Davi a vencer o gigante?": [
   "¿Quién ayudó a David a vencer al gigante?",
   "Qui a aidé David à vaincre le géant ?",
@@ -688,6 +683,61 @@
   "1 Samuel 16:7",
   "1 Samuel 16.7",
   "1 Samuel 16:7"
+ ],
+ "Dos camelos.": [
+  "De los camellos.",
+  "Des chameaux.",
+  "Camels."
+ ],
+ "Dos cavalos do rei.": [
+  "De los caballos del rey.",
+  "Des chevaux du roi.",
+  "The king’s horses."
+ ],
+ "Dos peixes.": [
+  "De los peces.",
+  "Des poissons.",
+  "Fish."
+ ],
+ "Para a aparência!": [
+  "¡A la apariencia!",
+  "L’apparence !",
+  "The outside!"
+ ],
+ "Para a roupa!": [
+  "¡A la ropa!",
+  "Les vêtements !",
+  "The clothes!"
+ ],
+ "Para a altura!": [
+  "¡A la estatura!",
+  "La taille !",
+  "How tall you are!"
+ ],
+ "O rei Saul.": [
+  "El rey Saúl.",
+  "Le roi Saül.",
+  "King Saul."
+ ],
+ "A armadura.": [
+  "La armadura.",
+  "L’armure.",
+  "The armour."
+ ],
+ "Fugir e esconder-me sempre.": [
+  "Huir y esconderme siempre.",
+  "M’enfuir et me cacher toujours.",
+  "Always run and hide."
+ ],
+ "Ficar calado e sozinho.": [
+  "Quedarme callado y solo.",
+  "Rester seul sans rien dire.",
+  "Stay quiet and alone."
+ ],
+ "Fingir que não tenho medo.": [
+  "Fingir que no tengo miedo.",
+  "Faire semblant de ne pas avoir peur.",
+  "Pretend I’m not scared."
  ],
  "Davi": [
   "David",

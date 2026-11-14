@@ -464,6 +464,13 @@ SCENES.push({
     ['Quem veio ajudar no outro barco?', 'O Tiago e o João.'],
     ['O que disse Jesus que o Pedro ia ser?', 'Pescador de pessoas!']
   ],
+  wrong: [
+    ['Cem!', 'Dois.', 'Doze.'],
+    ['Do Zaqueu.', 'De Jonas.', 'De Noé.'],
+    ['Não apanharam nada outra vez.', 'O barco afundou-se.', 'Apanharam só um peixinho.'],
+    ['Os soldados.', 'Ninguém.', 'Um peixe enorme.'],
+    ['Rei de Israel!', 'Carpinteiro!', 'Pastor de ovelhas!']
+  ],
   verse: ['Venham comigo, e eu farei de vocês pescadores de pessoas.', 'Mateus 4.19'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

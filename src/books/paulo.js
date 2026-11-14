@@ -352,6 +352,13 @@ SCENES.push({
     ['Paulo e Silas fugiram?', 'Não, ficaram para ajudar o carcereiro.'],
     ['O que respondeu Paulo ao carcereiro?', 'Crê no Senhor Jesus, e serás salvo!']
   ],
+  wrong: [
+    ['Do rei.', 'Do tempo.', 'De dinheiro.'],
+    ['Dormiam.', 'Choravam.', 'Tentavam fugir.'],
+    ['Começou a nevar.', 'Chegou o rei.', 'Apagaram-se as estrelas.'],
+    ['Sim, fugiram a correr.', 'Sim, esconderam-se.', 'Ficaram a dormir.'],
+    ['«Foge depressa!»', '«Deixa-nos em paz!»', 'Não respondeu nada.']
+  ],
   verse: ['Crê no Senhor Jesus, e serás salvo, tu e a tua família.', 'Atos 16.31'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

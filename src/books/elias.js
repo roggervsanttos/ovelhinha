@@ -558,6 +558,13 @@ SCENES.push({
     ['Quem respondeu com fogo: Baal ou Deus?', 'Deus! Baal era só uma estátua.'],
     ['O que viu o ajudante à sétima vez?', 'Uma nuvem pequenina, do tamanho de uma mão.']
   ],
+  wrong: [
+    ['Os leões!', 'Os soldados do rei!', 'Ninguém!'],
+    ['O ouro e a prata.', 'Os brinquedos.', 'O leite e o mel.'],
+    ['Três pedras.', 'Sete pedras.', 'Cem pedras.'],
+    ['Baal!', 'Os dois.', 'Nenhum.'],
+    ['Um arco-íris.', 'Um barco.', 'Um passarinho.']
+  ],
   verse: ['O Senhor é Deus! O Senhor é Deus!', '1 Reis 18.39'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

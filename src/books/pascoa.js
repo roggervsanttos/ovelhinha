@@ -671,6 +671,13 @@ SCENES.push({
     ['O que é que as mulheres viram no domingo?', 'A pedra fora do lugar e o túmulo vazio!'],
     ['Jesus está vivo?', 'Sim! Jesus está vivo para sempre!']
   ],
+  wrong: [
+    ['Num cavalo branco.', 'Num barco.', 'Numa carruagem.'],
+    ['«Vai-te embora!»', '«Silêncio!»', '«Viva o rei César!»'],
+    ['Porque não teve força.', 'Porque fez alguma coisa má.', 'Por acaso.'],
+    ['Jesus a dormir no túmulo.', 'Soldados a guardar a pedra.', 'Nada, estava tudo fechado.'],
+    ['Não, ficou no túmulo.', 'Só nas histórias.', 'Ninguém sabe.']
+  ],
   verse: ['Ele não está aqui. Ele ressuscitou!', 'Mateus 28.6'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]) + glowDefs();

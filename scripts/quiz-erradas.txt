@@ -1,0 +1,562 @@
+# Respostas erradas do quiz (3 por pergunta do fim de cada história).
+# Formato: <livro>.<pergunta>: português | espanhol | francês | inglês
+# Usado por scripts/quiz.py para gravar `wrong` nos livros e as traduções em src/i18n.
+adao.0: Os animais! | ¡Los animales! | Les animaux ! | The animals!
+adao.0: O mar! | ¡El mar! | La mer ! | The sea!
+adao.0: As árvores! | ¡Los árboles! | Les arbres ! | The trees!
+adao.1: Belém. | Belén. | Bethléem. | Bethlehem.
+adao.1: Egito. | Egipto. | Égypte. | Egypt.
+adao.1: Jericó. | Jericó. | Jéricho. | Jericho.
+adao.2: Eva. | Eva. | Ève. | Eve.
+adao.2: Noé. | Noé. | Noé. | Noah.
+adao.2: A serpente. | La serpiente. | Le serpent. | The snake.
+adao.3: Sim, obedeceram sempre. | Sí, obedecieron siempre. | Oui, ils ont toujours obéi. | Yes, they always obeyed.
+adao.3: Não sabiam o que Deus tinha dito. | No sabían lo que Dios había dicho. | Ils ne savaient pas ce que Dieu avait dit. | They didn't know what God had said.
+adao.3: Sim, nem tocaram na fruta. | Sí, ni tocaron la fruta. | Oui, ils n'ont même pas touché le fruit. | Yes, they didn't even touch the fruit.
+adao.4: Sim, deixou de os amar. | Sí, dejó de amarlos. | Oui, il a arrêté de les aimer. | Yes, He stopped loving them.
+adao.4: Esqueceu-se deles. | Se olvidó de ellos. | Il les a oubliés. | He forgot about them.
+adao.4: Ficou zangado para sempre. | Se enfadó para siempre. | Il s'est fâché pour toujours. | He stayed angry forever.
+
+davi.0: Dos camelos. | De los camellos. | Des chameaux. | Camels.
+davi.0: Dos cavalos do rei. | De los caballos del rey. | Des chevaux du roi. | The king's horses.
+davi.0: Dos peixes. | De los peces. | Des poissons. | Fish.
+davi.1: Para a aparência! | ¡A la apariencia! | L'apparence ! | The outside!
+davi.1: Para a roupa! | ¡A la ropa! | Les vêtements ! | The clothes!
+davi.1: Para a altura! | ¡A la estatura! | La taille ! | How tall you are!
+davi.2: Uma. | Una. | Une. | One.
+davi.2: Três. | Tres. | Trois. | Three.
+davi.2: Dez. | Diez. | Dix. | Ten.
+davi.3: O rei Saul. | El rey Saúl. | Le roi Saül. | King Saul.
+davi.3: Os irmãos dele. | Sus hermanos. | Ses frères. | His brothers.
+davi.3: A armadura. | La armadura. | L'armure. | The armour.
+davi.4: Fugir e esconder-me sempre. | Huir y esconderme siempre. | M'enfuir et me cacher toujours. | Always run and hide.
+davi.4: Ficar calado e sozinho. | Quedarme callado y solo. | Rester seul sans rien dire. | Stay quiet and alone.
+davi.4: Fingir que não tenho medo. | Fingir que no tengo miedo. | Faire semblant de ne pas avoir peur. | Pretend I'm not scared.
+
+natal.0: O anjo Miguel. | El ángel Miguel. | L'ange Michel. | The angel Michael.
+natal.0: Um pastor. | Un pastor. | Un berger. | A shepherd.
+natal.0: Um rei. | Un rey. | Un roi. | A king.
+natal.1: Em Nazaré. | En Nazaret. | À Nazareth. | In Nazareth.
+natal.1: Em Jerusalém. | En Jerusalén. | À Jérusalem. | In Jerusalem.
+natal.1: Em Roma. | En Roma. | À Rome. | In Rome.
+natal.2: Numa cama de ouro. | En una cama de oro. | Dans un lit en or. | In a golden bed.
+natal.2: Num barco. | En un barco. | Dans un bateau. | In a boat.
+natal.2: Num cesto no rio. | En una cesta en el río. | Dans un panier sur le fleuve. | In a basket on the river.
+natal.3: Os soldados. | Los soldados. | Les soldats. | The soldiers.
+natal.3: Os pescadores. | Los pescadores. | Les pêcheurs. | The fishermen.
+natal.3: O rei Herodes. | El rey Herodes. | Le roi Hérode. | King Herod.
+natal.4: Uma coroa. | Una corona. | Une couronne. | A crown.
+natal.4: Muitos brinquedos. | Muchos juguetes. | Beaucoup de jouets. | Lots of toys.
+natal.4: Uma estrela. | Una estrella. | Une étoile. | A star.
+
+ovelha.0: Dez. | Diez. | Dix. | Ten.
+ovelha.0: Cinco. | Cinco. | Cinq. | Five.
+ovelha.0: Mil. | Mil. | Mille. | A thousand.
+ovelha.1: Nenhuma. | Ninguna. | Aucune. | None.
+ovelha.1: Dez ovelhas. | Diez ovejas. | Dix brebis. | Ten sheep.
+ovelha.1: Todas. | Todas. | Toutes. | All of them.
+ovelha.2: Foi dormir. | Se fue a dormir. | Il est allé dormir. | He went to sleep.
+ovelha.2: Esqueceu-se dela. | Se olvidó de ella. | Il l'a oubliée. | He forgot about it.
+ovelha.2: Comprou outra ovelha. | Compró otra oveja. | Il a acheté une autre brebis. | He bought another sheep.
+ovelha.3: Puxada por uma corda. | Tirando de una cuerda. | Tirée par une corde. | Pulled by a rope.
+ovelha.3: Num carro. | En un carro. | Dans une charrette. | In a cart.
+ovelha.3: Ficou lá sozinha. | Se quedó allí sola. | Elle est restée là toute seule. | It stayed there alone.
+ovelha.4: O rei. | El rey. | Le roi. | The king.
+ovelha.4: O lobo. | El lobo. | Le loup. | The wolf.
+ovelha.4: Um soldado. | Un soldado. | Un soldat. | A soldier.
+
+pascoa.0: Num cavalo branco. | En un caballo blanco. | Sur un cheval blanc. | On a white horse.
+pascoa.0: Num barco. | En un barco. | En bateau. | In a boat.
+pascoa.0: Numa carruagem. | En un carruaje. | Dans un char. | In a chariot.
+pascoa.1: «Vai-te embora!» | «¡Vete!» | « Va-t'en ! » | "Go away!"
+pascoa.1: «Silêncio!» | «¡Silencio!» | « Silence ! » | "Quiet!"
+pascoa.1: «Viva o rei César!» | «¡Viva el rey César!» | « Vive César ! » | "Long live Caesar!"
+pascoa.2: Porque não teve força. | Porque no tuvo fuerza. | Parce qu'il n'avait pas de force. | Because He wasn't strong enough.
+pascoa.2: Porque fez alguma coisa má. | Porque hizo algo malo. | Parce qu'il avait fait quelque chose de mal. | Because He did something bad.
+pascoa.2: Por acaso. | Por casualidad. | Par hasard. | By accident.
+pascoa.3: Jesus a dormir no túmulo. | A Jesús durmiendo en la tumba. | Jésus endormi dans le tombeau. | Jesus asleep in the tomb.
+pascoa.3: Soldados a guardar a pedra. | Soldados guardando la piedra. | Des soldats qui gardaient la pierre. | Soldiers guarding the stone.
+pascoa.3: Nada, estava tudo fechado. | Nada, todo estaba cerrado. | Rien, tout était fermé. | Nothing, it was all shut.
+pascoa.4: Não, ficou no túmulo. | No, se quedó en la tumba. | Non, il est resté dans le tombeau. | No, He stayed in the tomb.
+pascoa.4: Só nas histórias. | Solo en los cuentos. | Seulement dans les histoires. | Only in stories.
+pascoa.4: Ninguém sabe. | Nadie lo sabe. | Personne ne le sait. | Nobody knows.
+
+noe.0: Uma torre muito alta. | Una torre muy alta. | Une très haute tour. | A very tall tower.
+noe.0: Uma casa na árvore. | Una casa en el árbol. | Une cabane dans un arbre. | A treehouse.
+noe.0: Um poço fundo. | Un pozo profundo. | Un puits profond. | A deep well.
+noe.1: Todos a correr de uma vez. | Todos corriendo a la vez. | Tous en courant en même temps. | All running in at once.
+noe.1: Um de cada vez. | De uno en uno. | Un par un. | One at a time.
+noe.1: De dez em dez. | De diez en diez. | Dix par dix. | Ten by ten.
+noe.2: Um dia e uma noite. | Un día y una noche. | Un jour et une nuit. | One day and one night.
+noe.2: Sete dias. | Siete días. | Sept jours. | Seven days.
+noe.2: Cem dias e cem noites. | Cien días y cien noches. | Cent jours et cent nuits. | A hundred days and a hundred nights.
+noe.3: Um peixe. | Un pez. | Un poisson. | A fish.
+noe.3: Uma pedra. | Una piedra. | Une pierre. | A stone.
+noe.3: Uma flor vermelha. | Una flor roja. | Une fleur rouge. | A red flower.
+noe.4: Que vai chover outra vez. | Que va a llover otra vez. | Qu'il va encore pleuvoir. | That it will rain again.
+noe.4: Que é hora de dormir. | Que es hora de dormir. | Que c'est l'heure de dormir. | That it's time to sleep.
+noe.4: Que há um tesouro no fim. | Que hay un tesoro al final. | Qu'il y a un trésor au bout. | That there's treasure at the end.
+
+babel.0: Cada um falava uma língua diferente. | Cada uno hablaba un idioma distinto. | Chacun parlait une langue différente. | Everyone spoke a different language.
+babel.0: Ninguém sabia falar. | Nadie sabía hablar. | Personne ne savait parler. | Nobody could talk.
+babel.0: Só falavam por gestos. | Solo hablaban con gestos. | Ils parlaient seulement avec des gestes. | They only used hand signs.
+babel.1: De ouro. | De oro. | En or. | Gold.
+babel.1: De madeira. | De madera. | En bois. | Wood.
+babel.1: De gelo. | De hielo. | En glace. | Ice.
+babel.2: Para guardar os animais. | Para guardar a los animales. | Pour garder les animaux. | To keep the animals safe.
+babel.2: Para fugir da chuva. | Para huir de la lluvia. | Pour se protéger de la pluie. | To hide from the rain.
+babel.2: Para dar graças a Deus. | Para dar gracias a Dios. | Pour remercier Dieu. | To thank God.
+babel.3: A torre ficou ainda mais alta. | La torre se hizo aún más alta. | La tour est devenue encore plus haute. | The tower got even taller.
+babel.3: Todos ficaram a cantar juntos. | Todos se quedaron cantando juntos. | Tout le monde s'est mis à chanter ensemble. | They all sang together.
+babel.3: Nada mudou. | No cambió nada. | Rien n'a changé. | Nothing changed.
+babel.4: Só de uma língua. | Solo de un idioma. | D'une seule langue. | Only one language.
+babel.4: Só das pessoas da torre. | Solo de la gente de la torre. | Seulement des gens de la tour. | Only the people at the tower.
+babel.4: De nenhuma. | De ninguna. | D'aucune. | None.
+
+abraao.0: Construir uma arca. | Construir un arca. | Construire une arche. | Build an ark.
+abraao.0: Ir pescar. | Ir a pescar. | Aller pêcher. | Go fishing.
+abraao.0: Ser rei do Egito. | Ser rey de Egipto. | Devenir roi d'Égypte. | Become king of Egypt.
+abraao.1: As nuvens. | Las nubes. | Les nuages. | The clouds.
+abraao.1: Os pássaros. | Los pájaros. | Les oiseaux. | The birds.
+abraao.1: As gotas de chuva. | Las gotas de lluvia. | Les gouttes de pluie. | The raindrops.
+abraao.2: Porque viu um camelo engraçado. | Porque vio un camello gracioso. | Parce qu'elle a vu un chameau rigolo. | Because she saw a funny camel.
+abraao.2: Porque Abraão contou uma anedota. | Porque Abraham contó un chiste. | Parce qu'Abraham a raconté une blague. | Because Abraham told a joke.
+abraao.2: Porque estava a brincar. | Porque estaba jugando. | Parce qu'elle jouait. | Because she was playing.
+abraao.3: Jacó. | Jacob. | Jacob. | Jacob.
+abraao.3: Moisés. | Moisés. | Moïse. | Moses.
+abraao.3: Davi. | David. | David. | David.
+abraao.4: Só às vezes. | Solo a veces. | Seulement parfois. | Only sometimes.
+abraao.4: Não, esquece-se. | No, se olvida. | Non, il oublie. | No, He forgets.
+abraao.4: Só se tivermos sorte. | Solo si tenemos suerte. | Seulement si on a de la chance. | Only if we're lucky.
+
+jaco.0: Abel. | Abel. | Abel. | Abel.
+jaco.0: José. | José. | Joseph. | Joseph.
+jaco.0: Isaque. | Isaac. | Isaac. | Isaac.
+jaco.1: Com um barco enorme. | Con un barco enorme. | D'un énorme bateau. | A huge boat.
+jaco.1: Com sete vacas gordas. | Con siete vacas gordas. | De sept vaches grasses. | Seven fat cows.
+jaco.1: Com um gigante. | Con un gigante. | D'un géant. | A giant.
+jaco.2: Que ia ser rei. | Que iba a ser rey. | Qu'il allait devenir roi. | That he would be king.
+jaco.2: Que nunca mais ia ter medo. | Que nunca más tendría miedo. | Qu'il n'aurait plus jamais peur. | That he would never be scared again.
+jaco.2: Muito ouro. | Mucho oro. | Beaucoup d'or. | Lots of gold.
+jaco.3: Abraão. | Abraham. | Abraham. | Abraham.
+jaco.3: Pedro. | Pedro. | Pierre. | Peter.
+jaco.3: Esaú. | Esaú. | Ésaü. | Esau.
+jaco.4: Nunca mais se falaram. | Nunca más se hablaron. | Ils ne se sont plus jamais parlé. | They never spoke again.
+jaco.4: Com uma luta. | Con una pelea. | Par une bagarre. | With a fight.
+jaco.4: Esaú foi embora sem dizer nada. | Esaú se fue sin decir nada. | Ésaü est parti sans rien dire. | Esau left without a word.
+
+jose.0: Uma coroa de ouro. | Una corona de oro. | Une couronne en or. | A golden crown.
+jose.0: Um cão. | Un perro. | Un chien. | A dog.
+jose.0: Uma espada. | Una espada. | Une épée. | A sword.
+jose.1: Porque José partiu um cântaro. | Porque José rompió un cántaro. | Parce que Joseph avait cassé une cruche. | Because Joseph broke a jar.
+jose.1: Porque José foi embora. | Porque José se fue. | Parce que Joseph était parti. | Because Joseph went away.
+jose.1: Porque estavam com fome. | Porque tenían hambre. | Parce qu'ils avaient faim. | Because they were hungry.
+jose.2: Ninguém. | Nadie. | Personne. | Nobody.
+jose.2: Os irmãos dele. | Sus hermanos. | Ses frères. | His brothers.
+jose.2: O pai, Jacó. | Su padre, Jacob. | Son père, Jacob. | His father, Jacob.
+jose.3: Muito ouro. | Mucho oro. | Beaucoup d'or. | Lots of gold.
+jose.3: Muitos camelos. | Muchos camellos. | Beaucoup de chameaux. | Lots of camels.
+jose.3: Muitos brinquedos. | Muchos juguetes. | Beaucoup de jouets. | Lots of toys.
+jose.4: Mandou-os para a prisão. | Los mandó a la cárcel. | Il les a envoyés en prison. | He sent them to prison.
+jose.4: Escondeu-se deles. | Se escondió de ellos. | Il s'est caché d'eux. | He hid from them.
+jose.4: Mandou-os embora sem comida. | Los mandó lejos sin comida. | Il les a renvoyés sans nourriture. | He sent them away with no food.
+
+moises.0: Numa árvore. | En un árbol. | Dans un arbre. | In a tree.
+moises.0: Numa gruta. | En una cueva. | Dans une grotte. | In a cave.
+moises.0: No palácio do faraó. | En el palacio del faraón. | Dans le palais du pharaon. | In Pharaoh's palace.
+moises.1: Um pescador. | Un pescador. | Un pêcheur. | A fisherman.
+moises.1: Um crocodilo. | Un cocodrilo. | Un crocodile. | A crocodile.
+moises.1: Um soldado. | Un soldado. | Un soldat. | A soldier.
+moises.2: Uma cidade de ouro. | Una ciudad de oro. | Une ville en or. | A city of gold.
+moises.2: Um camelo a falar. | Un camello que hablaba. | Un chameau qui parlait. | A talking camel.
+moises.2: Um poço cheio de peixes. | Un pozo lleno de peces. | Un puits plein de poissons. | A well full of fish.
+moises.3: Começou a chover. | Empezó a llover. | Il s'est mis à pleuvoir. | It started to rain.
+moises.3: O cajado virou flor. | El bastón se volvió flor. | Le bâton est devenu une fleur. | The staff turned into a flower.
+moises.3: Nada. | Nada. | Rien. | Nothing.
+moises.4: Uma coroa. | Una corona. | Une couronne. | A crown.
+moises.4: Um barco. | Un barco. | Un bateau. | A boat.
+moises.4: Um cesto de pão. | Una cesta de pan. | Un panier de pain. | A basket of bread.
+
+josue.0: Abraão. | Abraham. | Abraham. | Abraham.
+josue.0: O faraó. | El faraón. | Le pharaon. | Pharaoh.
+josue.0: Noé. | Noé. | Noé. | Noah.
+josue.1: O rei de Jericó. | El rey de Jericó. | Le roi de Jéricho. | The king of Jericho.
+josue.1: Os soldados. | Los soldados. | Les soldats. | The soldiers.
+josue.1: Ninguém. | Nadie. | Personne. | Nobody.
+josue.2: Uma. | Una. | Un. | One.
+josue.2: Três. | Tres. | Trois. | Three.
+josue.2: Cem. | Cien. | Cent. | A hundred.
+josue.3: Todos adormeceram. | Todos se durmieron. | Tout le monde s'est endormi. | Everyone fell asleep.
+josue.3: A cidade ficou mais alta. | La ciudad se hizo más alta. | La ville est devenue plus haute. | The city got taller.
+josue.3: Começou a chover. | Empezó a llover. | Il s'est mis à pleuvoir. | It started to rain.
+josue.4: «Volta para casa!» | «¡Vuelve a casa!» | « Rentre à la maison ! » | "Go back home!"
+josue.4: «Tem medo!» | «¡Ten miedo!» | « Aie peur ! » | "Be afraid!"
+josue.4: «Esconde-te!» | «¡Escóndete!» | « Cache-toi ! » | "Hide!"
+
+gideao.0: No telhado da casa. | En el tejado de la casa. | Sur le toit de la maison. | On the roof of the house.
+gideao.0: Numa árvore alta. | En un árbol alto. | Dans un grand arbre. | In a tall tree.
+gideao.0: Dentro de um barco. | Dentro de un barco. | Dans un bateau. | Inside a boat.
+gideao.1: Homem medroso! | ¡Hombre miedoso! | Homme peureux ! | Scaredy man!
+gideao.1: Rei de Israel! | ¡Rey de Israel! | Roi d'Israël ! | King of Israel!
+gideao.1: Pequeno pastor! | ¡Pequeño pastor! | Petit berger ! | Little shepherd!
+gideao.2: Trinta. | Treinta. | Trente. | Thirty.
+gideao.2: Três mil. | Tres mil. | Trois mille. | Three thousand.
+gideao.2: Dez mil. | Diez mil. | Dix mille. | Ten thousand.
+gideao.3: Espadas e escudos. | Espadas y escudos. | Des épées et des boucliers. | Swords and shields.
+gideao.3: Arcos e flechas. | Arcos y flechas. | Des arcs et des flèches. | Bows and arrows.
+gideao.3: Pães e peixes. | Panes y peces. | Des pains et des poissons. | Bread and fish.
+gideao.4: Os soldados mais fortes. | Los soldados más fuertes. | Les soldats les plus forts. | The strongest soldiers.
+gideao.4: As tochas. | Las antorchas. | Les torches. | The torches.
+gideao.4: Os inimigos. | Los enemigos. | Les ennemis. | The enemies.
+
+rute.0: O Boaz. | Booz. | Boaz. | Boaz.
+rute.0: As vizinhas. | Las vecinas. | Les voisines. | The neighbours.
+rute.0: Ninguém. | Nadie. | Personne. | Nobody.
+rute.1: Adeus, vou-me embora! | ¡Adiós, me voy! | Au revoir, je m'en vais ! | Goodbye, I'm leaving!
+rute.1: Fica tu sozinha! | ¡Quédate tú sola! | Reste toute seule ! | You stay here alone!
+rute.1: Vou dormir! | ¡Me voy a dormir! | Je vais dormir ! | I'm going to sleep!
+rute.2: Apanhava flores. | Recogía flores. | Elle cueillait des fleurs. | She picked flowers.
+rute.2: Guardava ovelhas. | Cuidaba ovejas. | Elle gardait des moutons. | She looked after sheep.
+rute.2: Brincava às escondidas. | Jugaba al escondite. | Elle jouait à cache-cache. | She played hide-and-seek.
+rute.3: A Noemi. | Noemí. | Naomi. | Naomi.
+rute.3: O rei. | El rey. | Le roi. | The king.
+rute.3: Um soldado. | Un soldado. | Un soldat. | A soldier.
+rute.4: Davi. | David. | David. | David.
+rute.4: Samuel. | Samuel. | Samuel. | Samuel.
+rute.4: Boaz. | Booz. | Boaz. | Boaz.
+
+samuel.0: Rute. | Rut. | Ruth. | Ruth.
+samuel.0: Sara. | Sara. | Sarah. | Sarah.
+samuel.0: Maria. | María. | Marie. | Mary.
+samuel.1: «Menino forte». | «Niño fuerte». | « Garçon fort ». | "Strong boy".
+samuel.1: «Ele ri». | «Él ríe». | « Il rit ». | "He laughs".
+samuel.1: «Pequeno rei». | «Pequeño rey». | « Petit roi ». | "Little king".
+samuel.2: O Eli. | Elí. | Éli. | Eli.
+samuel.2: A mãe dele. | Su madre. | Sa mère. | His mother.
+samuel.2: Um vizinho. | Un vecino. | Un voisin. | A neighbour.
+samuel.3: Uma vez. | Una vez. | Une fois. | Once.
+samuel.3: Sete vezes. | Siete veces. | Sept fois. | Seven times.
+samuel.3: Dez vezes. | Diez veces. | Dix fois. | Ten times.
+samuel.4: «Agora não, estou a dormir!» | «¡Ahora no, estoy durmiendo!» | « Pas maintenant, je dors ! » | "Not now, I'm sleeping!"
+samuel.4: Não respondeu nada. | No respondió nada. | Il n'a rien répondu. | He didn't answer.
+samuel.4: «Quem és tu?» | «¿Quién eres?» | « Qui es-tu ? » | "Who are you?"
+
+elias.0: Os leões! | ¡Los leones! | Les lions ! | The lions!
+elias.0: Os soldados do rei! | ¡Los soldados del rey! | Les soldats du roi ! | The king's soldiers!
+elias.0: Ninguém! | ¡Nadie! | Personne ! | Nobody!
+elias.1: O ouro e a prata. | El oro y la plata. | L'or et l'argent. | The gold and silver.
+elias.1: Os brinquedos. | Los juguetes. | Les jouets. | The toys.
+elias.1: O leite e o mel. | La leche y la miel. | Le lait et le miel. | The milk and honey.
+elias.2: Três pedras. | Tres piedras. | Trois pierres. | Three stones.
+elias.2: Sete pedras. | Siete piedras. | Sept pierres. | Seven stones.
+elias.2: Cem pedras. | Cien piedras. | Cent pierres. | A hundred stones.
+elias.3: Baal! | ¡Baal! | Baal ! | Baal!
+elias.3: Os dois. | Los dos. | Les deux. | Both.
+elias.3: Nenhum. | Ninguno. | Aucun. | Neither.
+elias.4: Um arco-íris. | Un arcoíris. | Un arc-en-ciel. | A rainbow.
+elias.4: Um barco. | Un barco. | Un bateau. | A boat.
+elias.4: Um passarinho. | Un pajarito. | Un petit oiseau. | A little bird.
+
+naama.0: Uma dor de dentes. | Dolor de muelas. | Un mal de dents. | A toothache.
+naama.0: Uma perna partida. | Una pierna rota. | Une jambe cassée. | A broken leg.
+naama.0: Uma constipação. | Un resfriado. | Un rhume. | A cold.
+naama.1: O rei da Síria. | El rey de Siria. | Le roi de Syrie. | The king of Syria.
+naama.1: Um soldado. | Un soldado. | Un soldat. | A soldier.
+naama.1: A mulher do Naamã. | La esposa de Naamán. | La femme de Naaman. | Naaman's wife.
+naama.2: No rio Nilo. | En el río Nilo. | Dans le Nil. | In the River Nile.
+naama.2: No mar. | En el mar. | Dans la mer. | In the sea.
+naama.2: Numa piscina do palácio. | En una piscina del palacio. | Dans une piscine du palais. | In a palace pool.
+naama.3: Uma vez. | Una vez. | Une fois. | Once.
+naama.3: Três vezes. | Tres veces. | Trois fois. | Three times.
+naama.3: Doze vezes. | Doce veces. | Douze fois. | Twelve times.
+naama.4: Que a água do rio é mágica. | Que el agua del río es mágica. | Que l'eau du fleuve est magique. | That the river water is magic.
+naama.4: Que o ouro cura tudo. | Que el oro lo cura todo. | Que l'or guérit tout. | That gold heals everything.
+naama.4: Que há muitos deuses. | Que hay muchos dioses. | Qu'il y a beaucoup de dieux. | That there are many gods.
+
+jonas.0: Para Belém. | A Belén. | À Bethléem. | To Bethlehem.
+jonas.0: Para o Egito. | A Egipto. | En Égypte. | To Egypt.
+jonas.0: Para o deserto. | Al desierto. | Dans le désert. | To the desert.
+jonas.1: Foi logo a Nínive. | Fue enseguida a Nínive. | Il est allé tout de suite à Ninive. | He went straight to Nineveh.
+jonas.1: Escondeu-se numa gruta. | Se escondió en una cueva. | Il s'est caché dans une grotte. | He hid in a cave.
+jonas.1: Subiu a um monte. | Subió a un monte. | Il est monté sur une montagne. | He climbed a mountain.
+jonas.2: Um leão. | Un león. | Un lion. | A lion.
+jonas.2: Um crocodilo. | Un cocodrilo. | Un crocodile. | A crocodile.
+jonas.2: Uma serpente. | Una serpiente. | Un serpent. | A snake.
+jonas.3: Dormiu o tempo todo. | Durmió todo el tiempo. | Il a dormi tout le temps. | He slept the whole time.
+jonas.3: Comeu peixinhos. | Comió pececitos. | Il a mangé des petits poissons. | He ate little fish.
+jonas.3: Ficou a chorar. | Se quedó llorando. | Il est resté à pleurer. | He just cried.
+jonas.4: Sim, só os bons. | Sí, solo a los buenos. | Oui, seulement les gentils. | Yes, only the good ones.
+jonas.4: Sim, só os de Israel. | Sí, solo a los de Israel. | Oui, seulement ceux d'Israël. | Yes, only the people of Israel.
+jonas.4: Só os que obedecem sempre. | Solo a los que obedecen siempre. | Seulement ceux qui obéissent toujours. | Only those who always obey.
+
+fornalha.0: Pedro, Tiago e João. | Pedro, Santiago y Juan. | Pierre, Jacques et Jean. | Peter, James and John.
+fornalha.0: Davi, Saul e Jónatas. | David, Saúl y Jonatán. | David, Saül et Jonathan. | David, Saul and Jonathan.
+fornalha.0: Gaspar, Belchior e Baltasar. | Gaspar, Melchor y Baltasar. | Gaspard, Melchior et Balthazar. | Caspar, Melchior and Balthazar.
+fornalha.1: De pedra. | De piedra. | En pierre. | Stone.
+fornalha.1: De madeira. | De madera. | En bois. | Wood.
+fornalha.1: De areia. | De arena. | En sable. | Sand.
+fornalha.2: Porque estavam cansados. | Porque estaban cansados. | Parce qu'ils étaient fatigués. | Because they were tired.
+fornalha.2: Porque não ouviram a música. | Porque no oyeron la música. | Parce qu'ils n'ont pas entendu la musique. | Because they didn't hear the music.
+fornalha.2: Porque estavam a dormir. | Porque estaban durmiendo. | Parce qu'ils dormaient. | Because they were asleep.
+fornalha.3: Três. | Tres. | Trois. | Three.
+fornalha.3: Uma. | Una. | Une. | One.
+fornalha.3: Nenhuma. | Ninguna. | Aucune. | None.
+fornalha.4: Sim, muito! | ¡Sí, mucho! | Oui, beaucoup ! | Yes, a lot!
+fornalha.4: Só um bocadinho. | Solo un poquito. | Juste un petit peu. | Just a little bit.
+fornalha.4: Ficaram todos pretos. | Quedaron todos negros. | Ils étaient tout noirs. | They were all black with soot.
+
+daniel.0: Nunca. | Nunca. | Jamais. | Never.
+daniel.0: Uma vez por ano. | Una vez al año. | Une fois par an. | Once a year.
+daniel.0: Só ao domingo. | Solo el domingo. | Seulement le dimanche. | Only on Sundays.
+daniel.1: Que todos tinham de dançar. | Que todos tenían que bailar. | Que tout le monde devait danser. | That everyone had to dance.
+daniel.1: Que ninguém podia comer pão. | Que nadie podía comer pan. | Que personne ne pouvait manger de pain. | That nobody could eat bread.
+daniel.1: Que todos tinham de dormir cedo. | Que todos tenían que dormir temprano. | Que tout le monde devait se coucher tôt. | That everyone had to go to bed early.
+daniel.2: Sim, teve medo. | Sí, tuvo miedo. | Oui, il a eu peur. | Yes, he got scared.
+daniel.2: Sim, escondeu-se. | Sí, se escondió. | Oui, il s'est caché. | Yes, he hid.
+daniel.2: Só orava em segredo no rio. | Solo oraba en secreto en el río. | Il priait seulement en cachette au bord du fleuve. | He only prayed in secret by the river.
+daniel.3: O rei. | El rey. | Le roi. | The king.
+daniel.3: O próprio Daniel. | El propio Daniel. | Daniel lui-même. | Daniel himself.
+daniel.3: Os soldados. | Los soldados. | Les soldats. | The soldiers.
+daniel.4: Não, só os reis. | No, solo los reyes. | Non, seulement les rois. | No, only kings can.
+daniel.4: Só na igreja. | Solo en la iglesia. | Seulement à l'église. | Only at church.
+daniel.4: Só quando sou grande. | Solo cuando sea mayor. | Seulement quand je serai grand. | Only when I'm grown up.
+
+ester.0: O rei. | El rey. | Le roi. | The king.
+ester.0: O malvado Hamã. | El malvado Amán. | Le méchant Haman. | Wicked Haman.
+ester.0: Uma princesa. | Una princesa. | Une princesse. | A princess.
+ester.1: O primo Mardoqueu. | Su primo Mardoqueo. | Son cousin Mardochée. | Her cousin Mordecai.
+ester.1: O rei. | El rey. | Le roi. | The king.
+ester.1: Os guardas do palácio. | Los guardias del palacio. | Les gardes du palais. | The palace guards.
+ester.2: Uma espada. | Una espada. | Une épée. | A sword.
+ester.2: Um ramo de flores. | Un ramo de flores. | Un bouquet de fleurs. | A bunch of flowers.
+ester.2: Uma carta. | Una carta. | Une lettre. | A letter.
+ester.3: No jardim, a correr. | En el jardín, corriendo. | Dans le jardin, en courant. | In the garden, running.
+ester.3: Numa carta secreta. | En una carta secreta. | Dans une lettre secrète. | In a secret letter.
+ester.3: No meio da rua. | En medio de la calle. | Au milieu de la rue. | In the middle of the street.
+ester.4: Páscoa. | Pascua. | Pâque. | Passover.
+ester.4: Natal. | Navidad. | Noël. | Christmas.
+ester.4: Pentecostes. | Pentecostés. | Pentecôte. | Pentecost.
+
+templo.0: Três anos. | Tres años. | Trois ans. | Three years old.
+templo.0: Trinta anos. | Treinta años. | Trente ans. | Thirty years old.
+templo.0: Sete anos. | Siete años. | Sept ans. | Seven years old.
+templo.1: Em Belém. | En Belén. | À Bethléem. | In Bethlehem.
+templo.1: Em Nazaré. | En Nazaret. | À Nazareth. | In Nazareth.
+templo.1: Em Roma. | En Roma. | À Rome. | In Rome.
+templo.2: Um dia. | Un día. | Un jour. | One day.
+templo.2: Sete dias. | Siete días. | Sept jours. | Seven days.
+templo.2: Quarenta dias. | Cuarenta días. | Quarante jours. | Forty days.
+templo.3: A brincar na rua. | Jugando en la calle. | En train de jouer dans la rue. | Playing in the street.
+templo.3: A dormir debaixo de uma árvore. | Durmiendo bajo un árbol. | En train de dormir sous un arbre. | Asleep under a tree.
+templo.3: No mercado, a comprar pão. | En el mercado, comprando pan. | Au marché, en train d'acheter du pain. | At the market, buying bread.
+templo.4: Era pescador. | Era pescador. | Il était pêcheur. | He was a fisherman.
+templo.4: Era rei. | Era rey. | Il était roi. | He was a king.
+templo.4: Era soldado. | Era soldado. | Il était soldat. | He was a soldier.
+
+pesca.0: Cem! | ¡Cien! | Cent ! | A hundred!
+pesca.0: Dois. | Dos. | Deux. | Two.
+pesca.0: Doze. | Doce. | Douze. | Twelve.
+pesca.1: Do Zaqueu. | De Zaqueo. | De Zachée. | Zacchaeus's.
+pesca.1: De Jonas. | De Jonás. | De Jonas. | Jonah's.
+pesca.1: De Noé. | De Noé. | De Noé. | Noah's.
+pesca.2: Não apanharam nada outra vez. | No pescaron nada otra vez. | Ils n'ont encore rien pris. | They caught nothing again.
+pesca.2: O barco afundou-se. | El barco se hundió. | Le bateau a coulé. | The boat sank.
+pesca.2: Apanharam só um peixinho. | Pescaron solo un pececito. | Ils n'ont pris qu'un petit poisson. | They caught just one little fish.
+pesca.3: Os soldados. | Los soldados. | Les soldats. | The soldiers.
+pesca.3: Ninguém. | Nadie. | Personne. | Nobody.
+pesca.3: Um peixe enorme. | Un pez enorme. | Un énorme poisson. | A huge fish.
+pesca.4: Rei de Israel! | ¡Rey de Israel! | Roi d'Israël ! | King of Israel!
+pesca.4: Carpinteiro! | ¡Carpintero! | Charpentier ! | A carpenter!
+pesca.4: Pastor de ovelhas! | ¡Pastor de ovejas! | Berger ! | A shepherd!
+
+rocha.0: Na areia. | En la arena. | Sur le sable. | On the sand.
+rocha.0: Dentro do rio. | Dentro del río. | Dans la rivière. | In the river.
+rocha.0: Numa nuvem. | En una nube. | Sur un nuage. | On a cloud.
+rocha.1: Em cima da rocha. | Sobre la roca. | Sur le roc. | On the rock.
+rocha.1: Numa árvore. | En un árbol. | Dans un arbre. | In a tree.
+rocha.1: Numa gruta. | En una cueva. | Dans une grotte. | In a cave.
+rocha.2: A casa na rocha. | La casa sobre la roca. | La maison sur le roc. | The house on the rock.
+rocha.2: As duas. | Las dos. | Les deux. | Both.
+rocha.2: Nenhuma. | Ninguna. | Aucune. | Neither.
+rocha.3: Quem tem a casa maior. | Quien tiene la casa más grande. | Celui qui a la plus grande maison. | Whoever has the biggest house.
+rocha.3: Quem sabe nadar. | Quien sabe nadar. | Celui qui sait nager. | Whoever can swim.
+rocha.3: Quem constrói mais depressa. | Quien construye más rápido. | Celui qui construit le plus vite. | Whoever builds fastest.
+rocha.4: A construir casas grandes. | A construir casas grandes. | À construire de grandes maisons. | To build big houses.
+rocha.4: A ganhar sempre. | A ganar siempre. | À toujours gagner. | To always win.
+rocha.4: A não sair à chuva. | A no salir con lluvia. | À ne pas sortir sous la pluie. | Not to go out in the rain.
+
+tempestade.0: Para Jerusalém. | A Jerusalén. | À Jérusalem. | To Jerusalem.
+tempestade.0: Para o Egito. | A Egipto. | En Égypte. | To Egypt.
+tempestade.0: Para pescar no mar alto. | A pescar en alta mar. | Pêcher en haute mer. | Fishing far out at sea.
+tempestade.1: Estava a remar. | Estaba remando. | Il ramait. | He was rowing.
+tempestade.1: Estava a pescar. | Estaba pescando. | Il pêchait. | He was fishing.
+tempestade.1: Estava a cantar. | Estaba cantando. | Il chantait. | He was singing.
+tempestade.2: «Mais forte!» | «¡Más fuerte!» | « Plus fort ! » | "Stronger!"
+tempestade.2: «Vamos fugir!» | «¡Vamos a huir!» | « Fuyons ! » | "Let's run away!"
+tempestade.2: Não disse nada. | No dijo nada. | Il n'a rien dit. | He didn't say anything.
+tempestade.3: O barco afundou-se. | El barco se hundió. | Le bateau a coulé. | The boat sank.
+tempestade.3: Choveu ainda mais. | Llovió aún más. | Il a plu encore plus. | It rained even harder.
+tempestade.3: Apareceu um peixe enorme. | Apareció un pez enorme. | Un énorme poisson est apparu. | A huge fish appeared.
+tempestade.4: Esconder-me debaixo da cama. | Esconderme debajo de la cama. | Me cacher sous le lit. | Hide under the bed.
+tempestade.4: Gritar muito alto. | Gritar muy fuerte. | Crier très fort. | Scream really loud.
+tempestade.4: Não contar a ninguém. | No contárselo a nadie. | N'en parler à personne. | Not tell anyone.
+
+jairo.0: Que lhe desse dinheiro. | Que le diera dinero. | Qu'il lui donne de l'argent. | That He give him money.
+jairo.0: Que fosse jantar a casa dele. | Que fuera a cenar a su casa. | Qu'il vienne dîner chez lui. | That He come to dinner at his house.
+jairo.0: Que contasse uma história. | Que contara una historia. | Qu'il raconte une histoire. | That He tell a story.
+jairo.1: Na mão de Pedro. | En la mano de Pedro. | La main de Pierre. | Peter's hand.
+jairo.1: No barco. | En el barco. | Le bateau. | The boat.
+jairo.1: Numa árvore. | En un árbol. | Un arbre. | A tree.
+jairo.2: Vamos embora! | ¡Vámonos! | Partons ! | Let's go!
+jairo.2: Já é tarde demais! | ¡Ya es demasiado tarde! | C'est trop tard ! | It's too late!
+jairo.2: Chora muito! | ¡Llora mucho! | Pleure beaucoup ! | Cry a lot!
+jairo.3: Menina, dorme mais! | ¡Niña, duerme más! | Petite fille, dors encore ! | Little girl, sleep some more!
+jairo.3: Menina, vai brincar! | ¡Niña, ve a jugar! | Petite fille, va jouer ! | Little girl, go and play!
+jairo.3: Não disse nada. | No dijo nada. | Il n'a rien dit. | He didn't say anything.
+jairo.4: Um brinquedo novo. | Un juguete nuevo. | Un nouveau jouet. | A new toy.
+jairo.4: Um vestido bonito. | Un vestido bonito. | Une jolie robe. | A pretty dress.
+jairo.4: Um cachorrinho. | Un perrito. | Un petit chien. | A puppy.
+
+paes.0: Dois. | Dos. | Deux. | Two.
+paes.0: Doze. | Doce. | Douze. | Twelve.
+paes.0: Cem. | Cien. | Cent. | A hundred.
+paes.1: Cinco! | ¡Cinco! | Cinq ! | Five!
+paes.1: Dez! | ¡Diez! | Dix ! | Ten!
+paes.1: Nenhum! | ¡Ninguno! | Aucun ! | None!
+paes.2: Comeu um pão. | Se comió un pan. | Il a mangé un pain. | He ate a loaf.
+paes.2: Mandou as pessoas embora. | Mandó a la gente a casa. | Il a renvoyé les gens. | He sent the people away.
+paes.2: Foi comprar mais comida. | Fue a comprar más comida. | Il est allé acheter plus de nourriture. | He went to buy more food.
+paes.3: Nenhum! | ¡Ninguno! | Aucun ! | None!
+paes.3: Um! | ¡Uno! | Un ! | One!
+paes.3: Três! | ¡Tres! | Trois ! | Three!
+paes.4: Nada, é tudo meu! | ¡Nada, todo es mío! | Rien, tout est à moi ! | Nothing, it's all mine!
+paes.4: Só o que não quero. | Solo lo que no quiero. | Seulement ce que je ne veux pas. | Only what I don't want.
+paes.4: Só com quem me dá coisas. | Solo con quien me da cosas. | Seulement avec ceux qui me donnent des choses. | Only with people who give me things.
+
+aguas.0: Foi dormir a casa. | Se fue a dormir a casa. | Il est rentré dormir. | He went home to sleep.
+aguas.0: Foi pescar. | Se fue a pescar. | Il est allé pêcher. | He went fishing.
+aguas.0: Foi à cidade comprar pão. | Fue a la ciudad a comprar pan. | Il est allé en ville acheter du pain. | He went to town to buy bread.
+aguas.1: A nadar. | Nadando. | À la nage. | Swimming.
+aguas.1: Noutro barco. | En otro barco. | Dans un autre bateau. | In another boat.
+aguas.1: Às costas de um peixe. | A lomos de un pez. | Sur le dos d'un poisson. | On the back of a fish.
+aguas.2: Que era um peixe enorme. | Que era un pez enorme. | Que c'était un énorme poisson. | That it was a huge fish.
+aguas.2: Que era um pescador. | Que era un pescador. | Que c'était un pêcheur. | That it was a fisherman.
+aguas.2: Que era o vento. | Que era el viento. | Que c'était le vent. | That it was the wind.
+aguas.3: O João. | Juan. | Jean. | John.
+aguas.3: Todos os discípulos. | Todos los discípulos. | Tous les disciples. | All the disciples.
+aguas.3: Ninguém. | Nadie. | Personne. | Nobody.
+aguas.4: Ficou a olhar. | Se quedó mirando. | Il est resté à regarder. | He just watched.
+aguas.4: Foi-se embora. | Se fue. | Il est parti. | He went away.
+aguas.4: Atirou-lhe uma corda. | Le tiró una cuerda. | Il lui a lancé une corde. | He threw him a rope.
+
+samaritano.0: Para Belém. | A Belén. | À Bethléem. | To Bethlehem.
+samaritano.0: Para o Egito. | A Egipto. | En Égypte. | To Egypt.
+samaritano.0: Para Nínive. | A Nínive. | À Ninive. | To Nineveh.
+samaritano.1: O samaritano. | El samaritano. | Le Samaritain. | The Samaritan.
+samaritano.1: Um soldado e um rei. | Un soldado y un rey. | Un soldat et un roi. | A soldier and a king.
+samaritano.1: Ninguém. | Nadie. | Personne. | Nobody.
+samaritano.2: Um sacerdote. | Un sacerdote. | Un prêtre. | A priest.
+samaritano.2: Os ladrões. | Los ladrones. | Les voleurs. | The robbers.
+samaritano.2: Um levita. | Un levita. | Un lévite. | A Levite.
+samaritano.3: Com terra e folhas. | Con tierra y hojas. | Avec de la terre et des feuilles. | With dirt and leaves.
+samaritano.3: Com água do mar. | Con agua de mar. | Avec de l'eau de mer. | With sea water.
+samaritano.3: Não tratou. | No las curó. | Il ne les a pas soignées. | He didn't.
+samaritano.4: «Passa ao largo!» | «¡Pasa de largo!» | « Passe ton chemin ! » | "Walk on by!"
+samaritano.4: «Ajuda só os amigos!» | «¡Ayuda solo a tus amigos!» | « Aide seulement tes amis ! » | "Only help your friends!"
+samaritano.4: «Fica em casa!» | «¡Quédate en casa!» | « Reste à la maison ! » | "Stay at home!"
+
+leprosos.0: Dois. | Dos. | Deux. | Two.
+leprosos.0: Cinco. | Cinco. | Cinq. | Five.
+leprosos.0: Cem. | Cien. | Cent. | A hundred.
+leprosos.1: Vai-te embora! | ¡Vete! | Va-t'en ! | Go away!
+leprosos.1: Dá-nos dinheiro! | ¡Danos dinero! | Donne-nous de l'argent ! | Give us money!
+leprosos.1: Não gritaram nada. | No gritaron nada. | Ils n'ont rien crié. | They didn't shout anything.
+leprosos.2: Antes de verem Jesus. | Antes de ver a Jesús. | Avant de voir Jésus. | Before they saw Jesus.
+leprosos.2: Só no dia seguinte. | Solo al día siguiente. | Seulement le lendemain. | Only the next day.
+leprosos.2: Nunca. | Nunca. | Jamais. | Never.
+leprosos.3: Todos os dez. | Los diez. | Tous les dix. | All ten.
+leprosos.3: Cinco. | Cinco. | Cinq. | Five.
+leprosos.3: Nenhum. | Ninguno. | Aucun. | None.
+leprosos.4: Por nada. | Por nada. | Pour rien. | Nothing.
+leprosos.4: Só pelos brinquedos novos. | Solo por los juguetes nuevos. | Seulement pour les nouveaux jouets. | Only for new toys.
+leprosos.4: Só quando ganho alguma coisa. | Solo cuando gano algo. | Seulement quand je gagne quelque chose. | Only when I win something.
+
+prodigo.0: Um cavalo. | Un caballo. | Un cheval. | A horse.
+prodigo.0: Uma casa nova. | Una casa nueva. | Une nouvelle maison. | A new house.
+prodigo.0: Um abraço. | Un abrazo. | Un câlin. | A hug.
+prodigo.1: Guardou-o num cofre. | Lo guardó en un cofre. | Il l'a gardé dans un coffre. | He kept it in a chest.
+prodigo.1: Deu-o ao irmão. | Se lo dio a su hermano. | Il l'a donné à son frère. | He gave it to his brother.
+prodigo.1: Comprou um barco. | Compró un barco. | Il a acheté un bateau. | He bought a boat.
+prodigo.2: De ovelhas. | De ovejas. | Des moutons. | Sheep.
+prodigo.2: De camelos. | De camellos. | Des chameaux. | Camels.
+prodigo.2: De galinhas. | De gallinas. | Des poules. | Chickens.
+prodigo.3: Fechou a porta. | Cerró la puerta. | Il a fermé la porte. | He shut the door.
+prodigo.3: Ficou zangado. | Se enfadó. | Il s'est fâché. | He got angry.
+prodigo.3: Mandou-o trabalhar. | Lo mandó a trabajar. | Il l'a envoyé travailler. | He sent him off to work.
+prodigo.4: Uma vassoura. | Una escoba. | Un balai. | A broom.
+prodigo.4: Nenhum. | Ninguno. | Aucun. | None.
+prodigo.4: Um saco de moedas. | Una bolsa de monedas. | Un sac de pièces. | A bag of coins.
+
+criancas.0: Os soldados. | Los soldados. | Les soldats. | The soldiers.
+criancas.0: Os discípulos. | Los discípulos. | Les disciples. | The disciples.
+criancas.0: Ninguém, foram sozinhas. | Nadie, fueron solos. | Personne, ils y sont allés seuls. | Nobody, they went alone.
+criancas.1: «Venham depressa!» | «¡Vengan rápido!» | « Venez vite ! » | "Come quickly!"
+criancas.1: «Tragam mais crianças!» | «¡Traigan más niños!» | « Amenez plus d'enfants ! » | "Bring more children!"
+criancas.1: Não disseram nada. | No dijeron nada. | Ils n'ont rien dit. | They didn't say anything.
+criancas.2: «Vão para casa!» | «¡Váyanse a casa!» | « Rentrez chez vous ! » | "Go home!"
+criancas.2: «Façam silêncio!» | «¡Hagan silencio!» | « Silence ! » | "Be quiet!"
+criancas.2: «Agora estou ocupado!» | «¡Ahora estoy ocupado!» | « Je suis occupé ! » | "I'm busy now!"
+criancas.3: Mandou-as embora. | Las mandó a casa. | Il les a renvoyés. | He sent them away.
+criancas.3: Deu-lhes doces. | Les dio dulces. | Il leur a donné des bonbons. | He gave them sweets.
+criancas.3: Nem olhou para elas. | Ni las miró. | Il ne les a même pas regardés. | He didn't even look at them.
+criancas.4: Só um bocadinho. | Solo un poquito. | Juste un petit peu. | Just a little bit.
+criancas.4: Só quando me porto bem. | Solo cuando me porto bien. | Seulement quand je suis sage. | Only when I'm good.
+criancas.4: Não sei. | No lo sé. | Je ne sais pas. | I don't know.
+
+cego.0: Zaqueu. | Zaqueo. | Zachée. | Zacchaeus.
+cego.0: Lázaro. | Lázaro. | Lazare. | Lazarus.
+cego.0: Pedro. | Pedro. | Pierre. | Peter.
+cego.1: «Dá-me dinheiro!» | «¡Dame dinero!» | « Donne-moi de l'argent ! » | "Give me money!"
+cego.1: «Vai-te embora!» | «¡Vete!» | « Va-t'en ! » | "Go away!"
+cego.1: Não disse nada. | No dijo nada. | Il n'a rien dit. | He didn't say anything.
+cego.2: Gritar mais alto. | Gritar más fuerte. | Crier plus fort. | Shout louder.
+cego.2: Ir para casa dormir. | Irse a casa a dormir. | Rentrer dormir. | Go home to sleep.
+cego.2: Cantar uma canção. | Cantar una canción. | Chanter une chanson. | Sing a song.
+cego.3: «Como te chamas?» | «¿Cómo te llamas?» | « Comment t'appelles-tu ? » | "What's your name?"
+cego.3: «Onde moras?» | «¿Dónde vives?» | « Où habites-tu ? » | "Where do you live?"
+cego.3: «Porque gritas?» | «¿Por qué gritas?» | « Pourquoi cries-tu ? » | "Why are you shouting?"
+cego.4: Voltou a sentar-se na estrada. | Volvió a sentarse en el camino. | Il s'est rassis au bord de la route. | He sat back down by the road.
+cego.4: Foi-se esconder. | Se fue a esconder. | Il est allé se cacher. | He went and hid.
+cego.4: Foi dormir. | Se fue a dormir. | Il est allé dormir. | He went to sleep.
+
+zaqueu.0: Em Belém. | En Belén. | À Bethléem. | In Bethlehem.
+zaqueu.0: Em Nazaré. | En Nazaret. | À Nazareth. | In Nazareth.
+zaqueu.0: Em Nínive. | En Nínive. | À Ninive. | In Nineveh.
+zaqueu.1: Para apanhar fruta. | Para coger fruta. | Pour cueillir des fruits. | To pick fruit.
+zaqueu.1: Para se esconder de Jesus. | Para esconderse de Jesús. | Pour se cacher de Jésus. | To hide from Jesus.
+zaqueu.1: Para brincar. | Para jugar. | Pour jouer. | To play.
+zaqueu.2: «Fica aí em cima!» | «¡Quédate ahí arriba!» | « Reste là-haut ! » | "Stay up there!"
+zaqueu.2: «Vai-te embora!» | «¡Vete!» | « Va-t'en ! » | "Go away!"
+zaqueu.2: Não disse nada. | No dijo nada. | Il n'a rien dit. | He didn't say anything.
+zaqueu.3: Ficar com o dinheiro todo. | Quedarse con todo el dinero. | Garder tout l'argent. | Keep all the money.
+zaqueu.3: Comprar uma árvore maior. | Comprar un árbol más grande. | Acheter un arbre plus grand. | Buy a bigger tree.
+zaqueu.3: Não prometeu nada. | No prometió nada. | Il n'a rien promis. | He didn't promise anything.
+zaqueu.4: Só as pessoas boazinhas. | Solo a la gente buena. | Seulement les gens gentils. | Only nice people.
+zaqueu.4: Só os ricos. | Solo a los ricos. | Seulement les riches. | Only rich people.
+zaqueu.4: Só os adultos. | Solo a los adultos. | Seulement les adultes. | Only grown-ups.
+
+paulo.0: Do rei. | Del rey. | Du roi. | The king.
+paulo.0: Do tempo. | Del tiempo. | Du temps qu'il fait. | The weather.
+paulo.0: De dinheiro. | De dinero. | D'argent. | Money.
+paulo.1: Dormiam. | Dormían. | Ils dormaient. | They slept.
+paulo.1: Choravam. | Lloraban. | Ils pleuraient. | They cried.
+paulo.1: Tentavam fugir. | Intentaban escapar. | Ils essayaient de s'enfuir. | They tried to escape.
+paulo.2: Começou a nevar. | Empezó a nevar. | Il s'est mis à neiger. | It started to snow.
+paulo.2: Chegou o rei. | Llegó el rey. | Le roi est arrivé. | The king arrived.
+paulo.2: Apagaram-se as estrelas. | Se apagaron las estrellas. | Les étoiles se sont éteintes. | The stars went out.
+paulo.3: Sim, fugiram a correr. | Sí, huyeron corriendo. | Oui, ils se sont enfuis en courant. | Yes, they ran away.
+paulo.3: Sim, esconderam-se. | Sí, se escondieron. | Oui, ils se sont cachés. | Yes, they hid.
+paulo.3: Ficaram a dormir. | Se quedaron durmiendo. | Ils sont restés à dormir. | They stayed asleep.
+paulo.4: «Foge depressa!» | «¡Huye rápido!» | « Fuis vite ! » | "Run away fast!"
+paulo.4: «Deixa-nos em paz!» | «¡Déjanos en paz!» | « Laisse-nous tranquilles ! » | "Leave us alone!"
+paulo.4: Não respondeu nada. | No respondió nada. | Il n'a rien répondu. | He didn't answer.

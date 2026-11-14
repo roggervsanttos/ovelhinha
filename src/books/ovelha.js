@@ -441,6 +441,13 @@ SCENES.push({
     ['Onde é que ele levou a ovelhinha?', 'Aos ombros, todo feliz!'],
     ['Quem é o nosso bom pastor?', 'Jesus!']
   ],
+  wrong: [
+    ['Dez.', 'Cinco.', 'Mil.'],
+    ['Nenhuma.', 'Dez ovelhas.', 'Todas.'],
+    ['Foi dormir.', 'Esqueceu-se dela.', 'Comprou outra ovelha.'],
+    ['Puxada por uma corda.', 'Num carro.', 'Ficou lá sozinha.'],
+    ['O rei.', 'O lobo.', 'Um soldado.']
+  ],
   verse: ['Eu sou o bom pastor.', 'João 10.11'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

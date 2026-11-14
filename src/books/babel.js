@@ -408,6 +408,13 @@ SCENES.push({
     ['O que aconteceu quando Deus mudou as línguas?', 'Ninguém se entendia e pararam a torre.'],
     ['Deus ama pessoas de que línguas?', 'De todas!']
   ],
+  wrong: [
+    ['Cada um falava uma língua diferente.', 'Ninguém sabia falar.', 'Só falavam por gestos.'],
+    ['De ouro.', 'De madeira.', 'De gelo.'],
+    ['Para guardar os animais.', 'Para fugir da chuva.', 'Para dar graças a Deus.'],
+    ['A torre ficou ainda mais alta.', 'Todos ficaram a cantar juntos.', 'Nada mudou.'],
+    ['Só de uma língua.', 'Só das pessoas da torre.', 'De nenhuma.']
+  ],
   verse: ['Louvem o Senhor, todas as nações!', 'Salmo 117.1'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

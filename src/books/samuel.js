@@ -396,6 +396,13 @@ SCENES.push({
     ['Quantas vezes o Samuel correu até ao Eli?', 'Três vezes.'],
     ['O que o Samuel respondeu a Deus?', '«Fala, Senhor, que o teu servo está a ouvir!»']
   ],
+  wrong: [
+    ['Rute.', 'Sara.', 'Maria.'],
+    ['«Menino forte».', '«Ele ri».', '«Pequeno rei».'],
+    ['O Eli.', 'A mãe dele.', 'Um vizinho.'],
+    ['Uma vez.', 'Sete vezes.', 'Dez vezes.'],
+    ['«Agora não, estou a dormir!»', 'Não respondeu nada.', '«Quem és tu?»']
+  ],
   verse: ['Fala, Senhor, que o teu servo está a ouvir.', '1 Samuel 3.10'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

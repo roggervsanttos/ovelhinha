@@ -337,3 +337,66 @@ svg.coloring { background: #fff; }
 .color-view .tbtn svg { stroke: #fff; }
 .color-view .ctitle, .color-view .cbook h3 { color: #2b2140; }
 .color-view .clead, .color-view .cc-go { color: #5a4c66; }
+
+/* ---------- quiz ---------- */
+.cc-art.qz { width: 64px; }
+.cc-art.qz b { position: absolute; left: 0; top: 2px; width: 42px; height: 42px; border-radius: 50%; background: #f7d04a; border: 3px solid var(--art-ink, #3a2730); box-sizing: border-box; display: grid; place-items: center; font-family: var(--font-display); font-weight: 900; font-size: 24px; color: #2b2140; z-index: 2; }
+.cc-art.qz i { position: absolute; width: 24px; height: 24px; border-radius: 8px; border: 3px solid var(--art-ink, #3a2730); box-sizing: border-box; display: grid; place-items: center; font-style: normal; font-family: var(--font-display); font-weight: 800; font-size: 12px; color: #2b2140; }
+.cc-art.qz i:nth-of-type(1) { left: 34px; top: 0; background: #9bd16b; }
+.cc-art.qz i:nth-of-type(2) { left: 38px; top: 22px; background: #8fd3f4; }
+.quiz-card { margin-top: 10px; }
+.qgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 12px; }
+@media (min-width: 640px) { .qgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .qgrid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.qcard { display: flex; flex-direction: column; align-items: center; gap: 6px; border: 0; background: none; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.qcard .cv, .qend .cv { position: relative; display: block; width: 100%; aspect-ratio: 8 / 11; border-radius: 6px 14px 14px 6px; overflow: hidden; background: var(--cover); box-shadow: 0 3px 0 var(--paper-edge), 0 10px 18px -10px #0006; transition: transform .15s; }
+.qcard:active .cv { transform: scale(.96); }
+.qcard svg, .qend .cv svg { display: block; width: 100%; height: 100%; }
+.qstars, .qst, .qbig { display: flex; gap: 2px; }
+.qstars i, .qst i, .qbig i { display: block; width: 18px; height: 18px; color: #d9ccb0; }
+.qstars i.on, .qst i.on, .qbig i.on { color: #f2b51d; }
+.qstars svg, .qst svg, .qbig svg { width: 100%; height: 100%; display: block; }
+
+.qplay { max-width: 720px; width: 100%; margin-inline: auto; padding-bottom: 24px; display: flex; flex-direction: column; gap: 12px; }
+.qplay[hidden] { display: none; }
+.qillus { border: 3px solid var(--art-ink, #3a2730); border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 10; max-height: 38vh; width: 100%; background: #bfe4f6; }
+.qillus svg { display: block; width: 100%; height: 100%; }
+.qcardq { background: #fffdf7; border: 3px solid var(--art-ink, #3a2730); border-radius: 18px; padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; font-size: clamp(15px, 4.2vw, 19px); }
+.qcardq .eyebrow { font-family: var(--font-display); font-weight: 700; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; color: #8a6a3a; display: flex; align-items: center; gap: .5em; }
+.qcardq .eyebrow svg { width: 1.3em; height: 1.3em; color: #f2b51d; }
+.qcardq h2 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 1.3em; line-height: 1.2; color: #2b2140; text-wrap: balance; }
+.qopts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.qopt { position: relative; min-height: 56px; padding: 10px 12px; border-radius: 16px; border: 2.5px solid #d9ccb0; background: #fff; color: #2b2140; font-family: var(--font-display); font-weight: 700; font-size: .92em; line-height: 1.25; cursor: pointer; box-shadow: 0 3px 0 #d9ccb0; -webkit-tap-highlight-color: transparent; display: flex; align-items: center; justify-content: center; gap: 6px; text-align: center; }
+.qopt:active { transform: translateY(2px); box-shadow: 0 1px 0 #d9ccb0; }
+.qopt.right { background: #4caf50; border-color: #3a8f3e; color: #fff; box-shadow: 0 3px 0 #2f7a33; }
+.qopt.right svg { width: 1.2em; height: 1.2em; flex: none; }
+.qopt.wrong { background: #fde3e1; border-color: #e5a29c; color: #a0473f; box-shadow: none; opacity: .75; }
+.qopt:disabled:not(.right) { cursor: default; }
+.qfeed { min-height: 1.6em; display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; color: #2b2140; border-radius: 14px; }
+.qfeed.ok { background: #e6f5e1; color: #2f6b2a; padding: 8px 12px; }
+.qfeed.no { color: #a0473f; padding: 0 4px; }
+.qnav { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; }
+.qdots { display: flex; gap: 6px; }
+.qdots i { width: 10px; height: 10px; border-radius: 50%; background: #e3d7bd; }
+.qdots i.done { background: #f2b51d; }
+.qdots i.now { background: #2b2140; transform: scale(1.2); }
+.qnav .again { font-size: 1em; }
+.qend { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; padding-top: 8px; }
+.qend .cv { width: min(46vw, 200px); }
+.qend h2 { margin: 6px 0 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(24px, 7vw, 34px); color: #2b2140; }
+.qbig i { width: 54px; height: 54px; }
+.qend p { margin: 0; font-size: 17px; color: #5a4c66; max-width: 30em; }
+.qend .endacts { justify-content: center; font-size: 18px; }
+
+/* ---------- tempo de ecrã ---------- */
+.tempo-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.tempo-opts .pbtn.on { background: var(--gold); border-color: var(--gold); color: var(--on-gold, #2b2140); }
+.rest { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 20px; background: linear-gradient(#1b2250, #3a4889); }
+.rest[hidden] { display: none; }
+.rest-box { box-sizing: border-box; width: min(420px, 100%); background: #fffdf7; color: #2b2140; border-radius: 28px; padding: 26px 22px; text-align: center; box-shadow: 0 20px 50px #0006; }
+.rest-sheep { width: 190px; height: auto; display: block; margin: 0 auto 6px; animation: restbob 3.2s ease-in-out infinite; }
+@keyframes restbob { 50% { transform: translateY(-5px); } }
+.rest h3 { margin: 6px 0; font-family: var(--font-display); font-weight: 900; font-size: 28px; }
+.rest p { margin: 0 0 18px; font-size: 18px; line-height: 1.4; color: #5a4c66; }
+.rest .pbtn { color: #2b2140; background: #fff; border-color: #d9ccb0; }
+.rest .gate { color: #2b2140; }

@@ -379,6 +379,13 @@ SCENES.push({
     ['O que prometeu o Zaqueu?', 'Dar metade aos pobres e devolver quatro vezes mais.'],
     ['Quem veio Jesus procurar e salvar?', 'Os que estavam perdidos. E também a ti!']
   ],
+  wrong: [
+    ['Em Belém.', 'Em Nazaré.', 'Em Nínive.'],
+    ['Para apanhar fruta.', 'Para se esconder de Jesus.', 'Para brincar.'],
+    ['«Fica aí em cima!»', '«Vai-te embora!»', 'Não disse nada.'],
+    ['Ficar com o dinheiro todo.', 'Comprar uma árvore maior.', 'Não prometeu nada.'],
+    ['Só as pessoas boazinhas.', 'Só os ricos.', 'Só os adultos.']
+  ],
   verse: ['O Filho do Homem veio procurar e salvar o que estava perdido.', 'Lucas 19.10'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

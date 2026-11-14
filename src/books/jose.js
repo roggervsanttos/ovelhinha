@@ -549,6 +549,13 @@ SCENES.push({
     ['O que é que José guardou nos anos bons?', 'Muito trigo.'],
     ['O que é que José fez quando viu os irmãos?', 'Perdoou-lhes e deu-lhes um abraço!']
   ],
+  wrong: [
+    ['Uma coroa de ouro.', 'Um cão.', 'Uma espada.'],
+    ['Porque José partiu um cântaro.', 'Porque José foi embora.', 'Porque estavam com fome.'],
+    ['Ninguém.', 'Os irmãos dele.', 'O pai, Jacó.'],
+    ['Muito ouro.', 'Muitos camelos.', 'Muitos brinquedos.'],
+    ['Mandou-os para a prisão.', 'Escondeu-se deles.', 'Mandou-os embora sem comida.']
+  ],
   verse: ['Vocês queriam fazer-me mal, mas Deus transformou o mal em bem.', 'Gênesis 50.20'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

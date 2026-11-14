@@ -346,6 +346,13 @@ SCENES.push({
     ['O que fez Jesus às crianças?', 'Abraçou-as e abençoou-as.'],
     ['Jesus gosta de ti?', 'Sim! Muito, muito!']
   ],
+  wrong: [
+    ['Os soldados.', 'Os discípulos.', 'Ninguém, foram sozinhas.'],
+    ['«Venham depressa!»', '«Tragam mais crianças!»', 'Não disseram nada.'],
+    ['«Vão para casa!»', '«Façam silêncio!»', '«Agora estou ocupado!»'],
+    ['Mandou-as embora.', 'Deu-lhes doces.', 'Nem olhou para elas.'],
+    ['Só um bocadinho.', 'Só quando me porto bem.', 'Não sei.']
+  ],
   verse: ['Deixem as crianças vir a mim.', 'Marcos 10.14'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

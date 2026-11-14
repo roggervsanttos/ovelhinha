@@ -693,7 +693,7 @@ const Book = {
     const nx = Ov.nextBook(this.def.id);
     let h = `<h2>${esc(T('end'))}</h2><div class="eyebrow">${ICON.chat}<span>${esc(T('talk'))}</span></div><ul class="qs">`;
     sc.questions.forEach(([q, a]) => h += `<li><button type="button" aria-expanded="false"><b>${esc(tr(q))}</b><span>${esc(tr(a))}</span></button></li>`);
-    h += `</ul><div class="verse"><span>${esc(quoted(tr(sc.verse[0])))}</span><small>${esc(tr(sc.verse[1]))}</small></div><div class="endacts"><button class="again" type="button" data-again>${ICON.replay}<span>${esc(T('again'))}</span></button><button class="again alt" type="button" data-home>${ICON.shelf}<span>${esc(T('homeShort'))}</span></button>${nx ? `<button class="again gold" type="button" data-next><span>${esc(T('nextBook', { t: tr(nx.title) }))}</span>${ICON.next}</button>` : ''}</div>`;
+    h += `</ul><div class="verse"><span>${esc(quoted(tr(sc.verse[0])))}</span><small>${esc(tr(sc.verse[1]))}</small></div><div class="endacts">${sc.wrong ? `<button class="again gold" type="button" data-quiz>${ICON.star}<span>${esc(T('quizDo'))}</span></button>` : ''}<button class="again" type="button" data-again>${ICON.replay}<span>${esc(T('again'))}</span></button><button class="again alt" type="button" data-home>${ICON.shelf}<span>${esc(T('homeShort'))}</span></button>${nx ? `<button class="again gold" type="button" data-next><span>${esc(T('nextBook', { t: tr(nx.title) }))}</span>${ICON.next}</button>` : ''}</div>`;
     el.innerHTML = h;
     el.querySelectorAll('.qs button').forEach(b => b.onclick = () => {
       const o = b.getAttribute('aria-expanded') !== 'true';
@@ -702,6 +702,7 @@ const Book = {
       if (o) Sound.play('chime', 'G5');
     });
     el.querySelector('[data-again]').onclick = () => this.go(0);
+    const qz = el.querySelector('[data-quiz]'); if (qz) qz.onclick = () => App.showQuiz(this.def.id);
     el.querySelector('[data-home]').onclick = () => App.home();
     const n = el.querySelector('[data-next]');
     if (n) n.onclick = () => App.openBook(nx.id, 0);

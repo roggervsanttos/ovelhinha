@@ -416,6 +416,13 @@ SCENES.push({
     ['O que fez o pai quando o viu ao longe?', 'Correu, abraçou-o e deu-lhe beijinhos!'],
     ['Que presentes lhe deu o pai?', 'Roupa nova, um anel e sandálias.']
   ],
+  wrong: [
+    ['Um cavalo.', 'Uma casa nova.', 'Um abraço.'],
+    ['Guardou-o num cofre.', 'Deu-o ao irmão.', 'Comprou um barco.'],
+    ['De ovelhas.', 'De camelos.', 'De galinhas.'],
+    ['Fechou a porta.', 'Ficou zangado.', 'Mandou-o trabalhar.'],
+    ['Uma vassoura.', 'Nenhum.', 'Um saco de moedas.']
+  ],
   verse: ['O meu filho estava perdido e foi encontrado!', 'Lucas 15.24'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

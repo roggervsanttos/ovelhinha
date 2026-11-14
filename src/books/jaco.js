@@ -707,6 +707,13 @@ SCENES.push({
     ['Qual foi o nome novo de Jacó?', 'Israel.'],
     ['Como acabou a zanga dos irmãos?', 'Com um abraço!']
   ],
+  wrong: [
+    ['Abel.', 'José.', 'Isaque.'],
+    ['Com um barco enorme.', 'Com sete vacas gordas.', 'Com um gigante.'],
+    ['Que ia ser rei.', 'Que nunca mais ia ter medo.', 'Muito ouro.'],
+    ['Abraão.', 'Pedro.', 'Esaú.'],
+    ['Nunca mais se falaram.', 'Com uma luta.', 'Esaú foi embora sem dizer nada.']
+  ],
   verse: ['Eu estou contigo e vou cuidar de ti onde quer que vás.', 'Gênesis 28.15'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

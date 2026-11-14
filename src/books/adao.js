@@ -763,6 +763,13 @@ SCENES.push({
     ['Adão e Eva obedeceram a Deus?', 'Não. Comeram a fruta que Deus lhes tinha dito para não comerem.'],
     ['Deus deixou de amar Adão e Eva?', 'Não! Deus continuou a amá-los.']
   ],
+  wrong: [
+    ['Os animais!', 'O mar!', 'As árvores!'],
+    ['Belém.', 'Egito.', 'Jericó.'],
+    ['Eva.', 'Noé.', 'A serpente.'],
+    ['Sim, obedeceram sempre.', 'Não sabiam o que Deus tinha dito.', 'Sim, nem tocaram na fruta.'],
+    ['Sim, deixou de os amar.', 'Esqueceu-se deles.', 'Ficou zangado para sempre.']
+  ],
   verse: ['Deus olhou para tudo o que tinha feito, e tudo era muito bom.', 'Gênesis 1.31'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

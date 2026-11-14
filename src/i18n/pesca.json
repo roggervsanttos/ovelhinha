@@ -304,11 +304,6 @@
   "Combien de poissons Pierre a-t-il attrapés pendant la nuit ?",
   "How many fish did Peter catch during the night?"
  ],
- "Nenhum!": [
-  "¡Ninguno!",
-  "Aucun !",
-  "None!"
- ],
  "De quem era o barco onde Jesus entrou?": [
   "¿De quién era la barca a la que subió Jesús?",
   "À qui était la barque où Jésus est monté ?",
@@ -358,6 +353,46 @@
   "Mateo 4:19",
   "Matthieu 4.19",
   "Matthew 4:19"
+ ],
+ "Do Zaqueu.": [
+  "De Zaqueo.",
+  "De Zachée.",
+  "Zacchaeus’s."
+ ],
+ "De Jonas.": [
+  "De Jonás.",
+  "De Jonas.",
+  "Jonah’s."
+ ],
+ "De Noé.": [
+  "De Noé.",
+  "De Noé.",
+  "Noah’s."
+ ],
+ "Não apanharam nada outra vez.": [
+  "No pescaron nada otra vez.",
+  "Ils n’ont encore rien pris.",
+  "They caught nothing again."
+ ],
+ "Apanharam só um peixinho.": [
+  "Pescaron solo un pececito.",
+  "Ils n’ont pris qu’un petit poisson.",
+  "They caught just one little fish."
+ ],
+ "Um peixe enorme.": [
+  "Un pez enorme.",
+  "Un énorme poisson.",
+  "A huge fish."
+ ],
+ "Carpinteiro!": [
+  "¡Carpintero!",
+  "Charpentier !",
+  "A carpenter!"
+ ],
+ "Pastor de ovelhas!": [
+  "¡Pastor de ovejas!",
+  "Berger !",
+  "A shepherd!"
  ],
  "Tiago": [
   "Santiago",

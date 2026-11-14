@@ -319,11 +319,6 @@
   "Dans quelle ville Jésus est-il resté ?",
   "In which city did Jesus stay?"
  ],
- "Em Jerusalém.": [
-  "En Jerusalén.",
-  "À Jérusalem.",
-  "In Jerusalem."
- ],
  "Quantos dias procuraram Jesus?": [
   "¿Cuántos días buscaron a Jesús?",
   "Pendant combien de jours ont-ils cherché Jésus ?",
@@ -353,6 +348,61 @@
   "Jesús crecía en sabiduría y en estatura, y era amado por Dios y por la gente.",
   "Jésus grandissait en sagesse et en taille, et il était aimé de Dieu et des hommes.",
   "Jesus grew in wisdom and in stature, and he was loved by God and by people."
+ ],
+ "Três anos.": [
+  "Tres años.",
+  "Trois ans.",
+  "Three years old."
+ ],
+ "Trinta anos.": [
+  "Treinta años.",
+  "Trente ans.",
+  "Thirty years old."
+ ],
+ "Sete anos.": [
+  "Siete años.",
+  "Sept ans.",
+  "Seven years old."
+ ],
+ "Um dia.": [
+  "Un día.",
+  "Un jour.",
+  "One day."
+ ],
+ "Quarenta dias.": [
+  "Cuarenta días.",
+  "Quarante jours.",
+  "Forty days."
+ ],
+ "A brincar na rua.": [
+  "Jugando en la calle.",
+  "En train de jouer dans la rue.",
+  "Playing in the street."
+ ],
+ "A dormir debaixo de uma árvore.": [
+  "Durmiendo bajo un árbol.",
+  "En train de dormir sous un arbre.",
+  "Asleep under a tree."
+ ],
+ "No mercado, a comprar pão.": [
+  "En el mercado, comprando pan.",
+  "Au marché, en train d’acheter du pain.",
+  "At the market, buying bread."
+ ],
+ "Era pescador.": [
+  "Era pescador.",
+  "Il était pêcheur.",
+  "He was a fisherman."
+ ],
+ "Era rei.": [
+  "Era rey.",
+  "Il était roi.",
+  "He was a king."
+ ],
+ "Era soldado.": [
+  "Era soldado.",
+  "Il était soldat.",
+  "He was a soldier."
  ],
  "Gosto tanto de aprender sobre Deus!": [
   "¡Me gusta tanto aprender sobre Dios!",

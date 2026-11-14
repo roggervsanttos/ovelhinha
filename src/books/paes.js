@@ -479,6 +479,13 @@ SCENES.push({
     ['Quantos cestos sobraram?', 'Doze!'],
     ['O que é que podes repartir com alguém?', 'O meu lanche, os meus brinquedos e muito mais!']
   ],
+  wrong: [
+    ['Dois.', 'Doze.', 'Cem.'],
+    ['Cinco!', 'Dez!', 'Nenhum!'],
+    ['Comeu um pão.', 'Mandou as pessoas embora.', 'Foi comprar mais comida.'],
+    ['Nenhum!', 'Um!', 'Três!'],
+    ['Nada, é tudo meu!', 'Só o que não quero.', 'Só com quem me dá coisas.']
+  ],
   verse: ['Eu sou o pão da vida.', 'João 6.35'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

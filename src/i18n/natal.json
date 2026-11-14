@@ -459,11 +459,6 @@
   "Dans quelle ville Jésus est-il né ?",
   "In what town was Jesus born?"
  ],
- "Em Belém.": [
-  "En Belén.",
-  "À Bethléem.",
-  "In Bethlehem."
- ],
  "Onde é que Maria deitou o bebé?": [
   "¿Dónde acostó María al bebé?",
   "Où Marie a-t-elle couché le bébé ?",
@@ -498,6 +493,46 @@
   "Lucas 2:11",
   "Luc 2.11",
   "Luke 2:11"
+ ],
+ "O anjo Miguel.": [
+  "El ángel Miguel.",
+  "L’ange Michel.",
+  "The angel Michael."
+ ],
+ "Um pastor.": [
+  "Un pastor.",
+  "Un berger.",
+  "A shepherd."
+ ],
+ "Um rei.": [
+  "Un rey.",
+  "Un roi.",
+  "A king."
+ ],
+ "Numa cama de ouro.": [
+  "En una cama de oro.",
+  "Dans un lit en or.",
+  "In a golden bed."
+ ],
+ "Num cesto no rio.": [
+  "En una cesta en el río.",
+  "Dans un panier sur le fleuve.",
+  "In a basket on the river."
+ ],
+ "Os pescadores.": [
+  "Los pescadores.",
+  "Les pêcheurs.",
+  "The fishermen."
+ ],
+ "O rei Herodes.": [
+  "El rey Herodes.",
+  "Le roi Hérode.",
+  "King Herod."
+ ],
+ "Uma estrela.": [
+  "Una estrella.",
+  "Une étoile.",
+  "A star."
  ],
  "Bebé Jesus": [
   "Niño Jesús",

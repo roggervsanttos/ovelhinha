@@ -404,6 +404,13 @@ SCENES.push({
     ['O que aconteceu depois?', 'O vento parou e ficou tudo calmo.'],
     ['O que podes fazer quando tens medo?', 'Falar com Jesus e confiar n’Ele.']
   ],
+  wrong: [
+    ['Para Jerusalém.', 'Para o Egito.', 'Para pescar no mar alto.'],
+    ['Estava a remar.', 'Estava a pescar.', 'Estava a cantar.'],
+    ['«Mais forte!»', '«Vamos fugir!»', 'Não disse nada.'],
+    ['O barco afundou-se.', 'Choveu ainda mais.', 'Apareceu um peixe enorme.'],
+    ['Esconder-me debaixo da cama.', 'Gritar muito alto.', 'Não contar a ninguém.']
+  ],
   verse: ['Quando eu tiver medo, confiarei em ti.', 'Salmo 56.3'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

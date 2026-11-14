@@ -417,6 +417,13 @@ SCENES.push({
     ['Onde estava Jesus?', 'No Templo, com os mestres.'],
     ['Que trabalho fazia o José?', 'Era carpinteiro.']
   ],
+  wrong: [
+    ['Três anos.', 'Trinta anos.', 'Sete anos.'],
+    ['Em Belém.', 'Em Nazaré.', 'Em Roma.'],
+    ['Um dia.', 'Sete dias.', 'Quarenta dias.'],
+    ['A brincar na rua.', 'A dormir debaixo de uma árvore.', 'No mercado, a comprar pão.'],
+    ['Era pescador.', 'Era rei.', 'Era soldado.']
+  ],
   verse: ['Jesus crescia em sabedoria e em tamanho, e era amado por Deus e pelas pessoas.', 'Lucas 2.52'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

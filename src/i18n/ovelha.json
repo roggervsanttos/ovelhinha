@@ -339,11 +339,6 @@
   "Combien de brebis le berger avait-il ?",
   "How many sheep did the shepherd have?"
  ],
- "Cem!": [
-  "¡Cien!",
-  "Cent !",
-  "A hundred!"
- ],
  "Quantas se perderam?": [
   "¿Cuántas se perdieron?",
   "Combien se sont perdues ?",
@@ -388,6 +383,51 @@
   "Juan 10:11",
   "Jean 10.11",
   "John 10:11"
+ ],
+ "Mil.": [
+  "Mil.",
+  "Mille.",
+  "A thousand."
+ ],
+ "Dez ovelhas.": [
+  "Diez ovejas.",
+  "Dix brebis.",
+  "Ten sheep."
+ ],
+ "Todas.": [
+  "Todas.",
+  "Toutes.",
+  "All of them."
+ ],
+ "Esqueceu-se dela.": [
+  "Se olvidó de ella.",
+  "Il l’a oubliée.",
+  "He forgot about it."
+ ],
+ "Comprou outra ovelha.": [
+  "Compró otra oveja.",
+  "Il a acheté une autre brebis.",
+  "He bought another sheep."
+ ],
+ "Puxada por uma corda.": [
+  "Tirando de una cuerda.",
+  "Tirée par une corde.",
+  "Pulled by a rope."
+ ],
+ "Num carro.": [
+  "En un carro.",
+  "Dans une charrette.",
+  "In a cart."
+ ],
+ "Ficou lá sozinha.": [
+  "Se quedó allí sola.",
+  "Elle est restée là toute seule.",
+  "It stayed there alone."
+ ],
+ "O lobo.": [
+  "El lobo.",
+  "Le loup.",
+  "The wolf."
  ],
  "Branquinha!": [
   "¡Blanquita!",

@@ -552,6 +552,13 @@ SCENES.push({
     ['O que é que Jesus perguntou?', '«O que queres que eu faça por ti?»'],
     ['O que é que Bartimeu fez depois de ver?', 'Foi com Jesus, a louvar a Deus.']
   ],
+  wrong: [
+    ['Zaqueu.', 'Lázaro.', 'Pedro.'],
+    ['«Dá-me dinheiro!»', '«Vai-te embora!»', 'Não disse nada.'],
+    ['Gritar mais alto.', 'Ir para casa dormir.', 'Cantar uma canção.'],
+    ['«Como te chamas?»', '«Onde moras?»', '«Porque gritas?»'],
+    ['Voltou a sentar-se na estrada.', 'Foi-se esconder.', 'Foi dormir.']
+  ],
   verse: ['O Senhor abre os olhos dos cegos.', 'Salmo 146.8'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

@@ -329,11 +329,6 @@
   "En quoi était faite la statue du roi ?",
   "What was the king’s statue made of?"
  ],
- "De ouro.": [
-  "De oro.",
-  "En or.",
-  "Gold."
- ],
  "Porque é que os três amigos não se ajoelharam?": [
   "¿Por qué no se arrodillaron los tres amigos?",
   "Pourquoi les trois amis ne se sont-ils pas mis à genoux ?",
@@ -368,6 +363,56 @@
   "Isaías 43:2",
   "Ésaïe 43.2",
   "Isaiah 43:2"
+ ],
+ "Pedro, Tiago e João.": [
+  "Pedro, Santiago y Juan.",
+  "Pierre, Jacques et Jean.",
+  "Peter, James and John."
+ ],
+ "Davi, Saul e Jónatas.": [
+  "David, Saúl y Jonatán.",
+  "David, Saül et Jonathan.",
+  "David, Saul and Jonathan."
+ ],
+ "Gaspar, Belchior e Baltasar.": [
+  "Gaspar, Melchor y Baltasar.",
+  "Gaspard, Melchior et Balthazar.",
+  "Caspar, Melchior and Balthazar."
+ ],
+ "De pedra.": [
+  "De piedra.",
+  "En pierre.",
+  "Stone."
+ ],
+ "De areia.": [
+  "De arena.",
+  "En sable.",
+  "Sand."
+ ],
+ "Porque estavam cansados.": [
+  "Porque estaban cansados.",
+  "Parce qu’ils étaient fatigués.",
+  "Because they were tired."
+ ],
+ "Porque não ouviram a música.": [
+  "Porque no oyeron la música.",
+  "Parce qu’ils n’ont pas entendu la musique.",
+  "Because they didn’t hear the music."
+ ],
+ "Porque estavam a dormir.": [
+  "Porque estaban durmiendo.",
+  "Parce qu’ils dormaient.",
+  "Because they were asleep."
+ ],
+ "Sim, muito!": [
+  "¡Sí, mucho!",
+  "Oui, beaucoup !",
+  "Yes, a lot!"
+ ],
+ "Ficaram todos pretos.": [
+  "Quedaron todos negros.",
+  "Ils étaient tout noirs.",
+  "They were all black with soot."
  ],
  "Sadraque": [
   "Sadrac",

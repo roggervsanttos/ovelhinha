@@ -347,6 +347,13 @@ SCENES.push({
     ['O que disse Jesus à menina?', 'Menina, levanta-te!'],
     ['O que mandou Jesus dar à menina?', 'Alguma coisa para comer.']
   ],
+  wrong: [
+    ['Que lhe desse dinheiro.', 'Que fosse jantar a casa dele.', 'Que contasse uma história.'],
+    ['Na mão de Pedro.', 'No barco.', 'Numa árvore.'],
+    ['Vamos embora!', 'Já é tarde demais!', 'Chora muito!'],
+    ['Menina, dorme mais!', 'Menina, vai brincar!', 'Não disse nada.'],
+    ['Um brinquedo novo.', 'Um vestido bonito.', 'Um cachorrinho.']
+  ],
   verse: ['Não tenhas medo. Continua a confiar!', 'Marcos 5.36'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

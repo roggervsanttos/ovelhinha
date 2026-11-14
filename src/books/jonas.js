@@ -709,6 +709,13 @@ SCENES.push({
     ['O que é que Jonas fez dentro do peixe?', 'Orou a Deus.'],
     ['Deus ama só algumas pessoas?', 'Não! Deus ama toda a gente.']
   ],
+  wrong: [
+    ['Para Belém.', 'Para o Egito.', 'Para o deserto.'],
+    ['Foi logo a Nínive.', 'Escondeu-se numa gruta.', 'Subiu a um monte.'],
+    ['Um leão.', 'Um crocodilo.', 'Uma serpente.'],
+    ['Dormiu o tempo todo.', 'Comeu peixinhos.', 'Ficou a chorar.'],
+    ['Sim, só os bons.', 'Sim, só os de Israel.', 'Só os que obedecem sempre.']
+  ],
   verse: ['O Senhor é bondoso e cheio de amor.', 'Jonas 4.2'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.5, '#262f6c'], [.7, '#3a4889'], [1, '#3a4889']]);

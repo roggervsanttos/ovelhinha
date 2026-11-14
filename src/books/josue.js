@@ -483,6 +483,13 @@ SCENES.push({
     ['O que aconteceu quando o povo gritou?', 'As muralhas caíram!'],
     ['O que Deus disse a Josué?', '«Sê forte e corajoso!»']
   ],
+  wrong: [
+    ['Abraão.', 'O faraó.', 'Noé.'],
+    ['O rei de Jericó.', 'Os soldados.', 'Ninguém.'],
+    ['Uma.', 'Três.', 'Cem.'],
+    ['Todos adormeceram.', 'A cidade ficou mais alta.', 'Começou a chover.'],
+    ['«Volta para casa!»', '«Tem medo!»', '«Esconde-te!»']
+  ],
   verse: ['Sê forte e corajoso! O Senhor, teu Deus, está contigo por onde quer que andares.', 'Josué 1.9'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

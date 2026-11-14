@@ -409,6 +409,26 @@
   "Je suis le pain de vie.",
   "I am the bread of life."
  ],
+ "Dez!": [
+  "¡Diez!",
+  "Dix !",
+  "Ten!"
+ ],
+ "Comeu um pão.": [
+  "Se comió un pan.",
+  "Il a mangé un pain.",
+  "He ate a loaf."
+ ],
+ "Mandou as pessoas embora.": [
+  "Mandó a la gente a casa.",
+  "Il a renvoyé les gens.",
+  "He sent the people away."
+ ],
+ "Foi comprar mais comida.": [
+  "Fue a comprar más comida.",
+  "Il est allé acheter plus de nourriture.",
+  "He went to buy more food."
+ ],
  "Um!": [
   "¡Uno!",
   "Un !",
@@ -418,6 +438,21 @@
   "¡Tres!",
   "Trois !",
   "Three!"
+ ],
+ "Nada, é tudo meu!": [
+  "¡Nada, todo es mío!",
+  "Rien, tout est à moi !",
+  "Nothing, it’s all mine!"
+ ],
+ "Só o que não quero.": [
+  "Solo lo que no quiero.",
+  "Seulement ce que je ne veux pas.",
+  "Only what I don’t want."
+ ],
+ "Só com quem me dá coisas.": [
+  "Solo con quien me da cosas.",
+  "Seulement avec ceux qui me donnent des choses.",
+  "Only with people who give me things."
  ],
  "Seis!": [
   "¡Seis!",
@@ -433,11 +468,6 @@
   "¡Nueve!",
   "Neuf !",
   "Nine!"
- ],
- "Dez!": [
-  "¡Diez!",
-  "Dix !",
-  "Ten!"
  ],
  "Onze!": [
   "¡Once!",

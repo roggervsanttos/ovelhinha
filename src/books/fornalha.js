@@ -407,6 +407,13 @@ SCENES.push({
     ['Quantas pessoas viu o rei dentro do fogo?', 'Quatro!'],
     ['Os amigos cheiravam a fumo?', 'Não! Nem um bocadinho.']
   ],
+  wrong: [
+    ['Pedro, Tiago e João.', 'Davi, Saul e Jónatas.', 'Gaspar, Belchior e Baltasar.'],
+    ['De pedra.', 'De madeira.', 'De areia.'],
+    ['Porque estavam cansados.', 'Porque não ouviram a música.', 'Porque estavam a dormir.'],
+    ['Três.', 'Uma.', 'Nenhuma.'],
+    ['Sim, muito!', 'Só um bocadinho.', 'Ficaram todos pretos.']
+  ],
   verse: ['Quando passares pelo fogo, não te queimarás. Eu estou contigo.', 'Isaías 43.2'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);

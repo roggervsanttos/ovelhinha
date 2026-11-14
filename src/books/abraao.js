@@ -421,6 +421,13 @@ SCENES.push({
     ['Como se chamava o bebé?', 'Isaque, que quer dizer «ele ri».'],
     ['Deus cumpre o que promete?', 'Sim! Sempre!']
   ],
+  wrong: [
+    ['Construir uma arca.', 'Ir pescar.', 'Ser rei do Egito.'],
+    ['As nuvens.', 'Os pássaros.', 'As gotas de chuva.'],
+    ['Porque viu um camelo engraçado.', 'Porque Abraão contou uma anedota.', 'Porque estava a brincar.'],
+    ['Jacó.', 'Moisés.', 'Davi.'],
+    ['Só às vezes.', 'Não, esquece-se.', 'Só se tivermos sorte.']
+  ],
   verse: ['Existe alguma coisa difícil demais para o Senhor?', 'Gênesis 18.14'],
   art() {
     let s = sky('sky', [[0, '#0f1640'], [.55, '#262f6c'], [.8, '#3a4889'], [1, '#3a4889']]);
