@@ -227,7 +227,7 @@ function buildArtifact() {
   const fam = path.join(DIST, 'familia'); clean(fam);
   fs.cpSync(dir, fam, { recursive: true });
   const fi = path.join(fam, 'index.html');
-  fs.writeFileSync(fi, fs.readFileSync(fi, 'utf8').replace('"store":"demo"', '"store":"aberto"').replace('<title>Ovelhinha</title>', '<title>Ovelhinha em Casa</title>'));
+  fs.writeFileSync(fi, fs.readFileSync(fi, 'utf8').replace('"store":"demo"', '"store":"aberto"'));
   return dir;
 }
 
