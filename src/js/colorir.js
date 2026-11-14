@@ -45,7 +45,7 @@ const LineArt = {
       el.removeAttribute('filter'); el.style.filter = 'none';
       if (noFill) {
         // traço grosso de cor (pernas, braços, cajados): fica branco com o contorno que já tem por baixo
-        if (this.lum(stroke) > .28 && sw >= 3) { el.style.stroke = '#ffffff'; this.region(el, 'stroke', groups, () => gid++); }
+        if (this.lum(stroke) > .28 && sw >= 3) { el.dataset.oc = stroke; el.style.stroke = '#ffffff'; this.region(el, 'stroke', groups, () => gid++); }
         // linhas finas de cor (raios, cortinas, cordas) passam a linhas escuras
         else if (!this.isOL(stroke)) el.style.stroke = OL;
         continue;
@@ -55,7 +55,7 @@ const LineArt = {
       if (!/url\(/.test(fill) && this.lum(fill) < .28 && (this.isOL(fill) || this.area(el) < 2500)) {
         // linhas retas (braços, pernas) têm o preenchimento por omissão, que não se vê: conta o traço
         if (stroke && stroke !== 'none' && this.lum(stroke) > .28 && !this.isOL(stroke)) {
-          if (sw >= 3) { el.style.stroke = '#ffffff'; this.region(el, 'stroke', groups, () => gid++); } else el.style.stroke = OL;
+          if (sw >= 3) { el.dataset.oc = stroke; el.style.stroke = '#ffffff'; this.region(el, 'stroke', groups, () => gid++); } else el.style.stroke = OL;
         }
         continue;
       }
@@ -65,6 +65,7 @@ const LineArt = {
       if (!stroke || stroke === 'none') {
         if (this.area(el) > 9000) { el.style.stroke = OL; el.style.strokeWidth = '1.8'; el.setAttribute('vector-effect', 'non-scaling-stroke'); }
       }
+      el.dataset.oc = fill; // cor original (usada nas fotos das lojas para mostrar um desenho já meio pintado)
       this.region(el, 'fill', groups, () => gid++, fill);
     }
     this.ink(svg);

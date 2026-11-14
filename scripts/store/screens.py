@@ -27,15 +27,30 @@ DEVICES = {
 
 # nome, endereço no app, toques (elemento, espera em ms depois do toque), espera final, frase
 SHOTS = [
-    ('estante', 'estante', [], 900, ('30 histórias da Bíblia', '5 grátis para começar')),
+    ('estante', 'estante', [], 900, ('Histórias da Bíblia', 'para ler, tocar e aprender')),
     ('moises', 'moises-10', [('cajado', 3300)], 300, ('Toca no cajado', 'e o mar abre-se!')),
-    ('noe', 'noe-12', [('nuvem', 2900)], 200, ('Ilustrações animadas', 'em todas as páginas')),
     ('davi', 'davi-2', [('davi', 230), ('davi', 230), ('star1', 160), ('davi', 230), ('z1', 420)], 0, ('Sons e música', 'a cada toque')),
-    ('adao', 'adao-2', [('s0', 250), ('s1', 250), ('s2', 250), ('s3', 2300)], 200, ('Da criação do mundo', 'até à Páscoa')),
+    ('quiz', 'estante', [], 700, ('Um quiz em cada história', 'para aprender a brincar')),
+    ('colorir', 'estante', [], 500, ('Desenhos para colorir', 'com um só toque')),
+    ('noe', 'noe-12', [('nuvem', 2900)], 200, ('Ilustrações animadas', 'em todas as páginas')),
     ('ovelha', 'ovelha-7', [('pastor', 1200)], 300, ('Histórias que mostram', 'o amor de Deus')),
-    ('conversa', 'moises-14', [], 700, ('Perguntas para', 'conversar em família')),
-    ('pais', 'estante', [], 600, ('Área dos pais protegida', 'sem anúncios e sem registo')),
+    ('pais', 'estante', [], 600, ('Área dos pais com', 'tempo de ecrã e sem anúncios')),
 ]
+
+# quiz: uma pergunta do Davi já respondida (botão verde e estrelas)
+QUIZ = """() => { App.showQuiz('davi'); Quiz.cur.order = [1, 0, 2, 3, 4]; Quiz.ask();
+  document.querySelector('.qopt[data-ok="0"]').click(); document.querySelector('.qopt[data-ok="1"]').click(); }"""
+# colorir: o desenho da festa da Ovelhinha meio pintado com as cores originais
+COLORIR = """() => { App.showColor(); Colorir.open('ovelha', 7);
+  const seen = new Set();
+  for (const el of Colorir.svg.querySelectorAll('[data-ci]')) {
+    const g = el.dataset.ci, c = el.dataset.oc || '';
+    if (seen.has(g) || !/^rgb/.test(c)) continue; seen.add(g);
+    const b = el.getBBox(); if (b.x + b.width / 2 > 520) continue;
+    const m = c.match(/[\\d.]+/g).map(Number), hex = '#' + m.slice(0, 3).map(v => Math.round(v).toString(16).padStart(2, '0')).join('');
+    Colorir.map[g] = hex; LineArt.paint(Colorir.svg, g, hex);
+  }
+  Colorir.pick('#3f7fd0'); }"""
 
 CLEAN = '#btnFull, .email, #installCard, svg.scene .cue { display: none !important; } * { caret-color: transparent !important; }'
 
@@ -58,7 +73,7 @@ def serve():
 async def app_shot(b, base, dev, shot, path, dsf):
     name, where, taps, settle, _ = shot
     ctx = await b.new_context(viewport={'width': dev['vp'][0], 'height': dev['vp'][1]}, device_scale_factor=dsf, color_scheme='light', locale='pt-PT')
-    if name not in ('estante', 'pais'): await ctx.add_init_script(UNLOCK)
+    if name not in ('estante', 'pais', 'colorir'): await ctx.add_init_script(UNLOCK)
     pg = await ctx.new_page()
     errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
@@ -67,7 +82,11 @@ async def app_shot(b, base, dev, shot, path, dsf):
     await pg.evaluate('document.fonts.ready')
     await pg.wait_for_timeout(1400)
     if name == 'pais':
-        await pg.evaluate('() => { Parents.open(); Parents.unlock(); }')
+        await pg.evaluate("() => { store.set('ov:tempo', '30'); Parents.open(); Parents.unlock(); }")
+        await pg.wait_for_timeout(300)
+        await pg.evaluate("() => { const g = document.getElementById('tempoOpts'); g.closest('.group').scrollIntoView({ block: 'center' }); }")
+    if name == 'quiz': await pg.evaluate(QUIZ)
+    if name == 'colorir': await pg.evaluate(COLORIR)
     for k, ms in taps:
         if not await pg.evaluate(TAP, k): errs.append(f'não achei o elemento "{k}"')
         await pg.wait_for_timeout(ms)
