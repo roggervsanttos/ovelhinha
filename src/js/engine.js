@@ -68,7 +68,8 @@ const Native = {
     const n = this.n(); if (!n) return;
     document.documentElement.classList.add('native', 'native-' + n.platform);
     const mq = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
-    const bar = () => { try { n.StatusBar.setStyle({ style: mq && mq.matches ? n.Style.Dark : n.Style.Light }).catch(() => { }); } catch (e) { } };
+    // cor dos ícones da barra do sistema (SystemBars do Capacitor, sem as APIs antigas do Android)
+    const bar = () => { try { n.SystemBars.setStyle({ style: mq && mq.matches ? n.SystemBarsStyle.Dark : n.SystemBarsStyle.Light }).catch(() => { }); } catch (e) { } };
     bar(); if (mq && mq.addEventListener) mq.addEventListener('change', bar);
     try { n.App.addListener('backButton', () => { if (!App.back()) n.App.exitApp(); }); } catch (e) { }
     setTimeout(() => { try { n.SplashScreen.hide({ fadeOutDuration: 300 }).catch(() => { }); } catch (e) { } }, 250);
