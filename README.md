@@ -24,14 +24,12 @@ O mesmo código dá origem a três coisas:
 
 | Versão | Onde fica | Como é gerada |
 | --- | --- | --- |
-| Site instalável (funciona sem internet), só com as histórias grátis | GitHub Pages, em https://aovelhinha.com/ | `.github/workflows/site.yml`, a cada alteração |
+| Site instalável (funciona sem internet), só com as histórias grátis | GitHub Pages, em https://roggervsanttos.github.io/ovelhinha/ | `.github/workflows/site.yml`, a cada alteração |
 | App de Android (.aab e .apk) | Google Play | Actions > **Android** > Run workflow |
 | App de iPhone e iPad | App Store (TestFlight) | Actions > **iPhone e iPad** > Run workflow |
 
-O contacto público é contacto@aovelhinha.com (Google Workspace). O domínio liga-se ao site em Settings > Pages > Custom domain
-(`aovelhinha.com`), com quatro registos A no domínio (185.199.108.153, 185.199.109.153, 185.199.110.153 e 185.199.111.153)
-e um CNAME `www` para `SEU-UTILIZADOR.github.io`; os registos MX do e-mail não se mexem. Com o site publicado por Actions,
-não é preciso ficheiro CNAME.
+O contacto público é ovelhinha.app@gmail.com. O site fica no endereço grátis do GitHub Pages (sem domínio próprio desde nov. 2026;
+o domínio aovelhinha.com e o Google Workspace foram cancelados). Em Settings > Pages, o campo Custom domain tem de ficar vazio.
 
 ## Pastas
 

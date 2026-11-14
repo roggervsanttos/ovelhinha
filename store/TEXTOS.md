@@ -1,6 +1,6 @@
 # Textos das lojas
 
-Copie e cole cada campo. O e-mail de contacto é contacto@aovelhinha.com e o site é https://aovelhinha.com/ (os endereços do site funcionam depois de ligar o domínio ao GitHub Pages).
+Copie e cole cada campo. O e-mail de contacto é ovelhinha.app@gmail.com e o site é https://roggervsanttos.github.io/ovelhinha/.
 
 A língua principal das fichas é o **Português (Portugal)**. Como a app tem quatro línguas, acrescente também **Espanhol**, **Francês** e **Inglês** (na App Store Connect, no menu da língua ao lado do nome da app; no Play Console, em Presença na loja > Traduções). Os textos dessas línguas estão no fim deste ficheiro.
 
@@ -12,9 +12,9 @@ A língua principal das fichas é o **Português (Portugal)**. Como a app tem qu
 | Subtítulo | Livros animados para crianças |
 | Texto promocional | Histórias da Bíblia para ler e tocar, de Adão e Eva até Paulo e Silas, em português, espanhol, francês e inglês. Algumas são grátis. Sem anúncios e funciona sem internet. |
 | Palavras-chave | noé,moisés,davi,golias,jonas,daniel,ester,josué,elias,zaqueu,jesus,natal,páscoa,infantil,cristão |
-| URL de suporte | https://aovelhinha.com/suporte.html |
-| URL de marketing | https://aovelhinha.com/ |
-| URL da política de privacidade | https://aovelhinha.com/privacidade.html |
+| URL de suporte | https://roggervsanttos.github.io/ovelhinha/suporte.html |
+| URL de marketing | https://roggervsanttos.github.io/ovelhinha/ |
+| URL da política de privacidade | https://roggervsanttos.github.io/ovelhinha/privacidade.html |
 | Direitos de autor | 2026 e o seu nome completo, o mesmo da conta da Apple |
 | Categorias | Principal Educação, secundária Livros |
 | Preço e países | Grátis (com compras dentro da app); todos os países menos a China continental, onde a Apple exige um registo do governo chinês |
@@ -245,9 +245,9 @@ Ovelhinha is a picture-book app for children with animated Bible stories in Euro
 | Descrição breve | Histórias da Bíblia animadas para ler e tocar com as crianças. Algumas grátis! |
 | Descrição completa | A mesma da App Store, acima |
 | Categoria | Educação |
-| E-mail de contacto | contacto@aovelhinha.com |
-| Site | https://aovelhinha.com/ |
-| Política de privacidade | https://aovelhinha.com/privacidade.html |
+| E-mail de contacto | ovelhinha.app@gmail.com |
+| Site | https://roggervsanttos.github.io/ovelhinha/ |
+| Política de privacidade | https://roggervsanttos.github.io/ovelhinha/privacidade.html |
 | Imagens | Pasta store/google-play: ícone 512, imagem de destaque 1024 x 500, telemóvel (8 ecrãs) e tablet de 10 polegadas (8 ecrãs, servem também para 7 polegadas) |
 
 ### Respostas do Play Console
