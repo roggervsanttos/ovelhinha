@@ -167,7 +167,7 @@ SCENES.push({
     s += `<defs>${rg('glory', [[0, '#fff6c8', 1], [.5, '#ffe28a', .45], [1, '#ffe28a', 0]])}</defs><circle data-k="luz" cx="600" cy="90" r="240" fill="${UR('glory')}"/>`;
     s += cloud(560, 100, 1.1, { shade: '#f6e3b8' }) + cloud(700, 140, .8, { shade: '#f6e3b8' }) + cloud(150, 180, .8, { d: 13 });
     s += hill([[-40, 470], [200, 444], [420, 462], [640, 440], [840, 456]], '#dfe5b4');
-    s += town(70, 380, .55) + palm(250, 470, .44);
+    s += town(70, 412, .55) + palm(250, 470, .44);
     s += house(560, 520, 130, 110, { wall: '#ecd5a6', sw: 3 }) + palm(706, 520, .5);
     s += `<rect x="-40" y="520" width="900" height="340" fill="#e6d3a2"/><path d="M300,860 C340,700 420,600 520,520 L600,520 C520,600 470,700 470,860 Z" fill="#efdfb6"/>`;
     s += `<g transform="translate(650,620)" data-k="placa"><g class="act">${limb(0, 0, 0, -120, 8, '#9a6b3e')}<path d="M-6,-120 L96,-120 L120,-100 L96,-80 L-6,-80 Z" fill="#c98f57" stroke="${OL}" stroke-width="3.4" stroke-linejoin="round"/><text x="50" y="-91" text-anchor="middle" font-size="22" class="svgtxt" fill="${OL}">${tr('Nínive')}</text>${hitC(50, -80, 60)}</g></g>`;
