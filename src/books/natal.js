@@ -209,7 +209,7 @@ SCENES.push({
     s += sun(640, 330, 46, { fill: '#ffb84a', fill2: '#ffcf6e', glow: '#ffe2a8' });
     s += cloud(180, 140, .8, { fill: '#fff4e4', shade: '#f6cfae' }) + cloud(500, 100, .6, { fill: '#fff4e4', shade: '#f6cfae', dx: -24 });
     s += hill([[-40, 420], [160, 396], [360, 410], [560, 380], [840, 400]], '#d6b98a');
-    s += `<g data-k="belem">${town(560, 330, .55)}${hitC(620, 330, 70)}</g>`;
+    s += `<g data-k="belem">${town(366, 372, .55)}${hitC(424, 380, 70)}</g>`;
     s += hill([[-40, 480], [200, 456], [420, 472], [640, 450], [840, 464]], '#c9a873');
     s += `<rect x="-40" y="520" width="900" height="340" fill="#e2cf9a"/><path d="M-40,760 C200,700 420,640 860,600 L860,640 C460,690 240,760 -40,820 Z" fill="#efdfb6"/>`;
     s += olive(110, 560, .8) + palm(760, 560, .55);
@@ -234,7 +234,7 @@ SCENES.push({
       api.st.busy = false;
     });
     api.tap(api.q('jose'), 'José', () => { api.snd('hello'); api.bubble(580, 430, 'Falta pouco, Maria!', { key: 'j' }); });
-    api.tap(api.q('belem'), 'Belém', () => { api.snd('twinkle'); api.burst(620, 320, 'spark', 8, { col: '#fff1b0' }); api.bubble(620, 240, 'Belém!', { key: 'b', size: 28 }); });
+    api.tap(api.q('belem'), 'Belém', () => { api.snd('twinkle'); api.burst(424, 360, 'spark', 8, { col: '#fff1b0' }); api.bubble(424, 362, 'Belém!', { key: 'b', size: 28 }); });
   }
 });
 
@@ -278,7 +278,7 @@ SCENES.push({
       const [x] = api.pos(api.q(k));
       api.bubble(x, 300, said[i], { key: 'd', dur: 2800 });
       if (!api.q(k).dataset.ok) { api.q(k).dataset.ok = 1; n++; }
-      if (i === 2) api.later(() => { api.bubble(760, 380, 'Vamos para lá!', { key: 'm', size: 26 }); api.nudgeNext(1200); }, 2900);
+      if (i === 2) api.later(() => { api.bubble(300, 460, 'Vamos para lá!', { key: 'm', size: 26 }); api.nudgeNext(1200); }, 2900);
     }));
     api.tap(api.q('maria'), 'Maria', () => { api.snd('hm'); api.bubble(300, 460, 'Estou cansada, José.', { key: 'm' }); });
     api.tap(api.q('jose'), 'José', () => { api.snd('hello'); api.bubble(140, 440, 'Vamos encontrar um lugar!', { key: 'j' }); });
@@ -384,7 +384,7 @@ SCENES.push({
       api.snd('choir');
       api.anim(api.q('luz'), [{ opacity: .55 }, { opacity: 1 }, { opacity: .8 }], { duration: 1600, fill: 'forwards' });
       api.burst(420, 240, 'spark', 14, { col: '#fff1b0' });
-      api.bubble(420, 140, 'Hoje nasceu o Salvador!', { key: 'a', below: true, dur: 3000 });
+      api.bubble(420, 448, 'Hoje nasceu o Salvador!', { key: 'a', below: true, dur: 3000 });
     });
     for (let i = 0; i < 3; i++) api.tap(api.q('pa' + i), 'Pastor', () => { const [x] = api.pos(api.q('pa' + i)); api.snd('gulp'); api.bubble(x, 470, ['Um anjo!', 'Que luz forte!', 'Uau!'][i], { key: 'p', size: 28 }); });
     for (const k of ['o1', 'o2']) api.tap(api.q(k), 'Ovelha', () => { api.snd('bleat', 1.1); api.hop(api.q(k), 12); });
