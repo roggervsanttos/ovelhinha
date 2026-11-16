@@ -11,5 +11,10 @@ public class MainActivity extends BridgeActivity {
         // A app gira livremente: em pé mostra uma página, deitada mostra o livro aberto.
         EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
+        // O tamanho de letra do sistema não muda o desenho das páginas: a app já ajusta a letra
+        // ao ecrã, e com o zoom do Android os títulos das capas saíam para fora.
+        if (getBridge() != null && getBridge().getWebView() != null) {
+            getBridge().getWebView().getSettings().setTextZoom(100);
+        }
     }
 }

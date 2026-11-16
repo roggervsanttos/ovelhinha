@@ -232,7 +232,9 @@ svg.scene .cue, svg.scene .fx { pointer-events: none; }
 /* ---------- capa ---------- */
 .cover { background: var(--cover); color: var(--cover-ink); }
 .cover .illus { position: absolute; inset: 0; background: var(--illus-bg); }
-.cover .ctitle { position: absolute; left: 0; right: 0; top: 0; padding: 6% 8% 0; text-align: center; pointer-events: none; display: grid; gap: .3em; justify-items: center; font-size: var(--cfs, 20px); }
+.cover .ctitle { position: absolute; left: 0; right: 0; top: 0; padding: 6% 8% 0; text-align: center; pointer-events: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: .3em; justify-items: center; font-size: var(--cfs, 20px); }
+/* o título e a frase nunca passam da largura da capa: se não couberem, passam para a linha seguinte */
+.cover .ctitle > * { max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; text-wrap: balance; }
 .cover .kicker { font-family: var(--font-display); font-weight: 700; font-size: .72em; letter-spacing: .16em; text-transform: uppercase; color: var(--navy); background: var(--glass); border-radius: 99px; padding: .25em .9em; }
 .cover h1 { margin: 0; font-family: var(--font-display); font-weight: 900; line-height: .9; font-size: 3.3em; color: var(--cover-ink); letter-spacing: .01em; -webkit-text-stroke: .085em var(--btn-edge); paint-order: stroke fill; text-shadow: 0 .09em 0 var(--btn-edge), 0 .16em 0 var(--cover-shadow); text-wrap: balance; }
 .cover h1 span { display: block; font-size: .56em; line-height: 1.05; margin-top: .12em; color: var(--sun); }
