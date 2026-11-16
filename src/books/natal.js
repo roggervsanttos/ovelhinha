@@ -174,7 +174,7 @@ SCENES.push({
       api.snd('choir', ['E4', 'G4', 'B4', 'E5']);
       await api.anim(api.q('anjosonho'), [{ opacity: .2 }, { opacity: 1 }], { duration: 900, fill: 'forwards' });
       api.burst(470, 260, 'spark', 8, { col: '#fff1b0' });
-      api.bubble(470, 140, 'Não tenhas medo, José!', { key: 'a', below: false });
+      api.bubble(470, 372, 'Não tenhas medo, José!', { key: 'a', below: true });
     };
     api.tap(api.q('sonho'), 'Sonho de José', show);
     api.tap(api.q('dorme'), 'José a dormir', async () => {
