@@ -134,7 +134,7 @@ SCENES.push({
         api.st.foi = true;
         api.nudgeNext(2600);
       }
-      api.bubble(330, 300, 'Vamos!', { key: 'j' });
+      api.bubble(445, 512, 'Vamos!', { key: 'j' });
     });
     for (let i = 0; i < 4; i++) api.tap(api.q('p' + i), 'Pessoa na margem', () => { const [x, y, sc] = api.pos(api.q('p' + i)); api.snd('hello'); api.wave(api.q('p' + i)); api.bubble(x, y - 250 * sc, 'Adeus, Jesus!', { key: 'p', size: 26 }); });
   }

@@ -507,7 +507,7 @@ SCENES.push({
       el.dataset.w = 1; walked++;
       api.anim(api.act(el), [{ transform: 'translateX(0px)' }, { transform: 'translateX(40px) translateY(-6px)', offset: .5 }, { transform: 'translateX(80px)' }], { duration: 1200, fill: 'forwards' });
       const [x] = api.pos(el);
-      api.bubble(x + 40, 400, ['Para o oeste!', 'Que estrela linda!', 'Um rei nasceu!'][i], { key: 'c', size: 26 });
+      api.bubble(x + 40, 505, ['Para o oeste!', 'Que estrela linda!', 'Um rei nasceu!'][i], { key: 'c', size: 26 });
       if (walked === 3) api.nudgeNext(1600);
     });
   }

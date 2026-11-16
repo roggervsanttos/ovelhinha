@@ -182,7 +182,7 @@ SCENES.push({
     api.tap(api.q('vulto'), 'Vulto em cima da água', async () => {
       api.snd('wind');
       await api.anim(api.q('vulto'), [{ opacity: .45 }, { opacity: .9 }], { duration: 900, fill: 'forwards' });
-      api.bubble(610, 300, 'Quem será?', { key: 'v' });
+      api.bubble(250, 500, 'Quem será?', { key: 'b' });
       ok('v');
     });
     api.tap(api.q('barco'), 'Discípulos assustados', () => { api.snd('boing'); api.shake(4); api.bubble(270, 300, 'Socorro! É um fantasma!', { key: 'b' }); ok('b'); });
