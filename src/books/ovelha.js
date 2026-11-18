@@ -457,8 +457,8 @@ SCENES.push({
     s += moon(600, 220, 30);
     s += `<text x="400" y="390" text-anchor="middle" class="fimtxt">${tr('Fim')}</text>`;
     s += hill([[-40, 600], [200, 572], [420, 592], [640, 566], [840, 586]], '#244a5b') + hill([[-40, 690], [240, 668], [480, 682], [720, 660], [840, 672]], '#2c584f');
-    s += `<g opacity=".9">${curral(600, 700, .6)}</g>`;
-    s += rebanho([[684, .32, [540, 590, 650]]], 13, { pose: 'sleep', wool: '#d9dcea' });
+    // as ovelhas dormem dentro do curral (entre o chão e o muro), não em cima do muro
+    s += `<g opacity=".9">${curral(600, 700, .6, rebanho([[668, .34, [520, 575, 632, 690]]], 13, { pose: 'sleep', wool: '#d9dcea' }))}</g>`;
     s += ovelhinha({ x: 300, y: 744, s: .9, pose: 'sleep', k: 'ove', wool: '#e9ecf6' });
     for (let i = 0; i < 7; i++) s += `<circle class="firefly" style="--d:${(4 + i % 4).toFixed(1)}s;--dx:${(i % 2 ? 1 : -1) * (20 + i * 4)}px;--dy:${-16 - i * 3}px;${dl(6)}" cx="${80 + i * 100}" cy="${640 + (i % 3) * 22}" r="3" fill="#f6f39a"/>`;
     return s;

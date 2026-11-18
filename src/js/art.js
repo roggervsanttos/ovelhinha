@@ -423,8 +423,27 @@ function headwear(R, d, sw) {
 }
 
 /* ---------- braços e objetos ---------- */
+// braços cruzados ficam estranhos: se a mão passar para o outro lado do corpo, o antebraço dobra menos
+// e as mãos ficam juntas à frente (a segurar, a orar ou a abraçar)
+function uncross(G, side, A) {
+  if (!A || A.hide || A.cross || (A.b ?? 0) >= 0 || (A.a ?? 12) > 40) return A;
+  const L = A.len ?? G.arm, u = L * .52, f = L - u, sx = side * (G.shW - 4);
+  const hx = (a, b) => { const rot = (side < 0 ? a : -a) * Math.PI / 180, bend = (b * (side < 0 ? 1 : -1)) * Math.PI / 180; return sx - Math.sin(rot) * u - Math.sin(rot + bend) * f; };
+  const lim = side * (G.hand * .9);
+  let a = A.a ?? 12, b = A.b;
+  if (a < 0) {
+    // braço a ir para dentro do corpo (pose de segurar ou orar): braço junto ao corpo e mãos juntas à frente
+    a = 6; let best = b, d = 1e9;
+    for (let t = -150; t <= 0; t += 2) { const x = hx(a, t); if (side * x >= side * lim && Math.abs(x - lim) < d) { d = Math.abs(x - lim); best = t; } }
+    return Object.assign({}, A, { a, b: best });
+  }
+  if (side * hx(a, b) >= side * lim) return A;
+  while (b < 0 && side * hx(a, b) < side * lim) b += 2;
+  return Object.assign({}, A, { b });
+}
 function armSVG(G, d, side, A, sw) {
   if (!A || A.hide) return '';
+  A = uncross(G, side, A);
   const out = A.a ?? 12;
   const rot = side < 0 ? out : -out;
   const bend = (A.b ?? 0) * (side < 0 ? 1 : -1);
@@ -443,6 +462,7 @@ function armSVG(G, d, side, A, sw) {
 // posição da mão (coordenadas locais do personagem)
 function handPos(kind, side, A, drop = 0) {
   const G = kind === 'adult' ? ADULT : CHILD;
+  A = uncross(G, side, A) || A;
   const out = A.a ?? 12, rot = (side < 0 ? out : -out) * Math.PI / 180;
   const bend = ((A.b ?? 0) * (side < 0 ? 1 : -1)) * Math.PI / 180;
   const L = A.len ?? G.arm, u = L * .52, f = L - u;

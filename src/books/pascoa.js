@@ -342,7 +342,7 @@ SCENES.push({
     let s = gardenNight({ seed: 26 }) + moon(650, 120, 34) + glowDefs();
     s += hill([[-40, 520], [200, 496], [420, 512], [640, 490], [840, 504]], '#26405a');
     s += nightOlive(110, 560, 1.1) + nightOlive(700, 540, 1.2);
-    s += `<g data-k="tochas" opacity="0" style="pointer-events:none"><g data-k="tochasM">${[0, 1, 2].map(i => person(Object.assign({}, SOLDADO, { x: 40 + i * 44, y: 540 + (i % 2) * 8, s: .36, face: 'frown', look: .5, armL: { a: 20 }, armR: { a: 110, b: -70, item: torch(60) }, cls: '' }))).join('')}</g></g>`;
+    s += `<g data-k="tochas" opacity="0" style="pointer-events:none"><g data-k="tochasM">${[0, 1, 2].map(i => person(Object.assign({}, SOLDADO, { x: 60 + i * 44, y: 592 + (i % 2) * 6, s: .36, face: 'frown', look: .5, armL: { a: 20 }, armR: { a: 110, b: -70, item: torch(60) }, cls: '' }))).join('')}</g></g>`;
     s += hill([[-40, 600], [220, 580], [460, 596], [700, 574], [840, 588]], '#2c4f4a');
     s += halo(320, 420, 180, 'luzJ', .6);
     s += rock(330, 690, 240, 100, { fill: '#7d7a8c', shade: '#5f5c70', hi: '#9a98aa' });
