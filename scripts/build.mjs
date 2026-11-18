@@ -107,6 +107,15 @@ function page(target) {
       .replace('</head>', '').replace('<body>', '').replace('</body>', '').replace('</html>', '')
       .replaceAll(`?v=${V}`, '').trim() + '\n';
   } else t = t.replace('<!--HEAD-START-->\n', '');
+  if (target === 'web') {
+    // segurança do site: só corre código e carrega ficheiros do próprio site (nada de fora),
+    // e o único script dentro da página é o da configuração (autorizado pelo seu hash)
+    const inline = [...t.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => `'sha256-${crypto.createHash('sha256').update(m[1]).digest('base64')}'`);
+    const csp = ["default-src 'self'", `script-src 'self' ${inline.join(' ')}`, "style-src 'self' 'unsafe-inline'", "img-src 'self' data: blob:",
+      "font-src 'self' data:", "connect-src 'self'", "media-src 'self' data: blob:", "worker-src 'self'", "manifest-src 'self'",
+      "object-src 'none'", "base-uri 'none'", "form-action 'none'"].join('; ');
+    t = t.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="${csp}">\n<meta name="referrer" content="no-referrer">`);
+  }
   if (/\{\{|<!--[A-Z]+-->/.test(t)) throw new Error(`Sobrou um marcador sem trocar em ${target}/index.html`);
   return t;
 }
