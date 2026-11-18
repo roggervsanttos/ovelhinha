@@ -338,7 +338,7 @@ SCENES.push({
     let s = nightSky(59, { n: 80, h: 440 });
     s += moon(130, 120, 32);
     s += hill([[-40, 470], [140, 440], [330, 462], [520, 432], [700, 452], [840, 440]], '#2b416c');
-    s += town(560, 414, .5, { wall: '#4a5582', shade: '#3c456e', roof: '#57628f', winCol: '#ffd66b', doorCol: '#2b304f', sw: 2 });
+    s += town(560, 452, .5, { wall: '#4a5582', shade: '#3c456e', roof: '#57628f', winCol: '#ffd66b', doorCol: '#2b304f', sw: 2 });
     s += hill([[-40, 560], [200, 530], [420, 548], [640, 520], [840, 540]], '#244a5b') + hill([[-40, 630], [220, 610], [460, 624], [700, 602], [840, 616]], '#2c584f');
     s += campfire(380, 680, .82);
     s += person(Object.assign({}, PASTORES[0], { x: 230, y: 706, s: .94, legs: 'sit', drop: 30, hemY: -62, face: 'smile', look: .6, armL: { a: -20, b: -60 }, armR: { a: 20, item: ITEM.staff(200, -1) }, k: 'pa0' }));

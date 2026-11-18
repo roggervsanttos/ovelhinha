@@ -412,8 +412,8 @@ SCENES.push({
     let s = prado({});
     s += rebanho([[520, .4, [60, 140, 640, 720]], [600, .5, [90, 700]]], 11);
     s += flowerBand(2901, 700, 800, 10);
-    s += jesus({ x: 400, y: 780, s: 1.1, face: 'joy', look: .3, armL: { a: -30, b: -84 }, armR: { a: -30, b: -84 }, k: 'jesus' });
-    s += ovelhinha({ x: 420, y: 650, s: .62, k: 'ovelhinha' });
+    s += jesus({ x: 400, y: 780, s: 1.1, face: 'joy', look: .3, armL: { a: 14, b: -70, cross: true }, armR: { a: 14, b: -70, cross: true }, k: 'jesus' });
+    s += ovelhinha({ x: 420, y: 625, s: .62, k: 'ovelhinha' });
     CRIANCAS.forEach(([x, y, p], i) => s += person(Object.assign({}, p, { x, y, s: 1, face: 'joy', look: x < 400 ? .6 : -.6, legs: i === 1 ? 'hop' : 'stand', armL: { a: i === 1 ? 150 : 30, b: i === 1 ? -20 : 30 }, armR: { a: i === 1 ? 150 : 40, b: i === 1 ? -20 : 40 }, k: 'k' + i })));
     return s;
   },
